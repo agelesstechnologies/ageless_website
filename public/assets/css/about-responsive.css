@@ -1,0 +1,274 @@
+/* Loaded after shared responsive rules; these adjustments belong to About Us. */
+@media (max-width: 1199.98px) {
+    .about-page .container {
+        padding-inline: 24px;
+    }
+
+    .about-page .row > [class*="col-"] {
+        min-width: 0;
+    }
+
+    .about-page .wonder-nav-header .header-menu-wrap {
+        display: none !important;
+    }
+
+    .about-page .wonder-nav-header .mobile-menu-icon {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        flex-shrink: 0;
+        padding: 10px;
+        background: transparent;
+        border: 0;
+        border-radius: 50%;
+    }
+
+    .about-page .wonder-nav-header .nav-call-btn {
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    .about-page .wonder-nav-header .nav-capsule-wrapper,
+    .about-page .wonder-nav-header.is-scrolled .nav-capsule-wrapper {
+        padding: 6px 12px !important;
+        gap: 12px;
+    }
+
+    .about-page .about-hero-wrapper {
+        /* Override the shared first-section rule so copy clears the fixed nav. */
+        padding: 124px 0 56px !important;
+        min-height: 0;
+    }
+
+    .about-page .about-hero-container > .row > div {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .about-page .about-stats-strip .row,
+    .about-page .about-story-section .row,
+    .about-page .about-vision-section .row,
+    .about-page .about-capabilities-section .row,
+    .about-page .about-advantage-section .row,
+    .about-page .framework-timeline-track .row,
+    .about-page .footer-area {
+        row-gap: 24px;
+    }
+
+    .about-page .about-stats-strip .row > div,
+    .about-page .about-advantage-section .row > div,
+    .about-page .footer-area > div {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .about-page .about-story-section,
+    .about-page .about-vision-section,
+    .about-page .about-capabilities-section,
+    .about-page .about-advantage-section,
+    .about-page .about-framework-section,
+    .about-page .about-cta-section {
+        padding: 64px 0;
+    }
+
+    .about-page .about-vision-section {
+        margin: 0;
+    }
+
+    .about-page .stats-text-content,
+    .about-page .floating-badge-text,
+    .about-page .iaapi-member-pill > div {
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
+
+    .about-page .stats-number {
+        line-height: 1.2;
+    }
+
+    .about-page .stats-number-safety {
+        font-size: clamp(16px, 2vw, 22px);
+    }
+
+    .about-page .story-floating-badge {
+        position: static;
+        margin-top: 20px;
+        padding: 18px;
+        max-width: 100%;
+        animation: none;
+    }
+
+    .about-page .floating-badge-icon,
+    .about-page .vision-card-icon,
+    .about-page .iaapi-member-pill img,
+    .about-page .badge-pulse-dot {
+        flex-shrink: 0;
+    }
+
+    .about-page .vision-card,
+    .about-page .advantage-card,
+    .about-page .step-card {
+        padding: 28px 24px;
+    }
+
+    .about-page .about-hero-actions a,
+    .about-page .about-cta-buttons a {
+        min-height: 48px;
+        max-width: 100%;
+        white-space: normal;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .about-page .footer-widget {
+        overflow-wrap: anywhere;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1199.98px) {
+    .about-page .about-capabilities-section .row > div {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .about-page .container {
+        padding-inline: 20px;
+    }
+
+    .about-page .about-hero-wrapper {
+        padding: 112px 0 40px !important;
+    }
+
+    .about-page .about-hero-title {
+        font-size: clamp(26px, 6.6vw, 44px);
+        line-height: 1.15;
+        letter-spacing: 0;
+        overflow-wrap: anywhere;
+    }
+
+    .about-page .about-hero-subheading {
+        font-size: clamp(18px, 3vw, 22px);
+        line-height: 1.5;
+    }
+
+    .about-page .about-hero-badge,
+    .about-page .section-pill-tag {
+        max-width: 100%;
+        font-size: 11px;
+        letter-spacing: 0.04em;
+        line-height: 1.6;
+    }
+
+    .about-page .about-story-heading,
+    .about-page .about-vision-section h2,
+    .about-page .about-advantage-section h2,
+    .about-page .about-cta-heading {
+        /* Two section titles also have desktop sizes set inline. */
+        font-size: clamp(24px, 5.8vw, 32px) !important;
+        line-height: 1.25;
+        overflow-wrap: anywhere;
+    }
+
+    .about-page .about-cta-heading br {
+        display: none;
+    }
+
+    .about-page .about-story-section,
+    .about-page .about-vision-section,
+    .about-page .about-capabilities-section,
+    .about-page .about-advantage-section,
+    .about-page .about-framework-section,
+    .about-page .about-cta-section {
+        padding: 44px 0;
+    }
+
+    .about-page .about-advantage-section .row > div {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .about-page .story-main-img-card img {
+        height: auto;
+        aspect-ratio: 4 / 3;
+    }
+
+    .about-page .story-features-list {
+        grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+        gap: 12px;
+    }
+
+    .about-page .iaapi-member-pill {
+        max-width: 100%;
+        border-radius: 18px;
+        padding: 12px;
+    }
+
+    .about-page .vision-card-header {
+        gap: 12px;
+    }
+
+    .about-page .vision-card-title {
+        font-size: 24px;
+    }
+
+    .about-page .capability-title {
+        font-size: 22px;
+    }
+
+    .about-page .about-cta-buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .about-page .about-hero-actions a,
+    .about-page .about-cta-buttons a {
+        width: 100%;
+        padding: 14px 18px;
+        font-size: 14px;
+    }
+
+    .about-page .framework-timeline-track {
+        margin-top: 28px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .about-page .container {
+        padding-inline: 16px;
+    }
+
+    .about-page .about-stats-strip .row > div,
+    .about-page .footer-area > div {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .about-page .about-stats-strip .row {
+        row-gap: 12px;
+    }
+
+    .about-page .vision-card,
+    .about-page .advantage-card,
+    .about-page .step-card,
+    .about-page .capability-content {
+        padding: 24px 18px;
+    }
+
+    .about-page .floating-badge-text h4 {
+        font-size: 18px;
+        line-height: 1.3;
+    }
+}
+
+/* Avoid offscreen entrance transforms on touch screens and reduced-motion setups. */
+@media (hover: none), (prefers-reduced-motion: reduce) {
+    .about-page [data-aos] {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+}

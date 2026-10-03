@@ -1,0 +1,239 @@
+/* Scoped to the journal and article pages, after shared responsive styles. */
+.blog-page .blog-content {
+    overflow-wrap: anywhere;
+}
+
+.blog-page .blog-content img,
+.blog-page .blog-content video {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+.blog-page .blog-content iframe {
+    max-width: 100%;
+}
+
+.blog-page .blog-content table,
+.blog-page .blog-content pre {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.blog-page .journal-pagination nav,
+.blog-page .journal-pagination .pagination {
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+@media (max-width: 1199.98px) {
+    .blog-page .container {
+        padding-inline: 24px;
+    }
+
+    .blog-page .wonder-nav-header .header-menu-wrap {
+        display: none !important;
+    }
+
+    .blog-page .wonder-nav-header .mobile-menu-icon {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        flex-shrink: 0;
+        border-radius: 50%;
+    }
+
+    .blog-page .wonder-nav-header .nav-call-btn {
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    .blog-page .wonder-nav-header .nav-capsule-wrapper,
+    .blog-page .wonder-nav-header.is-scrolled .nav-capsule-wrapper {
+        padding: 6px 12px !important;
+        gap: 12px;
+    }
+
+    .blog-page .blog-hero {
+        padding: 124px 0 56px;
+    }
+
+    .blog-page .blog-section-heading {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .blog-page .blog-section-heading > p {
+        max-width: 650px;
+    }
+
+    .blog-page .blog-articles {
+        padding: 56px 0;
+        scroll-margin-top: 90px;
+    }
+
+    .blog-page .footer-area {
+        row-gap: 24px;
+    }
+
+    .blog-page .footer-area > div {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .blog-page .footer-widget {
+        overflow-wrap: anywhere;
+    }
+
+    .blog-page .blog-primary-link,
+    .blog-page .journal-read-link,
+    .blog-page .blog-btn,
+    .blog-page .journal-pagination a {
+        min-height: 44px;
+    }
+
+    .blog-page .blog-detail-wrap {
+        padding: 124px 0 56px !important;
+    }
+
+    .blog-page .blog-detail-img img {
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
+
+    .blog-page .blog-detail-content h1 {
+        font-size: clamp(28px, 4vw, 40px);
+        line-height: 1.25;
+        overflow-wrap: anywhere;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .blog-page .container {
+        padding-inline: 20px;
+    }
+
+    .blog-page .blog-hero {
+        padding: 112px 0 44px;
+    }
+
+    .blog-page .blog-hero h1 {
+        font-size: clamp(26px, 6.6vw, 44px);
+        line-height: 1.18;
+        overflow-wrap: anywhere;
+    }
+
+    .blog-page .blog-hero p {
+        font-size: 15px;
+        line-height: 1.75;
+    }
+
+    .blog-page .blog-eyebrow {
+        max-width: 100%;
+        font-size: 11px;
+        line-height: 1.6;
+    }
+
+    .blog-page .blog-section-heading h2 {
+        font-size: clamp(24px, 5.8vw, 32px);
+        line-height: 1.25;
+    }
+
+    .blog-page .blog-primary-link {
+        max-width: 100%;
+        white-space: normal;
+        font-size: 12px;
+    }
+
+    .blog-page .blog-articles {
+        padding: 40px 0;
+    }
+
+    .blog-page .blog-card-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    /* Flat slides stay inside the content gutters; JS measures their natural height. */
+    .blog-page .is-arc-ready .blog-card-grid {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .blog-page .is-arc-ready .journal-card {
+        top: 0;
+        left: 0;
+        width: 100%;
+        max-width: none;
+        margin-left: 0;
+        transform: translateX(var(--slide-offset, 0px));
+        transform-origin: center;
+        box-shadow: none;
+    }
+
+    .blog-page .journal-image {
+        flex-shrink: 0;
+    }
+
+    .blog-page .journal-content {
+        padding: 22px;
+    }
+
+    .blog-page .is-arc-ready .journal-content h3 {
+        display: block;
+        font-size: 21px;
+    }
+
+    .blog-page .journal-image-label {
+        max-width: calc(100% - 36px);
+        white-space: normal;
+    }
+
+    .blog-page .is-arc-ready .journal-carousel-controls {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .blog-page .journal-carousel-navigation {
+        margin: 0;
+        gap: 20px;
+    }
+
+    .blog-page .journal-carousel-button {
+        width: 48px;
+        height: 48px;
+    }
+
+    .blog-page .blog-detail-wrap {
+        padding: 104px 0 40px !important;
+    }
+
+    .blog-page .blog-detail-content {
+        padding: 24px 20px;
+    }
+
+    .blog-page .blog-detail-content h1 {
+        font-size: clamp(24px, 5.8vw, 32px);
+    }
+
+    .blog-page .blog-content {
+        padding-top: 20px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .blog-page .container {
+        padding-inline: 16px;
+    }
+
+    .blog-page .footer-area > div {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .blog-page .blog-primary-link {
+        width: 100%;
+    }
+}

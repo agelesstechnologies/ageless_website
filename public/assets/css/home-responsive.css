@@ -1,0 +1,247 @@
+/* Homepage overrides follow the shared styles to keep other pages unchanged. */
+@media (max-width: 1199.98px) {
+    .home-page .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .home-page .wonder-nav-header .header-menu-wrap {
+        display: none !important;
+    }
+
+    .home-page .wonder-nav-header .mobile-menu-icon {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        padding: 10px;
+        border: 0;
+        border-radius: 50%;
+        background: transparent;
+        flex-shrink: 0;
+    }
+
+    .home-page .wonder-nav-header .nav-call-btn {
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    .home-page .wonder-nav-header .nav-capsule-wrapper,
+    .home-page .wonder-nav-header.is-scrolled .nav-capsule-wrapper {
+        padding: 6px 12px !important;
+        gap: 12px;
+    }
+
+    .home-page .hero-parallax-wrapper {
+        min-height: 600px;
+        min-height: min(760px, 100svh);
+    }
+
+    .home-page .hero-content-container {
+        padding: 120px 20px 64px !important;
+    }
+
+    .home-page .hero-content-container .col-lg-7 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .home-page .hero-text-block {
+        max-width: 650px;
+        margin-inline: auto;
+        text-align: center;
+    }
+
+    .home-page .hero-btn-group {
+        justify-content: center;
+    }
+
+    .home-page .hero-scroll-cue {
+        display: none;
+    }
+
+    .home-page .service-section .col-lg-3,
+    .home-page .footer-area > .col-lg-3 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .home-page .service-section .row,
+    .home-page .footer-area {
+        row-gap: 24px;
+    }
+
+    .home-page .service-cta-parallax {
+        padding: 28px;
+    }
+
+    .home-page .service-cta-inner {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .home-page .service-cta-inner h4 {
+        font-size: clamp(22px, 3vw, 28px);
+        line-height: 1.4;
+    }
+
+    .home-page .skill-item .d-flex {
+        gap: 16px;
+    }
+
+    .home-page .skill-item strong {
+        flex-shrink: 0;
+    }
+
+    .home-page .project-filter-btn {
+        min-height: 44px;
+    }
+
+    .home-page .footer-widget {
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .home-page .about-image-stack {
+        margin-bottom: 48px;
+    }
+
+    .home-page .skill-section .row {
+        row-gap: 32px;
+    }
+
+    .home-page .hero-text-block {
+        /* Keep scroll-driven transforms from pushing mobile copy out of view. */
+        transform: none !important;
+        opacity: 1 !important;
+    }
+
+    .home-page .section-heading h2 br,
+    .home-page .section-heading p br {
+        display: none;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .home-page .hero-parallax-wrapper {
+        min-height: 0;
+    }
+
+    .home-page .hero-content-container {
+        padding-top: 112px !important;
+        padding-bottom: 48px !important;
+    }
+
+    .home-page .home-hero-badge {
+        max-width: 100%;
+        white-space: normal;
+        line-height: 1.5;
+        letter-spacing: 0.3px;
+    }
+
+    .home-page .badge-pulse-dot {
+        flex-shrink: 0;
+    }
+
+    .home-page .dream-title-parallax .dream-white,
+    .home-page .dream-title-parallax .dream-orange {
+        font-size: clamp(32px, 8.5vw, 56px) !important;
+        letter-spacing: -1px;
+    }
+
+    .home-page .hero-btn-group {
+        max-width: 360px;
+    }
+
+    .home-page .hero-btn-group a,
+    .home-page .service-cta-inner .btn-glow-primary {
+        min-height: 48px;
+        white-space: normal;
+        text-align: center;
+    }
+
+    .home-page .about-image-stack {
+        max-width: 380px;
+        padding-inline: 12px;
+    }
+
+    .home-page .image-stack-wrapper {
+        height: auto;
+        aspect-ratio: 4 / 3;
+    }
+
+    .home-page .stack-card {
+        width: calc(100% - 20px);
+    }
+
+    .home-page .about-image-stack:hover .stack-card.is-front {
+        transform: translate3d(20px, 15px, 20px);
+    }
+
+    .home-page .service-section .col-lg-3 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .home-page .service-content {
+        padding: 24px;
+    }
+
+    .home-page .project-filter-wrap {
+        gap: 8px;
+    }
+
+    .home-page .project-filter-btn {
+        padding: 9px 12px;
+        font-size: 12px;
+        max-width: 100%;
+        white-space: normal;
+    }
+
+    .home-page .project-card-3d .project-thumb {
+        height: 280px;
+    }
+
+    .home-page .project-card-3d .project-glass-info {
+        padding: 18px;
+    }
+
+    .home-page .project-card-3d .project-glass-info h3 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .home-page .container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .home-page .hero-content-container {
+        padding-inline: 16px !important;
+    }
+
+    .home-page .footer-area > .col-lg-3 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .home-page .service-cta-parallax {
+        padding: 24px 16px;
+    }
+
+    .home-page .service-cta-inner .btn-glow-primary {
+        width: 100%;
+        justify-content: center;
+        padding-inline: 12px;
+    }
+
+    .home-page .ageless-video-container .ageless-play-trigger {
+        width: 56px;
+        height: 56px;
+        font-size: 20px;
+    }
+}

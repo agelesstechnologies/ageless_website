@@ -1,0 +1,34 @@
+[2026-09-15 12:55:51] local.ERROR: There are no commands defined in the "assets" namespace. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\NamespaceNotFoundException(code: 0): There are no commands defined in the \"assets\" namespace. at C:/xampp/htdocs/ageless_laravel_local/vendor/symfony/console/Application.php:694)
+[stacktrace]
+#0 C:/xampp/htdocs/ageless_laravel_local/vendor/symfony/console/Application.php(743): Symfony/Component/Console/Application->findNamespace('assets')
+#1 C:/xampp/htdocs/ageless_laravel_local/vendor/symfony/console/Application.php(298): Symfony/Component/Console/Application->find('assets:clear')
+#2 C:/xampp/htdocs/ageless_laravel_local/vendor/symfony/console/Application.php(195): Symfony/Component/Console/Application->doRun(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#3 C:/xampp/htdocs/ageless_laravel_local/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony/Component/Console/Application->run(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#4 C:/xampp/htdocs/ageless_laravel_local/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate/Foundation/Console/Kernel->handle(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#5 C:/xampp/htdocs/ageless_laravel_local/artisan(7): Illuminate/Foundation/Application->handleCommand(Object(Symfony/Component/Console/Input/ArgvInput))
+#6 {main}
+"} 
+[2026-09-26 12:16:55] local.ERROR: AI reply keeps server-selected source links {"exception":"[object] (RuntimeException(code: 0): AI reply keeps server-selected source links at C:/xampp/htdocs/ageless_laravel_local/tests/huggingface_chat_smoke.php:13)
+[stacktrace]
+#0 C:/xampp/htdocs/ageless_laravel_local/tests/huggingface_chat_smoke.php(29): checkHf(false, 'AI reply keeps ...')
+#1 {main}
+"} 
+[2026-09-26 12:17:08] local.WARNING: Hugging Face chat unavailable. {"status":401} 
+[2026-09-26 12:17:08] local.WARNING: Hugging Face chat unavailable. {"status":402} 
+[2026-09-26 12:17:08] local.WARNING: Hugging Face chat unavailable. {"status":429} 
+[2026-09-26 12:17:08] local.WARNING: Hugging Face chat unavailable. {"status":503} 
+[2026-09-26 12:17:08] local.WARNING: Hugging Face chat connection failed.  
+[2026-10-01 10:36:24] local.WARNING: Ollama chat unavailable. {"status":404} 
+[2026-10-01 10:36:24] local.WARNING: Ollama chat unavailable. {"status":429} 
+[2026-10-01 10:36:24] local.WARNING: Ollama chat unavailable. {"status":500} 
+[2026-10-01 10:36:24] local.WARNING: Ollama chat unavailable. {"status":503} 
+[2026-10-01 10:36:24] local.WARNING: Ollama chat connection failed.  
+[2026-10-01 10:36:25] local.WARNING: Hugging Face chat unavailable. {"status":401} 
+[2026-10-01 10:36:25] local.WARNING: Hugging Face chat unavailable. {"status":402} 
+[2026-10-01 10:36:25] local.WARNING: Hugging Face chat unavailable. {"status":429} 
+[2026-10-01 10:36:25] local.WARNING: Hugging Face chat unavailable. {"status":503} 
+[2026-10-01 10:36:25] local.WARNING: Hugging Face chat connection failed.  
+[2026-10-01 10:40:25] local.WARNING: Ollama chat connection failed.  
+[2026-10-01 10:40:36] local.WARNING: Ollama chat connection failed.  
+[2026-10-01 10:45:31] local.WARNING: Ollama chat connection failed.  
+[2026-10-03 09:32:29] local.WARNING: Ollama chat connection failed.  

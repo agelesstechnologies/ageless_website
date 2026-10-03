@@ -1,0 +1,1004 @@
+/* ===================================================
+   Ageless Entertainments - About Us Page Styles
+   Clean, Premium, High-Energy Theme Matching Home Page
+   =================================================== */
+
+/* ---------------------------------------------------
+   1. HERO SECTION (ABOUT US)
+   --------------------------------------------------- */
+.about-hero-wrapper {
+    position: relative;
+    min-height: 88vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-blue-deep, #030d28);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    padding: 140px 0 100px 0;
+    color: #ffffff;
+}
+
+.about-hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.about-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(3, 13, 40, 0.72) 0%,
+        rgba(3, 13, 40, 0.55) 45%,
+        rgba(11, 23, 39, 0.40) 100%
+    );
+    z-index: 1;
+}
+
+.about-hero-mesh {
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(245, 161, 0, 0.22) 0%, rgba(0, 210, 255, 0.08) 50%, transparent 70%);
+    filter: blur(80px);
+    z-index: 1;
+    pointer-events: none;
+    animation: meshPulse 8s ease-in-out infinite alternate;
+}
+
+.about-hero-mesh-left {
+    position: absolute;
+    bottom: -20%;
+    left: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(0, 210, 255, 0.15) 0%, rgba(245, 161, 0, 0.08) 50%, transparent 70%);
+    filter: blur(80px);
+    z-index: 1;
+    pointer-events: none;
+    animation: meshPulse 10s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes meshPulse {
+    0% { transform: scale(1) translate(0, 0); opacity: 0.7; }
+    100% { transform: scale(1.15) translate(30px, 20px); opacity: 1; }
+}
+
+.about-hero-container {
+    position: relative;
+    z-index: 2;
+}
+
+.about-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(245, 161, 0, 0.12);
+    border: 1px solid rgba(245, 161, 0, 0.35);
+    padding: 8px 18px;
+    border-radius: 50px;
+    color: var(--primary-orange, #f5a100);
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(245, 161, 0, 0.15);
+}
+
+.about-hero-badge .badge-pulse-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--primary-orange, #f5a100);
+    box-shadow: 0 0 10px var(--primary-orange, #f5a100);
+    animation: badgeBlink 1.5s infinite;
+}
+
+@keyframes badgeBlink {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.8); }
+}
+
+.about-hero-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(2.6rem, 5.5vw, 4.6rem);
+    line-height: 1.05;
+    letter-spacing: 0.02em;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    text-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+}
+
+.about-hero-title span.highlight-orange {
+    color: var(--primary-orange, #f5a100);
+    background: linear-gradient(135deg, #f5a100 0%, #ffc107 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.about-hero-subheading {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1.15rem, 2.2vw, 1.55rem);
+    font-weight: 600;
+    color: #e2e8f0;
+    line-height: 1.4;
+    margin-bottom: 22px;
+    max-width: 880px;
+}
+
+.about-hero-intro {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(0.95rem, 1.1vw, 1.1rem);
+    line-height: 1.8;
+    color: #cbd5e1;
+    margin-bottom: 35px;
+    max-width: 900px;
+}
+
+.about-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 45px;
+}
+
+/* ---------------------------------------------------
+   2. KEY STATS CALLOUT STRIP (HERO COUNTERS)
+   --------------------------------------------------- */
+.about-stats-strip {
+    position: relative;
+    z-index: 3;
+    margin-top: 15px;
+}
+
+.stats-grid-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+    padding: 24px 20px;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    transition: all 0.35s cubic-bezier(0.2, 0, 0.2, 1);
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    height: 100%;
+}
+
+.stats-grid-card:hover {
+    transform: translateY(-6px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(245, 161, 0, 0.4);
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.35), 0 0 25px rgba(245, 161, 0, 0.15);
+}
+
+.stats-icon-wrap {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, rgba(245, 161, 0, 0.2), rgba(245, 161, 0, 0.05));
+    border: 1px solid rgba(245, 161, 0, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-orange, #f5a100);
+    font-size: 1.7rem;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.stats-grid-card:hover .stats-icon-wrap {
+    transform: scale(1.1) rotate(5deg);
+    background: var(--primary-orange, #f5a100);
+    color: #030d28;
+}
+
+.stats-text-content {
+    flex-grow: 1;
+}
+
+.stats-number {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.2rem;
+    line-height: 1;
+    color: #ffffff;
+    letter-spacing: 0.03em;
+    margin-bottom: 4px;
+}
+
+.stats-number span.accent-plus {
+    color: var(--primary-orange, #f5a100);
+}
+
+.stats-safety-content {
+    min-width: 0;
+    flex: 1;
+    container-type: inline-size;
+    overflow-wrap: anywhere;
+}
+
+.stats-number-safety {
+    font-size: 1.1rem;
+    font-size: clamp(0.65rem, 11cqi, 1.5rem);
+    line-height: 1.2;
+}
+
+.stats-number-safety .accent-plus {
+    display: block;
+}
+
+.stats-label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: #94a3b8;
+    line-height: 1.35;
+    margin: 0;
+}
+
+/* ---------------------------------------------------
+   3. WHO WE ARE (BRAND STORY SECTION)
+   --------------------------------------------------- */
+.about-story-section {
+    padding: 100px 0;
+    background: #ffffff;
+    position: relative;
+}
+
+.about-story-section.about-story-orange {
+    background: var(--primary-orange, #f5a100);
+}
+
+.about-story-orange .about-story-heading span.gradient-word {
+    background: none;
+    color: #030d28;
+    -webkit-text-fill-color: currentColor;
+}
+
+.about-story-orange .story-lead-para,
+.about-story-orange .story-body-para {
+    color: #030d28;
+    border-left-color: #030d28;
+}
+
+.about-story-orange .section-pill-tag {
+    background: #030d28;
+    color: #ffffff;
+    border-color: #030d28;
+}
+
+.section-pill-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(245, 161, 0, 0.1);
+    color: #d97706;
+    border: 1px solid rgba(245, 161, 0, 0.25);
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 15px;
+}
+
+.about-story-heading {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(2rem, 3.8vw, 3rem);
+    line-height: 1.15;
+    color: #0b1727;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+}
+
+.about-story-heading span.gradient-word {
+    color: #f5a100;
+    background: linear-gradient(135deg, #f5a100 0%, #e65100 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.story-lead-para {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    line-height: 1.7;
+    color: #1e293b;
+    margin-bottom: 18px;
+    border-left: 4px solid var(--primary-orange, #f5a100);
+    padding-left: 18px;
+}
+
+.story-body-para {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.98rem;
+    line-height: 1.85;
+    color: #475569;
+    margin-bottom: 28px;
+}
+
+.story-features-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 35px;
+}
+
+.story-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #1e293b;
+    transition: all 0.3s ease;
+}
+
+.story-feature-item:hover {
+    background: #fff8eb;
+    border-color: rgba(245, 161, 0, 0.4);
+    transform: translateX(4px);
+}
+
+.story-feature-item i {
+    font-size: 1.25rem;
+    color: var(--primary-orange, #f5a100);
+}
+
+.iaapi-member-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    border-radius: 50px;
+    padding: 8px 20px 8px 10px;
+    margin-top: 10px;
+}
+
+.iaapi-member-pill img {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+    border-radius: 50%;
+    background: #ffffff;
+    padding: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.iaapi-member-pill .member-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1.2;
+}
+
+.iaapi-member-pill .member-subtitle {
+    font-size: 0.75rem;
+    color: #64748b;
+    font-weight: 500;
+}
+
+/* Media Gallery Showcase for Brand Story */
+.story-media-showcase {
+    position: relative;
+}
+
+.story-main-img-card {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(11, 23, 39, 0.18);
+    border: 1px solid rgba(11, 23, 39, 0.08);
+}
+
+.story-main-img-card img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.2, 0, 0.2, 1);
+}
+
+.story-main-img-card:hover img {
+    transform: scale(1.04);
+}
+
+.story-floating-badge {
+    position: absolute;
+    bottom: -25px;
+    left: -20px;
+    background: #ffffff;
+    border: 1px solid rgba(11, 23, 39, 0.08);
+    border-radius: 20px;
+    padding: 18px 24px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    z-index: 2;
+    animation: floatBadge 4s ease-in-out infinite;
+}
+
+@keyframes floatBadge {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+.floating-badge-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #f5a100, #ff6f00);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+}
+
+.floating-badge-text h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.35rem;
+    color: #0b1727;
+    margin: 0;
+    line-height: 1.1;
+}
+
+.floating-badge-text p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #64748b;
+    margin: 0;
+}
+
+/* ---------------------------------------------------
+   4. VISION & MISSION SECTION
+   --------------------------------------------------- */
+.about-vision-section {
+    margin: 40px 0;
+    padding: 100px 0;
+    background: #f5a100;
+    color: #0b1727;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-vision-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 350px;
+    background: radial-gradient(ellipse, rgba(245, 161, 0, 0.15) 0%, transparent 70%);
+    filter: blur(60px);
+    pointer-events: none;
+}
+
+.vision-card {
+    background: #ffffff;
+    border: 1px solid rgba(245, 161, 0, 0.3);
+    box-shadow: 0 12px 32px rgba(210, 95, 0, 0.3);
+    border-radius: 24px;
+    padding: 40px 32px;
+    height: 100%;
+    backdrop-filter: blur(16px);
+    transition: all 0.4s cubic-bezier(0.2, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.vision-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--primary-orange, #f5a100), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.vision-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(245, 161, 0, 0.35);
+    background: #ffffff;
+    box-shadow: 0 20px 50px rgba(210, 95, 0, 0.4), 0 0 30px rgba(245, 161, 0, 0.2);
+}
+
+.vision-card:hover::before {
+    opacity: 1;
+}
+
+.vision-card-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 24px;
+}
+
+.vision-card-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(245, 161, 0, 0.25), rgba(245, 161, 0, 0.05));
+    border: 1px solid rgba(245, 161, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: var(--primary-orange, #f5a100);
+}
+
+.vision-card-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.85rem;
+    color: #0b1727;
+    margin: 0;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+.vision-card-title span {
+    color: var(--primary-orange, #f5a100);
+}
+
+.vision-card-body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #475569;
+}
+
+.mission-points-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.mission-point-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: #475569;
+}
+
+.mission-check-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(0, 210, 255, 0.15);
+    border: 1px solid rgba(0, 210, 255, 0.4);
+    color: #00d2ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+
+/* ---------------------------------------------------
+   5. WHAT WE BUILD & DELIVER (CORE CAPABILITIES)
+   --------------------------------------------------- */
+.about-capabilities-section {
+    padding: 100px 0;
+    background: #ffffff;
+    position: relative;
+}
+
+.about-capabilities-section .section-pill-tag {
+    background: #0b1727;
+    color: #ffffff;
+    border-color: #0b1727;
+}
+
+.about-capabilities-section .about-story-heading span.gradient-word {
+    background: none;
+    color: #0b1727;
+    -webkit-text-fill-color: currentColor;
+}
+
+.capability-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 22px;
+    overflow: hidden;
+    height: 100%;
+    transition: all 0.35s cubic-bezier(0.2, 0, 0.2, 1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+}
+
+.capability-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(245, 161, 0, 0.5);
+    box-shadow: 0 20px 45px rgba(11, 23, 39, 0.1), 0 0 20px rgba(245, 161, 0, 0.1);
+}
+
+.capability-thumb-wrap {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+}
+
+.capability-thumb-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.capability-card:hover .capability-thumb-wrap img {
+    transform: scale(1.08);
+}
+
+.capability-category-badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: rgba(3, 13, 40, 0.85);
+    backdrop-filter: blur(8px);
+    color: #ffffff;
+    padding: 5px 12px;
+    border-radius: 30px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.capability-number-badge {
+    position: absolute;
+    bottom: 14px;
+    right: 14px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--primary-orange, #f5a100);
+    color: #030d28;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.capability-content {
+    padding: 26px 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.capability-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.45rem;
+    color: #0b1727;
+    margin-bottom: 14px;
+    line-height: 1.25;
+    text-transform: uppercase;
+}
+
+.capability-items-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-grow: 1;
+}
+
+.capability-items-list li {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: #475569;
+    position: relative;
+    padding-left: 20px;
+}
+
+.capability-items-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--primary-orange, #f5a100);
+}
+
+/* ---------------------------------------------------
+   6. THE AGELESS ADVANTAGE (WHY CHOOSE US)
+   --------------------------------------------------- */
+.about-advantage-section {
+    padding: 100px 0;
+    background: #f5a100;
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+.advantage-card {
+    background: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 20px;
+    padding: 32px 26px;
+    height: 100%;
+    transition: all 0.35s ease;
+    backdrop-filter: blur(12px);
+    position: relative;
+}
+
+.advantage-card:hover {
+    transform: translateY(-8px);
+    background: #ffffff;
+    border-color: rgba(245, 161, 0, 0.4);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45), 0 0 25px rgba(245, 161, 0, 0.12);
+}
+
+.advantage-icon-box {
+    width: 62px;
+    height: 62px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(245, 161, 0, 0.25), rgba(245, 161, 0, 0.05));
+    border: 1px solid rgba(245, 161, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.85rem;
+    color: var(--primary-orange, #f5a100);
+    margin-bottom: 22px;
+    transition: transform 0.3s ease;
+}
+
+.advantage-card:hover .advantage-icon-box {
+    transform: scale(1.1) rotate(5deg);
+    background: var(--primary-orange, #f5a100);
+    color: #030d28;
+}
+
+.advantage-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.35rem;
+    color: #0b1727;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    letter-spacing: 0.02em;
+}
+
+.advantage-desc {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.92rem;
+    line-height: 1.75;
+    color: #475569;
+    margin: 0;
+}
+
+/* ---------------------------------------------------
+   7. 5-STEP PROJECT EXECUTION FRAMEWORK
+   --------------------------------------------------- */
+.about-framework-section {
+    padding: 100px 0;
+    background: #ffffff;
+    position: relative;
+}
+
+.framework-timeline-track {
+    position: relative;
+    margin-top: 50px;
+}
+
+.step-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 30px 24px;
+    height: 100%;
+    transition: all 0.35s cubic-bezier(0.2, 0, 0.2, 1);
+    position: relative;
+}
+
+.step-card:hover {
+    background: #ffffff;
+    transform: translateY(-8px);
+    border-color: var(--primary-orange, #f5a100);
+    box-shadow: 0 16px 36px rgba(11, 23, 39, 0.08), 0 0 20px rgba(245, 161, 0, 0.12);
+}
+
+.step-badge-number {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.2rem;
+    color: rgba(11, 23, 39, 0.15);
+    line-height: 1;
+    margin-bottom: 14px;
+    transition: color 0.3s ease;
+}
+
+.step-card:hover .step-badge-number {
+    color: var(--primary-orange, #f5a100);
+}
+
+.step-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.25rem;
+    color: #0b1727;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    line-height: 1.3;
+}
+
+.step-desc {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.88rem;
+    line-height: 1.7;
+    color: #475569;
+    margin: 0;
+}
+
+/* ---------------------------------------------------
+   8. CLOSING CTA BANNER STRIP
+   --------------------------------------------------- */
+.about-cta-section {
+    padding: 90px 0;
+    background: #f5a100;
+    position: relative;
+    overflow: hidden;
+    color: #ffffff;
+}
+
+.about-cta-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 400px;
+    background: radial-gradient(ellipse, rgba(245, 161, 0, 0.2) 0%, transparent 70%);
+    filter: blur(80px);
+    pointer-events: none;
+}
+
+.about-cta-box {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 920px;
+    margin: 0 auto;
+}
+
+.about-cta-heading {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+    line-height: 1.15;
+    text-transform: uppercase;
+    color: #0b1727;
+    margin-bottom: 20px;
+}
+
+.about-cta-heading span.cta-orange-glow {
+    color: #0b1727;
+}
+
+.about-cta-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #0b1727;
+    margin-bottom: 35px;
+}
+
+.about-cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+}
+
+.about-cta-buttons .btn-glow-primary {
+    background: #0b1727;
+    color: #ffffff;
+}
+
+.about-cta-section.about-company-cta {
+    background: #000000;
+}
+
+.about-company-cta .about-cta-glow {
+    display: none;
+}
+
+.about-company-cta .about-cta-heading {
+    color: #ffffff;
+}
+
+.about-company-cta .about-cta-heading span.cta-orange-glow {
+    color: #f5a100;
+}
+
+.about-company-cta .about-cta-text {
+    color: #cbd5e1;
+}
+
+.about-company-cta .about-cta-buttons .btn-glow-primary {
+    background: #f5a100;
+    color: #0b1727;
+}
+
+/* ---------------------------------------------------
+   RESPONSIVE ADJUSTMENTS
+   --------------------------------------------------- */
+@media (max-width: 991px) {
+    .about-hero-wrapper {
+        padding: 120px 0 70px 0;
+        min-height: auto;
+    }
+    .story-floating-badge {
+        position: static;
+        margin-top: 20px;
+        display: inline-flex;
+    }
+    .story-main-img-card img {
+        height: 360px;
+    }
+}
+
+@media (max-width: 767px) {
+    .about-hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .about-hero-actions a {
+        justify-content: center;
+        text-align: center;
+    }
+    .stats-grid-card {
+        padding: 18px 16px;
+    }
+    .about-story-section,
+    .about-vision-section,
+    .about-capabilities-section,
+    .about-advantage-section,
+    .about-framework-section,
+    .about-cta-section {
+        padding: 70px 0;
+    }
+}

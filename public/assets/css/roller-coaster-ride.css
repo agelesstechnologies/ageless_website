@@ -1,0 +1,15 @@
+/* ===================================================
+   Ageless Entertainments - Trackless Zigzag Roller Coaster
+   Full Page / Viewport Ambient Thrill Animation
+   =================================================== */
+
+#ageless-coaster-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 998; /* Floats dynamically over page content, under fixed header (999) */
+    display: block;
+}

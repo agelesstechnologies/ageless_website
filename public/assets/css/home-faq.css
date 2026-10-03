@@ -1,0 +1,95 @@
+.home-faq {
+    padding: clamp(48px, 7vw, 88px) 0;
+    background: #fff;
+    color: #172235;
+    border-top: 1px solid #edf0f3;
+}
+
+.home-faq-inner {
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.home-faq-header {
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.home-faq-header h2 {
+    color: #172235;
+    font-size: clamp(26px, 3vw, 36px);
+    line-height: 1.25;
+    text-transform: none;
+    letter-spacing: -0.02em;
+}
+
+.home-faq-header p,
+.home-faq details p,
+.home-faq-contact {
+    color: #526174;
+    font-size: 15px;
+    line-height: 1.75;
+}
+
+.home-faq-list {
+    border-top: 1px solid #e5e9ee;
+}
+
+.home-faq details {
+    border-bottom: 1px solid #e5e9ee;
+}
+
+.home-faq summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 22px 4px;
+    color: #172235;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    cursor: pointer;
+    list-style: none;
+}
+
+.home-faq summary::-webkit-details-marker {
+    display: none;
+}
+
+.home-faq summary::after {
+    content: '+';
+    flex-shrink: 0;
+    color: #a95300;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.home-faq details[open] summary::after {
+    content: '\2212';
+}
+
+.home-faq summary:focus-visible,
+.home-faq a:focus-visible {
+    outline: 2px solid #a95300;
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+.home-faq details p {
+    max-width: 740px;
+    margin: 0;
+    padding: 0 4px 22px;
+}
+
+.home-faq-contact {
+    margin: 28px 0 0;
+    text-align: center;
+}
+
+.home-faq-contact a {
+    color: #a95300;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
