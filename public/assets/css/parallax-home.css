@@ -61,13 +61,13 @@ html.lenis {
 
 /* Seamless ultra-transparent glass navigation capsule */
 .wonder-nav-header .nav-capsule-wrapper {
-    background: rgba(255, 255, 255, 0.78) !important;
-    backdrop-filter: blur(18px) saturate(180%) brightness(1.05) !important;
-    -webkit-backdrop-filter: blur(18px) saturate(180%) brightness(1.05) !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
     border-radius: 60px;
-    border: 1px solid rgba(255, 255, 255, 0.85) !important;
+    border: 0 !important;
     outline: none !important;
-    box-shadow: 0 10px 32px rgba(3, 13, 40, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+    box-shadow: none !important;
     padding: 8px 24px;
     display: flex;
     align-items: center;
@@ -215,11 +215,11 @@ html.lenis {
 }
 
 .main-header.wonder-nav-header.is-scrolled .nav-capsule-wrapper {
-    background: rgba(255, 255, 255, 0.92) !important;
-    backdrop-filter: blur(20px) saturate(200%) !important;
-    -webkit-backdrop-filter: blur(20px) saturate(200%) !important;
-    box-shadow: 0 12px 35px rgba(3, 13, 40, 0.16), 0 2px 6px rgba(0, 0, 0, 0.06) !important;
-    border: 1px solid rgba(255, 255, 255, 0.95) !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    box-shadow: none !important;
+    border: 0 !important;
     padding: 8px 24px !important;
 }
 

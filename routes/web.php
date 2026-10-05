@@ -43,8 +43,9 @@ Route::view('/test', 'pages.test')->name('pages.test');
 Route::view('/testimonials', 'pages.testimonials')->name('pages.testimonials');
 Route::view('/seo-strategy', 'pages.seo-strategy')->name('pages.seo-strategy');
 
-Route::get('/faq', [FaqController::class, 'index'])->name('faq.index');
-Route::redirect('/faqs', '/faq');
+Route::view('/privacy-policy', 'pages.privacy-policy')->name('privacy-policy');
+Route::redirect('/faq', '/privacy-policy', 301)->name('faq.index');
+Route::redirect('/faqs', '/privacy-policy', 301);
 
 Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
 Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');

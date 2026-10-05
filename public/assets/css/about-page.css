@@ -406,6 +406,18 @@
     position: relative;
 }
 
+.park-media-showcase {
+    top: 30px;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 767px) {
+    .park-media-showcase {
+        top: 16px;
+        margin-bottom: 16px;
+    }
+}
+
 .story-main-img-card {
     position: relative;
     border-radius: 24px;
@@ -426,18 +438,38 @@
     transform: scale(1.04);
 }
 
+/* Keep scroll motion smooth inside the clipped park image frame. */
+@media (prefers-reduced-motion: no-preference) {
+    .park-media-showcase .story-main-img-card {
+        transition: transform 180ms ease-out;
+    }
+
+    .park-media-showcase .story-main-img-card img {
+        will-change: transform;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .park-media-showcase .story-main-img-card img {
+        transition: none;
+        transform: none;
+    }
+}
+
 .story-floating-badge {
     position: absolute;
+    width: fit-content;
+    max-width: 100%;
     bottom: -25px;
     left: -20px;
     background: #ffffff;
     border: 1px solid rgba(11, 23, 39, 0.08);
-    border-radius: 20px;
-    padding: 18px 24px;
+    border-radius: 12px;
+    padding: 10px 12px;
     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 9px;
     z-index: 2;
     animation: floatBadge 4s ease-in-out infinite;
 }
@@ -448,20 +480,21 @@
 }
 
 .floating-badge-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
+    width: 34px;
+    flex-shrink: 0;
+    height: 34px;
+    border-radius: 8px;
     background: linear-gradient(135deg, #f5a100, #ff6f00);
     color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.6rem;
+    font-size: 1.15rem;
 }
 
 .floating-badge-text h4 {
     font-family: 'Poppins', sans-serif;
-    font-size: 1.35rem;
+    font-size: 0.9rem;
     color: #0b1727;
     margin: 0;
     line-height: 1.1;
@@ -469,7 +502,7 @@
 
 .floating-badge-text p {
     font-family: 'Poppins', sans-serif;
-    font-size: 0.8rem;
+    font-size: 0.65rem;
     font-weight: 500;
     color: #64748b;
     margin: 0;

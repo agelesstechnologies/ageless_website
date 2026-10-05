@@ -325,7 +325,7 @@
 
                 <!-- Right Column: Visual Media Showcase -->
                 <div class="col-lg-5">
-                    <div class="story-media-showcase" data-aos="fade-up-left">
+                    <div class="story-media-showcase park-media-showcase" data-aos="fade-up-left">
                         <div class="story-main-img-card">
                             <img src="{{ asset('park.png') }}" alt="Ageless Amusement Park Engineering">
                         </div>
@@ -716,7 +716,7 @@
                         <ul class="footer-social">
                             <li><a href="https://www.facebook.com/agelessindia"><i class="lab la-facebook-f"></i></a></li>
                             <li><a href="https://www.instagram.com/ageless_entertainments_"><i class="lab la-instagram"></i></a></li>
-                            <li><a href="https://www.youtube.com/@agelessentertainments9107"><i class="lab la-youtube"></i></a></li>
+                            <li><a href="https://www.youtube.com/@agelessentertainments"><i class="lab la-youtube"></i></a></li>
                             <li><a href="https://www.linkedin.com/in/ageless-entertainments-582290367/"><i class="lab la-linkedin-in"></i></a></li>
                         </ul>
                     </div>
@@ -786,6 +786,7 @@
     <script src="{{ asset('assets/js/mailchimp.js') }}"></script>
     <script src="{{ asset('assets/js/main.js') }}?v={{ filemtime(public_path('assets/js/main.js')) }}"></script>
     <script src="{{ asset('assets/js/kite-cursor.js') }}?v={{ time() }}"></script>
+    <script src="{{ asset('assets/js/park-parallax.js') }}?v={{ filemtime(public_path('assets/js/park-parallax.js')) }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
         function initAboutAnimations() {

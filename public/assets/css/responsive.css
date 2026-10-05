@@ -186,6 +186,12 @@ iframe {
 }
 
 .wonder-nav-header .nav-capsule-wrapper {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    color: #fff;
+    border-color: transparent !important;
+    box-shadow: none !important;
     border-radius: 60px;
     padding: clamp(6px, 0.8vw, 10px) clamp(14px, 1.8vw, 26px);
     display: flex;
@@ -200,9 +206,16 @@ iframe {
     align-items: center;
 }
 
+.main-header.wonder-nav-header.is-scrolled .nav-capsule-wrapper {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+}
+
 .site-logo img {
-    filter: drop-shadow(0 3px 3px rgba(20, 35, 55, 0.5))
-            drop-shadow(0 5px 10px rgba(255, 135, 0, 0.5));
+    filter: none;
 }
 
 .wonder-nav-header .site-logo img {
@@ -231,6 +244,26 @@ iframe {
     transition: all 0.25s ease;
 }
 
+.wonder-nav-header .nav-menu > li > a,
+.main-header.wonder-nav-header.is-scrolled .nav-menu > li > a,
+.wonder-nav-header .nav-menu > li:hover > a,
+.main-header.wonder-nav-header.is-scrolled .nav-menu > li:hover > a {
+    color: #fff !important;
+}
+
+.wonder-nav-header .burger-menu .line-menu,
+.main-header.wonder-nav-header.is-scrolled .burger-menu .line-menu {
+    background-color: #fff !important;
+}
+
+.wonder-nav-header .nav-menu > li > a[aria-current="page"],
+.main-header.wonder-nav-header.is-scrolled .nav-menu > li > a[aria-current="page"],
+.mobile-navigation-menu .nav-menu > li > a[aria-current="page"] {
+    background: rgba(245, 161, 0, 0.12);
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(245, 161, 0, 0.4);
+}
+
 .wonder-nav-header .nav-right-actions {
     display: flex;
     align-items: center;
@@ -245,6 +278,33 @@ iframe {
     gap: 6px;
     border-radius: 30px;
     text-decoration: none;
+}
+
+/* Keep the header clean: logo, labels and icons without capsule or button fills. */
+body .main-header.wonder-nav-header .nav-capsule-wrapper,
+body .main-header.wonder-nav-header.is-scrolled .nav-capsule-wrapper {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+}
+
+body .main-header.wonder-nav-header .nav-menu > li > a,
+body .main-header.wonder-nav-header .nav-menu > li:hover > a,
+body .main-header.wonder-nav-header .nav-call-btn,
+body .main-header.wonder-nav-header .nav-call-btn:hover,
+body .main-header.wonder-nav-header.is-scrolled .nav-menu > li > a,
+body .main-header.wonder-nav-header.is-scrolled .nav-menu > li:hover > a,
+body .main-header.wonder-nav-header.is-scrolled .nav-call-btn,
+body .main-header.wonder-nav-header.is-scrolled .nav-call-btn:hover {
+    background: transparent !important;
+    border: 0;
+    box-shadow: none !important;
+}
+
+body .main-header.wonder-nav-header .nav-call-btn .call-icon-wrap {
+    color: #f5a100;
 }
 
 /* --------------------------------------------------------------------------

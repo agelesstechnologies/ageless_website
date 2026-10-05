@@ -33,14 +33,16 @@
         // Sticky Header - Single Navigation Bar
         function stickyHeader() {
             var mainHeader = $("header.main-header");
-            $(window).on("scroll", function () {
+            function updateHeader() {
                 var yOffset = $(window).scrollTop();
                 if (yOffset > 30) {
                     mainHeader.addClass("is-scrolled");
                 } else {
                     mainHeader.removeClass("is-scrolled");
                 }
-            });
+            }
+            $(window).on("scroll", updateHeader);
+            updateHeader();
         }
         stickyHeader();
 

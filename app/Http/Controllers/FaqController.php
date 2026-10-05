@@ -15,10 +15,6 @@ class FaqController extends Controller
 
     public function index()
     {
-        $faqs = Faq::where('status', 1)
-            ->ordered()
-            ->get();
-
-        return view('pages.faq', compact('faqs'));
+        return redirect()->route('privacy-policy', [], 301);
     }
 }

@@ -1,4 +1,17 @@
 /* Contact-specific adjustments follow the shared responsive stylesheet. */
+.contact-page .wonder-nav-header > .container {
+    max-width: none;
+    padding-inline: calc(var(--contact-page-gutter) + 16px);
+}
+
+.contact-page .wonder-nav-header:not(.is-scrolled) .nav-menu > li > a {
+    color: #0b1727 !important;
+}
+
+.contact-page .wonder-nav-header:not(.is-scrolled) .burger-menu .line-menu {
+    background-color: #0b1727 !important;
+}
+
 @media (max-width: 1199.98px) {
     .contact-page {
         --contact-page-gutter: 24px;
@@ -18,7 +31,7 @@
     }
 
     .contact-page .contact-hero-wrapper {
-        min-height: 420px;
+        min-height: 516px;
         padding: 48px 32px;
         margin-bottom: 32px;
     }
@@ -126,9 +139,9 @@
     body.contact-page > section.contact-hero-wrapper:first-of-type {
         /* Keep hero content below the shared fixed navigation. */
         padding: 110px 20px 36px !important;
-        min-height: 360px;
+        min-height: 456px;
         margin-bottom: 24px;
-        border-radius: 20px;
+        border-radius: 0;
     }
 
     .contact-page .contact-hero-title {

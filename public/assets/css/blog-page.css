@@ -1,10 +1,12 @@
 .ageless-blog{font-family:'Poppins',sans-serif;color:#0b1727;background:#fff}
 .ageless-blog h1,.ageless-blog h2,.ageless-blog h3{font-family:inherit;color:#0b1727;letter-spacing:-.035em}
-.blog-hero{padding:185px 0 80px;text-align:center;background:radial-gradient(ellipse at 85% 15%,rgba(245,161,0,.16),transparent 45%),linear-gradient(160deg,#030d28,#0b1727);overflow:hidden}
+.blog-hero{padding:185px 0 80px;text-align:left;background:#faf9f7 url('../img/blog-banner.png') center center/cover no-repeat;overflow:hidden}
+.blog-hero .blog-hero-copy{max-width:560px}
+.blog-hero .blog-eyebrow{color:#a45b00;background:#fff5df;border-color:#f5a10055}
 .blog-eyebrow{display:inline-flex;align-items:center;gap:9px;padding:9px 17px;border-radius:30px;border:1px solid #f5a10066;background:#f5a10014;color:#ffb51b;font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase}
-.ageless-blog .blog-hero h1{max-width:1000px;margin:23px auto;color:#fff;font-size:clamp(2.3rem,4.4vw,4.5rem);font-weight:700;line-height:1.12;text-transform:uppercase}
+.ageless-blog .blog-hero h1{max-width:1000px;margin:23px 0;color:#0b1727;font-size:clamp(2.3rem,4.4vw,4.5rem);font-weight:700;line-height:1.12;text-transform:uppercase}
 .blog-hero h1 span,.blog-contact-banner h2 span{color:#f5a100}
-.blog-hero p{max-width:750px;margin:0 auto 30px;color:#cbd5e1;font-size:17px;line-height:1.85}
+.blog-hero p{max-width:750px;margin:0 0 30px;color:#475569;font-size:17px;line-height:1.85}
 .blog-primary-link{display:inline-flex;align-items:center;justify-content:center;gap:18px;padding:17px 25px;border-radius:40px;background:linear-gradient(110deg,#f5a100,#ff8500);color:#0b1727;font-size:13px;font-weight:700;text-transform:uppercase;box-shadow:0 8px 28px #f5a10030;transition:transform .25s,box-shadow .25s}
 .blog-primary-link:hover{color:#0b1727;transform:translateY(-3px);box-shadow:0 12px 32px #f5a10055}
 .blog-articles{padding:75px 0;background:#f8fafc;scroll-margin-top:125px}

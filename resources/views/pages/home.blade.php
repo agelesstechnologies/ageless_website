@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="{{ asset("assets/css/responsive.css") }}?v={{ time() }}">
     <link rel="stylesheet" href="{{ asset('assets/css/home-faq.css') }}?v={{ filemtime(public_path('assets/css/home-faq.css')) }}">
     <link rel="stylesheet" href="{{ asset('assets/css/home-responsive.css') }}?v={{ filemtime(public_path('assets/css/home-responsive.css')) }}">
+    @include('partials.clean-navigation')
 </head>
 
 <body class="home-page">
@@ -1451,7 +1452,7 @@
                         <ul class="footer-social">
                             <li><a href="https://www.facebook.com/agelessindia"><i class="lab la-facebook-f"></i></a></li>
                             <li><a href="https://www.instagram.com/ageless_entertainments_"><i class="lab la-instagram"></i></a></li>
-                            <li><a href="https://www.youtube.com/@agelessentertainments9107"><i class="lab la-youtube"></i></a></li>
+                            <li><a href="https://www.youtube.com/@agelessentertainments"><i class="lab la-youtube"></i></a></li>
                             <li><a href="https://www.linkedin.com/in/ageless-entertainments-582290367/"><i class="lab la-linkedin-in"></i></a></li>
                         </ul>
                     </div>
@@ -1462,8 +1463,8 @@
                         <ul class="footer-list">
                             <li><a href="{{ url('/about-company') }}">About Us</a></li>
                             <li><a href="{{ url('/contact') }}">Get in Touch</a></li>
-                            <li><a href="{{ url('/faq') }}">Help &amp; Faqs</a></li>
-                            <li><a href="{{ url('/faq') }}">Privacy Policy</a></li>
+                            <li><a href="{{ url('/#home-faq') }}">Help &amp; Faqs</a></li>
+                            <li><a href="{{ route('privacy-policy') }}">Privacy Policy</a></li>
                             <li><a href="{{ url('/contact') }}">Support</a></li>
                         </ul>
                     </div>
@@ -1617,7 +1618,7 @@
 
             var hasLoaded = false;
             var timer = null;
-            var videoId = 'ZLaG1migE00';
+            var videoId = 'QNXkUCMlo7I';
             var activeIframe = null;
 
             function loadVideo(isManualClick) {
@@ -1631,13 +1632,14 @@
 
                 // Autoplay policy requires mute=1 for automated playback without user gesture
                 var muteParam = isManualClick ? '&mute=0' : '&mute=1';
-                var embedUrl = 'https://www.youtube-nocookie.com/embed/' + videoId +
-                    '?autoplay=1' + muteParam +
+                var embedUrl = 'https://www.youtube.com/embed/' + videoId +
+                    '?si=bdtfJbViNIEo9Je5&autoplay=1' + muteParam +
                     '&playsinline=1&rel=0&modestbranding=1&enablejsapi=1';
 
                 var iframe = document.createElement('iframe');
                 iframe.setAttribute('src', embedUrl);
                 iframe.setAttribute('title', 'Ageless Entertainments Video');
+                iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
                 iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
                 iframe.setAttribute('allowfullscreen', 'true');
                 iframe.style.width = '100%';

@@ -95,7 +95,7 @@
     .about-page .story-floating-badge {
         position: static;
         margin-top: 20px;
-        padding: 18px;
+        padding: 10px 12px;
         max-width: 100%;
         animation: none;
     }
@@ -259,7 +259,7 @@
     }
 
     .about-page .floating-badge-text h4 {
-        font-size: 18px;
+        font-size: 14px;
         line-height: 1.3;
     }
 }

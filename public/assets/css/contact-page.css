@@ -12,10 +12,10 @@
 
 .contact-hero-wrapper {
     position: relative;
-    width: calc(100% - var(--contact-page-gutter) * 2);
-    margin: clamp(96px, 8vw, 120px) auto 48px;
-    border-radius: 26px;
-    min-height: clamp(470px, 33.6vw, 660px);
+    width: 100%;
+    margin: 0 auto 48px;
+    border-radius: 0;
+    min-height: clamp(566px, 41.6vw, 780px);
     display: flex;
     align-items: flex-end;
     justify-content: center;

@@ -3,10 +3,10 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Buildex Construction and Building HTML5 Template">
+        <meta name="description" content="Learn how Ageless Entertainment collects, uses, stores, and safeguards your personal information.">
         <meta name="author" content="ThemeEaster">
 
-        <title>Agelessindia</title>
+        <title>Privacy Policy | Ageless Entertainment</title>
 
         <link rel="shortcut icon" type="image/png" href="{{ asset('assets/img/favicon.png') }}?v={{ time() }}">
     <link rel="icon" type="image/png" href="{{ asset('assets/img/favicon.png') }}?v={{ time() }}">
@@ -88,8 +88,8 @@
         <div class="page-header-bg"></div>
         <div class="container">
             <div class="page-header-info">
-                <h4>Help and faqs</h4>
-                <h2>Frequently asked <br><span>questions!</span></h2>
+                <h4>Ageless Entertainment</h4>
+                <h2>Privacy <span>Policy</span></h2>
                 
             </div>
         </div>
@@ -99,59 +99,56 @@
     <section class="blog-section blog-page padding">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 sm-padding">
-                    <div class="accordion faq-accordion" id="faq-accordion">
-    @forelse($faqs as $index => $faq)
-        <div class="accordion-item">
-            <h2 class="accordion-header" id="heading{{ $faq->id }}">
-                <button class="accordion-button {{ $index == 0 ? '' : 'collapsed' }}"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapse{{ $faq->id }}"
-                    aria-expanded="{{ $index == 0 ? 'true' : 'false' }}">
-                    {{ $faq->question }}
-                </button>
-            </h2>
+                <article class="col-12 sm-padding privacy-policy">
+                    <p>At <strong>Ageless Entertainment</strong>, we value the trust you place in us and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, store, and safeguard your data when you visit our website, submit enquiries, or interact with our digital platforms.</p>
 
-            <div id="collapse{{ $faq->id }}"
-                class="accordion-collapse collapse {{ $index == 0 ? 'show' : '' }}"
-                data-bs-parent="#faq-accordion">
-                <div class="accordion-body">
-                    <p>{{ $faq->answer }}</p>
-                </div>
-            </div>
-        </div>
-    @empty
-        <p>No FAQs available.</p>
-    @endforelse
-</div>
-                </div>
-                <!--Blog Grid-->
-                <div class="col-lg-4 sm-padding">
-                    <div class="sidebar-widget search-widget">
-                        <form action="" class="search-form">
-                            <input type="text" class="form-control" placeholder="Search">
-                            <button class="search-btn" type="button"><i class="las la-search"></i></button>
-                        </form>
-                    </div>
-                    <!--Search Form-->
-                    <div class="sidebar-widget">
-                        <div class="widget-title">
-                            <h3>Categories</h3>
-                        </div>
-                        <ul class="category-list">
-                            <li><a href="#">Business Strategy</a><span>23</span></li>
-                            <li><a href="#">Project Management</a><span>05</span></li>
-                            <li><a href="#">Digital Marketing</a><span>18</span></li>
-                            <li><a href="#">Customer Experience</a><span>04</span></li>
-                            <li><a href="#">Partnership System</a><span>15</span></li>
-                        </ul>
-                    </div>
-                    <!--Categories-->
-                 
-                    <!--Tags-->
-                </div>
-                <!--Sidebar-->
+                    <h3 class="mt-4">Information We Collect</h3>
+                    <p>We may collect personal information such as your name, phone number, email address, company name, location, and business requirements when you:</p>
+                    <ul class="list-unstyled mb-3">
+                        <li>&#9679; Fill out enquiry or contact forms</li>
+                        <li>&#9679; Submit lead forms (including Meta/Facebook lead forms)</li>
+                        <li>&#9679; Communicate with us via email, phone, or social media</li>
+                        <li>&#9679; Visit and browse our website</li>
+                    </ul>
+                    <p>We may also collect non-personal information such as IP address, browser type, device details, pages visited, and time spent on the website for analytics and performance improvement.</p>
+
+                    <h3 class="mt-4">How We Use Your Information</h3>
+                    <p>The information collected is used strictly for legitimate business purposes, including:</p>
+                    <ul class="list-unstyled mb-3">
+                        <li>&#9679; Responding to enquiries and providing requested information</li>
+                        <li>&#9679; Contacting potential clients for marketing, sales, and business communication</li>
+                        <li>&#9679; Sharing product details, quotations, updates, and promotional offers related to our services.</li>
+                        <li>&#9679; Improving website performance, user experience, and service quality</li>
+                    </ul>
+                    <p>We clearly state that <strong>we do not misuse, sell, rent, or trade your personal data</strong> to third parties for unrelated purposes.</p>
+
+                    <h3 class="mt-4">Meta Lead Forms &amp; Marketing Data</h3>
+                    <p>When you submit your details through Meta (Facebook or Instagram) lead forms, the information is securely received by Ageless Entertainment and used <strong>only for contacting potential clients and marketing our products and services</strong>. We fully comply with Meta’s data usage policies and ensure responsible handling of such data.</p>
+
+                    <h3 class="mt-4">Data Protection &amp; Security</h3>
+                    <p>We implement appropriate technical and organizational security measures to protect your personal data from unauthorized access, misuse, loss, or disclosure. Access to information is restricted to authorized personnel only.</p>
+
+                    <h3 class="mt-4">Sharing of Information</h3>
+                    <p>We may share limited data with trusted service providers (such as CRM, hosting, or communication tools) strictly for operational purposes. These third parties are bound by confidentiality agreements and data protection obligations.</p>
+
+                    <h3 class="mt-4">Cookies</h3>
+                    <p>Our website may use cookies to enhance user experience, analyze traffic, and improve functionality. You may choose to disable cookies through your browser settings, though some features may not function optimally.</p>
+
+                    <h3 class="mt-4">Your Rights</h3>
+                    <p>You have the right to:</p>
+                    <ul class="list-unstyled mb-3">
+                        <li>&#9679; Request access to your personal data</li>
+                        <li>&#9679; Request correction or deletion of your information</li>
+                        <li>&#9679; Opt out of marketing communications at any time</li>
+                    </ul>
+                    <p>To exercise these rights, you may contact us using the details provided below.</p>
+
+                    <h3 class="mt-4">Policy Updates</h3>
+                    <p>Ageless Entertainment reserves the right to update this Privacy Policy at any time. Changes will be posted on this page and become effective immediately upon publication.</p>
+
+                    <h3 class="mt-4">Contact Us</h3>
+                    <p>If you have any questions or concerns regarding this Privacy Policy or data usage, please contact us via the details mentioned on our website.</p>
+                </article>
             </div>
         </div>
     </section>
@@ -167,7 +164,7 @@
                             <ul class="footer-social">
                                 <li><a href="https://www.facebook.com/agelessindia"><i class="lab la-facebook-f"></i></a></li>
                                 <li><a href="https://www.instagram.com/ageless_entertainments_"><i class="lab la-instagram"></i></a></li>
-                                <li><a href="https://www.youtube.com/@agelessentertainments9107"><i class="lab la-youtube"></i></a></li>
+                                <li><a href="https://www.youtube.com/@agelessentertainments"><i class="lab la-youtube"></i></a></li>
                                 <li><a href="https://www.linkedin.com/in/ageless-entertainments-582290367/"><i class="lab la-linkedin-in"></i></a></li>
                             </ul>
                         </div>
@@ -178,8 +175,8 @@
                             <ul class="footer-list">
                                 <li><a href="{{ url('/about') }}">About Us</a></li>
                                 <li><a href="{{ url('/contact') }}">Get in Touch</a></li>
-                                <li><a href="{{ url('/faqs') }}">Help &amp; Faqs</a></li>
-                                <li><a href="{{ url('/faqs') }}">Privacy Policy</a></li>
+                                <li><a href="{{ url('/#home-faq') }}">Help &amp; Faqs</a></li>
+                                <li><a href="{{ route('privacy-policy') }}">Privacy Policy</a></li>
                                 <li><a href="{{ url('/contact') }}">Support</a></li>
                             </ul>
                         </div>

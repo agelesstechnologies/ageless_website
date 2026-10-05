@@ -163,7 +163,7 @@
                             <li>Share This Project:</li>
                             <li><a href="https://www.facebook.com/agelessindia"><i class="lab la-facebook-f"></i></a></li>
                             <li><a href="#"><i class="lab la-twitter"></i></a></li>
-                            <li><a href="https://www.youtube.com/@agelessentertainments9107"><i class="lab la-youtube"></i></a></li>
+                            <li><a href="https://www.youtube.com/@agelessentertainments"><i class="lab la-youtube"></i></a></li>
                             <li><a href="#"><i class="lab la-behance"></i></a></li>
                         </ul>
                     </div>
@@ -263,7 +263,7 @@
                             <ul class="footer-social">
                                 <li><a href="https://www.facebook.com/agelessindia"><i class="lab la-facebook-f"></i></a></li>
                                 <li><a href="https://www.instagram.com/ageless_entertainments_"><i class="lab la-instagram"></i></a></li>
-                                <li><a href="https://www.youtube.com/@agelessentertainments9107"><i class="lab la-youtube"></i></a></li>
+                                <li><a href="https://www.youtube.com/@agelessentertainments"><i class="lab la-youtube"></i></a></li>
                                 <li><a href="https://www.linkedin.com/in/ageless-entertainments-582290367/"><i class="lab la-linkedin-in"></i></a></li>
                             </ul>
                         </div>
@@ -274,8 +274,8 @@
                             <ul class="footer-list">
                                 <li><a href="{{ url('/about') }}">About Us</a></li>
                                 <li><a href="{{ url('/contact') }}">Get in Touch</a></li>
-                                <li><a href="{{ url('/faqs') }}">Help &amp; Faqs</a></li>
-                                <li><a href="{{ url('/faqs') }}">Privacy Policy</a></li>
+                                <li><a href="{{ url('/#home-faq') }}">Help &amp; Faqs</a></li>
+                                <li><a href="{{ route('privacy-policy') }}">Privacy Policy</a></li>
                                 <li><a href="{{ url('/contact') }}">Support</a></li>
                             </ul>
                         </div>

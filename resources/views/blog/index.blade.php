@@ -6,6 +6,7 @@
 @section('body_class', 'blog-page')
 
 @push('styles')
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
 <link rel="stylesheet" href="{{ asset('assets/css/blog-page.css') }}?v={{ filemtime(public_path('assets/css/blog-page.css')) }}">
 <link rel="stylesheet" href="{{ asset('assets/css/blog-responsive.css') }}?v={{ filemtime(public_path('assets/css/blog-responsive.css')) }}">
 @endpush
@@ -15,21 +16,23 @@
 <main class="ageless-blog">
     <section class="blog-hero">
         <div class="container">
+            <div class="blog-hero-copy" data-aos="fade-right">
             <span class="blog-eyebrow"><i class="las la-newspaper" aria-hidden="true"></i> News &amp; Articles</span>
             <h1>Ideas that shape <span>extraordinary destinations.</span></h1>
             <p>Amusement park insights, attraction guides, and fresh perspectives from the world of entertainment engineering.</p>
             <a href="#latest-articles" class="blog-primary-link">Explore Our Articles <i class="las la-arrow-down" aria-hidden="true"></i></a>
+            </div>
         </div>
     </section>
 
     <section class="blog-articles" id="latest-articles" aria-labelledby="articles-title">
         <div class="container">
             <div class="blog-section-heading">
-                <div>
+                <div data-aos="fade-right">
                     <span class="blog-eyebrow blog-eyebrow-light">The Ageless Journal</span>
                     <h2 id="articles-title">Insights &amp; <span>inspiration.</span></h2>
                 </div>
-                <p>Explore ideas for planning parks, choosing attractions, and bringing entertainment destinations to life.</p>
+                <p data-aos="fade-left">Explore ideas for planning parks, choosing attractions, and bringing entertainment destinations to life.</p>
             </div>
             <div class="journal-carousel" data-journal-carousel role="region" aria-roledescription="carousel" aria-label="Journal articles">
             <div class="blog-card-grid" id="journal-arc-track">
@@ -76,4 +79,26 @@
 
 </main>
 <script src="{{ asset('assets/js/blog-carousel.js') }}?v={{ filemtime(public_path('assets/js/blog-carousel.js')) }}" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+    function initBlogAnimations() {
+        if (typeof AOS === 'undefined') return;
+
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 0,
+            disable: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+        });
+    }
+
+    if (document.readyState === 'complete') {
+        requestAnimationFrame(initBlogAnimations);
+    } else {
+        window.addEventListener('load', function () {
+            requestAnimationFrame(initBlogAnimations);
+        }, { once: true });
+    }
+</script>
 @endsection
