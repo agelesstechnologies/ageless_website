@@ -33,7 +33,7 @@
                     <td>
                         <a href="<?php echo e(route('admin.projects.edit', $project)); ?>" class="btn btn-sm btn-warning">Edit</a>
 
-                        <form action="<?php echo e(route('admin.projects.destroy', $project)); ?>" method="POST" style="display:inline-block">
+                        <form class="!tw-inline-block" action="<?php echo e(route('admin.projects.destroy', $project)); ?>" method="POST">
                             <?php echo csrf_field(); ?>
                             <?php echo method_field('DELETE'); ?>
                             <button class="btn btn-sm btn-danger" onclick="return confirm('Delete project?')">Delete</button>

@@ -1,5 +1,23 @@
 <!doctype html>
-    <html class="no-js" lang="en">
+    <html lang="en" class="no-js @include('partials.tailwind.poppins-font')
+@include('partials.tailwind.bootstrap')
+@include('partials.tailwind.animate')
+@include('partials.tailwind.keyframe-animation')
+@include('partials.tailwind.line-awesome')
+@include('partials.tailwind.construction-icons')
+@include('partials.tailwind.odometer')
+@include('partials.tailwind.nice-select')
+@include('partials.tailwind.swiper')
+@include('partials.tailwind.venobox')
+@include('partials.tailwind.slider')
+@include('partials.tailwind.common-style')
+@include('partials.tailwind.main')
+@include('partials.tailwind.parallax-home')
+@include('partials.tailwind.responsive')
+@include('partials.tailwind.partials-clean-navigation-1')
+@include('partials.tailwind.website-chat')
+@include('partials.tailwind.kite-cursor')
+@stack('tailwind_styles')">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,29 +25,15 @@
         <meta name="keywords" content="rope rider manufacturer for adventure parks, zipline manufacturer india, rope course manufacturer, adventure park builder india, net park manufacturer">
         <meta name="author" content="Ageless Entertainments">
 
-        <title>Rope Rider Manufacturer for Adventure Parks | Ageless</title>
+        <title>High &amp; Low Rope Rider for Adventure Parks | Ageless</title>
 
-        <link rel="shortcut icon" type="image/png" href="{{ asset('assets/img/favicon.png') }}?v={{ time() }}">
-    <link rel="icon" type="image/png" href="{{ asset('assets/img/favicon.png') }}?v={{ time() }}">
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link rel="shortcut icon" type="image/png" href="{{ asset('assets/img/favicon.png') }}?v={{ filemtime(public_path('assets/img/favicon.png')) }}">
+    <link rel="icon" type="image/png" href="{{ asset('assets/img/favicon.png') }}?v={{ filemtime(public_path('assets/img/favicon.png')) }}">
 
-        <link rel="stylesheet" href="{{ asset("assets/css/bootstrap.min.css") }}">
-        <link rel="stylesheet" href="{{ asset("assets/css/animate.min.css") }}">
-        <link rel="stylesheet" href="{{ asset("assets/css/keyframe-animation.css") }}">
-        <link rel="stylesheet" href="{{ asset("assets/css/line-awesome.min.css") }}">
-        <link rel="stylesheet" href="{{ asset("assets/css/construction-icons.css") }}">
-        <link rel="stylesheet" href="{{ asset("assets/css/odometer.min.css") }}">
-        <link rel="stylesheet" href="{{ asset("assets/css/nice-select.css") }}">
-        <link rel="stylesheet" href="{{ asset("assets/css/swiper.min.css") }}">
-        <link rel="stylesheet" href="{{ asset("assets/css/venobox.min.css") }}">
-        <link rel="stylesheet" href="{{ asset("assets/css/slider.css") }}">
-        <link rel="stylesheet" href="{{ asset("assets/css/common-style.css") }}">
-        <link rel="stylesheet" href="{{ asset("assets/css/main.css") }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/parallax-home.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/scroll-animate.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}?v={{ time() }}">
-
-    </head>
+        @include('partials.clean-navigation')
+    
+    <link rel="stylesheet" href="{{ asset('assets/css/tailwind.css') }}?v={{ filemtime(public_path('assets/css/tailwind.css')) }}">
+</head>
 
     <body>
         
@@ -38,38 +42,7 @@
         </div>
         <!-- Site Preloader -->
 
-           <header class="main-header wonder-nav-header">
-        <div class="container">
-            <div class="nav-capsule-wrapper">
-                <div class="site-logo">
-                    <a href="{{ url('/') }}"><img src="{{ asset("assets/img/nlogo.png") }}" alt="Ageless Logo"></a>
-                </div>
-                <div class="header-menu-wrap">
-                    <ul class="nav-menu">
-                        <li><a href="{{ url('/') }}"><i class="las la-home nav-item-icon"></i><span>Home</span></a></li>
-                        <li><a href="{{ url('/about-company') }}"><i class="las la-building nav-item-icon"></i><span>About Us</span></a></li>
-                        <li><a href="{{ url('/projects') }}"><i class="las la-layer-group nav-item-icon"></i><span>Projects</span></a></li>
-                        <li><a href="{{ url('/products') }}"><i class="las la-cubes nav-item-icon"></i><span>Products</span></a></li>
-                        <li class="dropdown_menu"><a href="{{ route('blog.index') }}"><i class="las la-newspaper nav-item-icon"></i><span>Blog</span></a></li>
-                        <li><a href="{{ url('/contact') }}"><i class="las la-envelope nav-item-icon"></i><span>Contact</span></a></li>
-                    </ul>
-                </div>
-                <div class="nav-right-actions">
-                    <a href="tel:+917025777755" class="nav-call-btn">
-                        <span class="call-icon-wrap"><i class="las la-phone-volume"></i></span>
-                        <span>Call Us</span>
-                    </a>
-                    <div class="mobile-menu-icon">
-                        <div class="burger-menu">
-                            <div class="line-menu line-half first-line"></div>
-                            <div class="line-menu"></div>
-                            <div class="line-menu line-half last-line"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+           @include('partials.navigation')
         <!--/.main-header-->
 
     <div id="popup-search-box">
@@ -90,8 +63,8 @@
         <div class="container">
             <div class="page-header-info text-center">
                 <h4>Project details</h4>
-                <h1>Rope Rider Manufacturer for Adventure Parks</h1>
-                <p>An exhilarating adventure high above the ground.</p>
+                <h1>High &amp; Low Rope Rider for Adventure Parks</h1>
+                <p>High and low rope adventures for balance, confidence, and outdoor excitement.</p>
             </div>
         </div>
     </section>
@@ -126,11 +99,11 @@
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
                     <div class="project-thumb">
-                        <img src="https://5.imimg.com/data5/SELLER/Default/2025/7/523820546/HZ/TF/XC/27654362/rope-rider.jpg" alt="Rope Rider">
+                        <img src="{{ asset("assets/img/rope3.jpg") }}" alt="High Rope Rider">
                     </div>
                     <div class="project-details-content">
-                        <h2 class="mt-30">Thrilling Aerial Adventure</h2>
-                        <p>The Rope Rider brings an exciting combination of zip-lining and suspension riding. Safe, durable, and breathtaking, it lets riders experience the thrill of altitude while enjoying spectacular views.</p>
+                        <h2 class="mt-30">High Rope Rider</h2>
+                        <p>High Rope Rider combines elevated rope crossings, suspended bridges, and balance challenges. Course layouts and difficulty can be tailored to your park and intended participants.</p>
                         <p>This attraction requires extreme precision and safety standardization. We implemented state-of-the-art rigging, high-tension safety cable systems, and highly secure harnesses to offer a spectacular but perfectly safe ride.</p>
                         <div class="overview-wrap">
                             <div>
@@ -153,9 +126,12 @@
                             </div>
                         </div>
                         <ul class="post-details-gallery">
-                            <li><img src="{{ asset("assets/img/post-1.jpg") }}" alt="img"></li>
-                            <li><img src="{{ asset("assets/img/post-2.jpg") }}" alt="img"></li>
+                            <li><img src="{{ asset("assets/img/rope3.jpg") }}" alt="img"></li>
+                            <li><img src="{{ asset("assets/img/rope4.jpg") }}" alt="img"></li>
                         </ul>
+                        <h2 class="mt-30">Low Rope Rider</h2>
+                        <p>Low Rope Rider offers lower-level rope crossings and balance obstacles for an approachable adventure experience. Routes focus on coordination and confidence building, with heights, safety equipment, and supervision planned for the selected configuration.</p>
+                        <p><a href="{{ url('/products/rope-rider') }}">Explore High Rope Rider</a> &bull; <a href="{{ url('/products/low-rope-rider') }}">Explore Low Rope Rider</a></p>
                         <h2 class="mt-30">Solution And Results:</h2>
                         <p>The Rope Rider at Misty Land was an absolute success, becoming the main anchor for thrill-seekers looking for an elevated experience. Visitors highlighted the smoothness of the ride and the feeling of complete safety provided by the robust engineering.</p>
                         <ul class="project-social">

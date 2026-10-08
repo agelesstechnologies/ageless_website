@@ -25,7 +25,7 @@
         @if($faq->image)
         <div class="mb-3">
             <label>Current Image</label><br>
-            <img src="{{ asset('storage/faqs/'.$faq->image) }}" alt="FAQ Image" style="max-width:150px;">
+            <img class="![max-width:150px]" src="{{ asset('storage/faqs/'.$faq->image) }}" alt="FAQ Image">
         </div>
         @endif
         <div class="mb-3">

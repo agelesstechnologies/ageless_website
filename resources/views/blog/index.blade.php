@@ -1,15 +1,15 @@
+@push('tailwind_styles')
+@include('partials.tailwind.aos')
+@include('partials.tailwind.blog-page')
+@include('partials.tailwind.blog-responsive')
+@endpush
+
 @extends('layouts.app')
 
 @section('title', 'Amusement Park Industry Insights & Guides | Ageless')
 @section('meta_description', 'Explore amusement park industry insights, ride planning guides and entertainment project ideas from Ageless Entertainments in India.')
 @section('canonical', url('/blog'))
 @section('body_class', 'blog-page')
-
-@push('styles')
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
-<link rel="stylesheet" href="{{ asset('assets/css/blog-page.css') }}?v={{ filemtime(public_path('assets/css/blog-page.css')) }}">
-<link rel="stylesheet" href="{{ asset('assets/css/blog-responsive.css') }}?v={{ filemtime(public_path('assets/css/blog-responsive.css')) }}">
-@endpush
 
 @section('content')
 

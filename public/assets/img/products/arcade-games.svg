@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Arcade gaming zone concept</title>
+  <desc id="desc">Three colourful arcade cabinets in a neon indoor gaming zone.</desc>
+  <defs>
+    <linearGradient id="bg" x2="0" y2="1"><stop stop-color="#19233c"/><stop offset="1" stop-color="#080d19"/></linearGradient>
+    <linearGradient id="screen" x2="1" y2="1"><stop stop-color="#15304d"/><stop offset="1" stop-color="#070e22"/></linearGradient>
+    <linearGradient id="body" x2="1" y2="1"><stop stop-color="#34445b"/><stop offset="1" stop-color="#111a2b"/></linearGradient>
+    <pattern id="grid" width="80" height="65" patternUnits="userSpaceOnUse"><path d="M80 0H0V65" fill="none" stroke="#334761" stroke-width="2"/></pattern>
+    <g id="cabinet">
+      <path d="M0 0H220L235 190 208 295 245 360V560H-15V360L22 295-5 190Z" fill="url(#body)" stroke="currentColor" stroke-width="7"/>
+      <rect x="13" y="18" width="194" height="58" rx="9" fill="currentColor"/>
+      <text x="110" y="56" text-anchor="middle" fill="#111827" font-family="Arial,sans-serif" font-weight="bold" font-size="25">ARCADE</text>
+      <path d="M23 100H197L207 240H13Z" fill="url(#screen)" stroke="#5f728f" stroke-width="5"/>
+      <path d="M30 294H190L222 350H-2Z" fill="#263c53" stroke="currentColor" stroke-width="3"/>
+      <path d="M55 330V303" stroke="#d9e7f5" stroke-width="7"/><circle cx="55" cy="300" r="12" fill="currentColor"/>
+      <circle cx="137" cy="323" r="9" fill="#fb7185"/><circle cx="166" cy="318" r="9" fill="#fbbf24"/>
+      <path d="M17 386H203V527H17Z" fill="#0d1626"/><path d="M80 417H140V460H80Z" fill="#30445d"/><path d="M94 432H126" stroke="#b9cddd" stroke-width="5"/>
+      <path d="M23 497H197" stroke="currentColor" stroke-width="4"/>
+    </g>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <path d="M0 595H1200V800H0Z" fill="url(#grid)"/>
+  <path d="M70 120V50H350M850 50H1130V120" fill="none" stroke="#ff8937" stroke-width="6"/>
+  <ellipse cx="600" cy="717" rx="450" ry="40" fill="#050a13" opacity=".7"/>
+  <g transform="translate(175 182) scale(.9)" color="#22d3ee"><use href="#cabinet"/><path d="m45 200 35-60 30 42 32-55 37 73" fill="none" stroke="#22d3ee" stroke-width="5"/><circle cx="80" cy="131" r="7" fill="#fff"/></g>
+  <g transform="translate(490 135)" color="#fb923c"><use href="#cabinet"/><path d="m65 236 32-120h26l32 120" fill="#283d59"/><path d="M110 135V165M110 185V215" stroke="#fbbf24" stroke-width="5"/><rect x="95" y="185" width="30" height="42" rx="7" fill="#fb923c"/></g>
+  <g transform="translate(830 182) scale(.9)" color="#a78bfa"><use href="#cabinet"/><g fill="#a78bfa"><rect x="40" y="126" width="30" height="22"/><rect x="95" y="126" width="30" height="22"/><rect x="150" y="126" width="30" height="22"/><rect x="65" y="166" width="30" height="22"/><rect x="120" y="166" width="30" height="22"/></g><path d="m95 218 15-18 15 18Z" fill="#fbbf24"/></g>
+</svg>

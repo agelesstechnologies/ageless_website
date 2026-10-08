@@ -1,5 +1,26 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html lang="en" class="no-js <?php echo $__env->make('partials.tailwind.poppins-font', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.bootstrap', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.animate', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.keyframe-animation', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.line-awesome', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.construction-icons', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.odometer', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.nice-select', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.swiper', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.venobox', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.slider', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.common-style', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.main', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.parallax-home', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.about-page', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.products-page', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.projects-page', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.responsive', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.partials-clean-navigation-1', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.website-chat', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.kite-cursor', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->yieldPushContent('tailwind_styles'); ?>">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,92 +37,18 @@
     <meta property="og:description" content="<?php echo $__env->yieldContent('meta_description', 'Ageless Entertainments designs, builds and installs amusement parks, adventure rides, immersive attractions, 12D theatres, flying cinemas, traffic parks and entertainment solutions across India.'); ?>">
     <meta property="og:image" content="<?php echo e(asset('hero-park.png')); ?>">
 
-    <link rel="shortcut icon" type="image/png" href="<?php echo e(asset('assets/img/favicon.png')); ?>?v=<?php echo e(time()); ?>">
-    <link rel="icon" type="image/png" href="<?php echo e(asset('assets/img/favicon.png')); ?>?v=<?php echo e(time()); ?>">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/bootstrap.min.css')); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/animate.min.css')); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/keyframe-animation.css')); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/line-awesome.min.css')); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/construction-icons.css')); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/odometer.min.css')); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/nice-select.css')); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/swiper.min.css')); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/venobox.min.css')); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/slider.css')); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/common-style.css')); ?>?v=<?php echo e(time()); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/main.css')); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/parallax-home.css')); ?>?v=<?php echo e(time()); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/about-page.css')); ?>?v=<?php echo e(time()); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/products-page.css')); ?>?v=<?php echo e(time()); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/projects-page.css')); ?>?v=<?php echo e(time()); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/responsive.css')); ?>?v=<?php echo e(time()); ?>">
+    <link rel="shortcut icon" type="image/png" href="<?php echo e(asset('assets/img/favicon.png')); ?>?v=<?php echo e(filemtime(public_path('assets/img/favicon.png'))); ?>">
+    <link rel="icon" type="image/png" href="<?php echo e(asset('assets/img/favicon.png')); ?>?v=<?php echo e(filemtime(public_path('assets/img/favicon.png'))); ?>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <?php echo $__env->yieldPushContent('styles'); ?>
     <?php echo $__env->make('partials.clean-navigation', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+    
+    <link rel="stylesheet" href="<?php echo e(asset('assets/css/tailwind.css')); ?>?v=<?php echo e(filemtime(public_path('assets/css/tailwind.css'))); ?>">
 </head>
 <body class="<?php echo $__env->yieldContent('body_class'); ?>">
-<header class="main-header wonder-nav-header">
-            <div class="container">
-                <div class="nav-capsule-wrapper">
-                    <div class="site-logo">
-                        <a href="<?php echo e(url('/')); ?>"><img src="<?php echo e(asset("assets/img/nlogo.png")); ?>" alt="Logo"></a>
-                    </div>
-                    <div class="header-menu-wrap">
-                        <ul class="nav-menu">
-                            <li>
-                                <a href="<?php echo e(url('/')); ?>">
-                                    <i class="las la-home nav-item-icon"></i>
-                                    <span>Home</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?php echo e(url('/about-company')); ?>">
-                                    <i class="las la-building nav-item-icon"></i>
-                                    <span>About Us</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?php echo e(url('/projects')); ?>">
-                                    <i class="las la-layer-group nav-item-icon"></i>
-                                    <span>Projects</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?php echo e(url('/products')); ?>">
-                                    <i class="las la-cubes nav-item-icon"></i>
-                                    <span>Products</span>
-                                </a>
-                            </li>
-                            <li class="dropdown_menu">
-                                <a href="<?php echo e(route('blog.index')); ?>">
-                                    <i class="las la-newspaper nav-item-icon"></i>
-                                    <span>Blog</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?php echo e(url('/contact')); ?>">
-                                    <i class="las la-envelope nav-item-icon"></i>
-                                    <span>Contact</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="nav-right-actions">
-                        <a href="tel:+917025777755" class="nav-call-btn">
-                            <span class="call-icon-wrap"><i class="las la-phone-volume"></i></span>
-                            <span>Call Us</span>
-                        </a>
-                        <button type="button" class="mobile-menu-icon" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-navigation" style="border: 0; background: transparent; padding: 0;">
-                            <span class="burger-menu" aria-hidden="true">
-                                <span class="line-menu line-half first-line"></span>
-                                <span class="line-menu"></span>
-                                <span class="line-menu line-half last-line"></span>
-                            </span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </header>
+<?php echo $__env->make('partials.navigation', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
 <?php echo $__env->yieldContent('content'); ?>
 <footer class="footer-section">
             <div class="container">
@@ -183,7 +130,7 @@
     <script src="<?php echo e(asset("assets/js/vendor/wow.min.js")); ?>"></script>
     <script src="<?php echo e(asset("assets/js/mailchimp.js")); ?>"></script>
     <script src="<?php echo e(asset('assets/js/main.js')); ?>?v=<?php echo e(filemtime(public_path('assets/js/main.js'))); ?>"></script>
-    <script src="<?php echo e(asset("assets/js/kite-cursor.js")); ?>?v=<?php echo e(time()); ?>"></script>
+    <script src="<?php echo e(asset("assets/js/kite-cursor.js")); ?>?v=<?php echo e(filemtime(public_path('assets/js/kite-cursor.js'))); ?>"></script>
 
 
 <?php echo $__env->make('partials.website-chat', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>

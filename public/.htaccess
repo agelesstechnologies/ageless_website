@@ -1,3 +1,21 @@
+# Compress text responses without recompressing images or video.
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/css application/javascript text/javascript application/json image/svg+xml
+</IfModule>
+
+# Allow repeat visits to reuse static assets; HTML remains dynamic.
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css "access plus 7 days"
+    ExpiresByType application/javascript "access plus 7 days"
+    ExpiresByType text/javascript "access plus 7 days"
+    ExpiresByType image/png "access plus 1 day"
+    ExpiresByType image/jpeg "access plus 1 day"
+    ExpiresByType image/webp "access plus 1 day"
+    ExpiresByType image/svg+xml "access plus 1 day"
+    ExpiresByType font/woff2 "access plus 7 days"
+</IfModule>
+
 <IfModule mod_rewrite.c>
     <IfModule mod_negotiation.c>
         Options -MultiViews -Indexes

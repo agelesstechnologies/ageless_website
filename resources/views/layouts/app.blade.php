@@ -1,5 +1,26 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html lang="en" class="no-js @include('partials.tailwind.poppins-font')
+@include('partials.tailwind.bootstrap')
+@include('partials.tailwind.animate')
+@include('partials.tailwind.keyframe-animation')
+@include('partials.tailwind.line-awesome')
+@include('partials.tailwind.construction-icons')
+@include('partials.tailwind.odometer')
+@include('partials.tailwind.nice-select')
+@include('partials.tailwind.swiper')
+@include('partials.tailwind.venobox')
+@include('partials.tailwind.slider')
+@include('partials.tailwind.common-style')
+@include('partials.tailwind.main')
+@include('partials.tailwind.parallax-home')
+@include('partials.tailwind.about-page')
+@include('partials.tailwind.products-page')
+@include('partials.tailwind.projects-page')
+@include('partials.tailwind.responsive')
+@include('partials.tailwind.partials-clean-navigation-1')
+@include('partials.tailwind.website-chat')
+@include('partials.tailwind.kite-cursor')
+@stack('tailwind_styles')">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,92 +37,18 @@
     <meta property="og:description" content="@yield('meta_description', 'Ageless Entertainments designs, builds and installs amusement parks, adventure rides, immersive attractions, 12D theatres, flying cinemas, traffic parks and entertainment solutions across India.')">
     <meta property="og:image" content="{{ asset('hero-park.png') }}">
 
-    <link rel="shortcut icon" type="image/png" href="{{ asset('assets/img/favicon.png') }}?v={{ time() }}">
-    <link rel="icon" type="image/png" href="{{ asset('assets/img/favicon.png') }}?v={{ time() }}">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/animate.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/keyframe-animation.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/line-awesome.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/construction-icons.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/odometer.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/nice-select.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/swiper.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/venobox.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/slider.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/common-style.css') }}?v={{ time() }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/parallax-home.css') }}?v={{ time() }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/about-page.css') }}?v={{ time() }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/products-page.css') }}?v={{ time() }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/projects-page.css') }}?v={{ time() }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}?v={{ time() }}">
+    <link rel="shortcut icon" type="image/png" href="{{ asset('assets/img/favicon.png') }}?v={{ filemtime(public_path('assets/img/favicon.png')) }}">
+    <link rel="icon" type="image/png" href="{{ asset('assets/img/favicon.png') }}?v={{ filemtime(public_path('assets/img/favicon.png')) }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     @stack('styles')
     @include('partials.clean-navigation')
+    
+    <link rel="stylesheet" href="{{ asset('assets/css/tailwind.css') }}?v={{ filemtime(public_path('assets/css/tailwind.css')) }}">
 </head>
 <body class="@yield('body_class')">
-<header class="main-header wonder-nav-header">
-            <div class="container">
-                <div class="nav-capsule-wrapper">
-                    <div class="site-logo">
-                        <a href="{{ url('/') }}"><img src="{{ asset("assets/img/nlogo.png") }}" alt="Logo"></a>
-                    </div>
-                    <div class="header-menu-wrap">
-                        <ul class="nav-menu">
-                            <li>
-                                <a href="{{ url('/') }}">
-                                    <i class="las la-home nav-item-icon"></i>
-                                    <span>Home</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ url('/about-company') }}">
-                                    <i class="las la-building nav-item-icon"></i>
-                                    <span>About Us</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ url('/projects') }}">
-                                    <i class="las la-layer-group nav-item-icon"></i>
-                                    <span>Projects</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ url('/products') }}">
-                                    <i class="las la-cubes nav-item-icon"></i>
-                                    <span>Products</span>
-                                </a>
-                            </li>
-                            <li class="dropdown_menu">
-                                <a href="{{ route('blog.index') }}">
-                                    <i class="las la-newspaper nav-item-icon"></i>
-                                    <span>Blog</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ url('/contact') }}">
-                                    <i class="las la-envelope nav-item-icon"></i>
-                                    <span>Contact</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="nav-right-actions">
-                        <a href="tel:+917025777755" class="nav-call-btn">
-                            <span class="call-icon-wrap"><i class="las la-phone-volume"></i></span>
-                            <span>Call Us</span>
-                        </a>
-                        <button type="button" class="mobile-menu-icon" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-navigation" style="border: 0; background: transparent; padding: 0;">
-                            <span class="burger-menu" aria-hidden="true">
-                                <span class="line-menu line-half first-line"></span>
-                                <span class="line-menu"></span>
-                                <span class="line-menu line-half last-line"></span>
-                            </span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </header>
+@include('partials.navigation')
 @yield('content')
 <footer class="footer-section">
             <div class="container">
@@ -183,7 +130,7 @@
     <script src="{{ asset("assets/js/vendor/wow.min.js") }}"></script>
     <script src="{{ asset("assets/js/mailchimp.js") }}"></script>
     <script src="{{ asset('assets/js/main.js') }}?v={{ filemtime(public_path('assets/js/main.js')) }}"></script>
-    <script src="{{ asset("assets/js/kite-cursor.js") }}?v={{ time() }}"></script>
+    <script src="{{ asset("assets/js/kite-cursor.js") }}?v={{ filemtime(public_path('assets/js/kite-cursor.js')) }}"></script>
 
 
 @include('partials.website-chat')

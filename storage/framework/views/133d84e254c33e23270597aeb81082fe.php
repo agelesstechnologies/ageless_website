@@ -25,7 +25,7 @@
         <?php if($faq->image): ?>
         <div class="mb-3">
             <label>Current Image</label><br>
-            <img src="<?php echo e(asset('storage/faqs/'.$faq->image)); ?>" alt="FAQ Image" style="max-width:150px;">
+            <img class="![max-width:150px]" src="<?php echo e(asset('storage/faqs/'.$faq->image)); ?>" alt="FAQ Image">
         </div>
         <?php endif; ?>
         <div class="mb-3">
@@ -46,4 +46,5 @@
     </form>
 </div>
 <?php $__env->stopSection(); ?>
+
 <?php echo $__env->make('admin.layout', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH C:\xampp\htdocs\ageless_website\resources\views\admin\faqs\edit.blade.php ENDPATH**/ ?>

@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build-css.cjs",
+    "dev": "node scripts/build-css.cjs --watch"
+  },
+  "devDependencies": {
+    "cssnano": "^9.3.2",
+    "playwright": "^1.63.0",
+    "postcss": "^8.5.28",
+    "tailwindcss": "3.4.19"
+  }
+}

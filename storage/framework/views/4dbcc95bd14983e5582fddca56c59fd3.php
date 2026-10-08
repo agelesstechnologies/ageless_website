@@ -32,7 +32,7 @@
                     <td>
                         <a href="<?php echo e(route('admin.products.edit', $product)); ?>" class="btn btn-sm btn-warning">Edit</a>
 
-                        <form action="<?php echo e(route('admin.products.destroy', $product)); ?>" method="POST" style="display:inline-block">
+                        <form class="!tw-inline-block" action="<?php echo e(route('admin.products.destroy', $product)); ?>" method="POST">
                             <?php echo csrf_field(); ?>
                             <?php echo method_field('DELETE'); ?>
                             <button class="btn btn-sm btn-danger" onclick="return confirm('Delete product?')">Delete</button>

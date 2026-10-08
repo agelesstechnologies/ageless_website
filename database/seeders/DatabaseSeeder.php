@@ -17,7 +17,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        $this->call(ShootingAndArcherySeeder::class);
         $this->call(CatalogSeeder::class);
+        $this->call(InteractiveEntertainmentsSeeder::class);
+        $this->call(BumperCarsSeeder::class);
+        $this->call(ArcadeGamesSeeder::class);
+        $this->call(RopeRiderSeeder::class);
+        $this->call(RainbowSlideProductSeeder::class);
 
         // Ensure storage directories exist
         $productDir = public_path('storage/products');
@@ -131,12 +137,12 @@ class DatabaseSeeder extends Seeder
                 'description' => "Custom geodesic architectural dome design, high-lumen multi-projector blending, acoustic treatment, and climate-controlled seating for 80+ simultaneous guests delivering breathtaking nature and space journeys.",
             ],
             [
-                'title' => 'Highland Adventure Park Aerial Rope Rider Course',
+                'title' => 'Rope Riding',
                 'slug' => 'highland-adventure-rope-rider',
                 'category' => 'Adventure & Aerial',
                 'image' => 'projects/' . $copyImg('rope1.jpg', $projectDir, 'highland-rope-project.jpg'),
-                'short_description' => 'Multi-stage aerial glider course and suspended treetop obstacle circuits across hilly terrain.',
-                'description' => "Engineered steel towers, continuous safety lifeline harnesses, high-speed cable trolleys, and comprehensive operator safety certification achieving 100% accident-free operation.",
+                'short_description' => 'Experience the thrill of rope riding with suspended trails, treetop crossings, and aerial adventure routes.',
+                'description' => 'Rope riding brings aerial adventure to life with elevated routes, suspended crossings, and harness-supported rides. Designed for adventure parks, the attraction combines outdoor exploration with an exciting journey above the ground.',
             ],
             [
                 'title' => 'Arctic World Turnkey Sub-Zero Snow Experience Arena',

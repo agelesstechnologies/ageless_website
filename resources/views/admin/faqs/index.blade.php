@@ -25,7 +25,7 @@
                     <td>
                         <a href="{{ route('admin.faqs.edit', $faq) }}" class="btn btn-sm btn-warning">Edit</a>
 
-                        <form action="{{ route('admin.faqs.destroy', $faq) }}" method="POST" style="display:inline-block">
+                        <form class="!tw-inline-block" action="{{ route('admin.faqs.destroy', $faq) }}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button class="btn btn-sm btn-danger" onclick="return confirm('Delete this FAQ?')">Delete</button>

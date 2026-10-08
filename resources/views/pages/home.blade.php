@@ -1,5 +1,26 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html lang="en" class="no-js @include('partials.tailwind.poppins-font')
+@include('partials.tailwind.bootstrap')
+@include('partials.tailwind.animate')
+@include('partials.tailwind.keyframe-animation')
+@include('partials.tailwind.line-awesome')
+@include('partials.tailwind.construction-icons')
+@include('partials.tailwind.odometer')
+@include('partials.tailwind.nice-select')
+@include('partials.tailwind.swiper')
+@include('partials.tailwind.venobox')
+@include('partials.tailwind.slider')
+@include('partials.tailwind.common-style')
+@include('partials.tailwind.main')
+@include('partials.tailwind.parallax-home')
+@include('partials.tailwind.responsive')
+@include('partials.tailwind.home-faq')
+@include('partials.tailwind.home-responsive')
+@include('partials.tailwind.partials-clean-navigation-1')
+@include('partials.tailwind.pages-home-1')
+@include('partials.tailwind.website-chat')
+@include('partials.tailwind.kite-cursor')
+@stack('tailwind_styles')">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,98 +29,24 @@
 
     <title>Ageless Entertainments </title>
 
-    <link rel="shortcut icon" type="image/png" href="{{ asset('assets/img/favicon.png') }}?v={{ time() }}">
-    <link rel="icon" type="image/png" href="{{ asset('assets/img/favicon.png') }}?v={{ time() }}">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset("assets/css/bootstrap.min.css") }}">
-    <link rel="stylesheet" href="{{ asset("assets/css/animate.min.css") }}">
-    <link rel="stylesheet" href="{{ asset("assets/css/keyframe-animation.css") }}">
-    <link rel="stylesheet" href="{{ asset("assets/css/line-awesome.min.css") }}">
-    <link rel="stylesheet" href="{{ asset("assets/css/construction-icons.css") }}">
-    <link rel="stylesheet" href="{{ asset("assets/css/odometer.min.css") }}">
-    <link rel="stylesheet" href="{{ asset("assets/css/nice-select.css") }}">
-    <link rel="stylesheet" href="{{ asset("assets/css/swiper.min.css") }}">
-    <link rel="stylesheet" href="{{ asset("assets/css/venobox.min.css") }}">
-    <link rel="stylesheet" href="{{ asset("assets/css/slider.css") }}">
-    <link rel="stylesheet" href="{{ asset("assets/css/common-style.css") }}?v={{ time() }}">
-    <link rel="stylesheet" href="{{ asset("assets/css/main.css") }}">
+    <link rel="shortcut icon" type="image/png" href="{{ asset('assets/img/favicon.png') }}?v={{ filemtime(public_path('assets/img/favicon.png')) }}">
+    <link rel="icon" type="image/png" href="{{ asset('assets/img/favicon.png') }}?v={{ filemtime(public_path('assets/img/favicon.png')) }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <!-- Full Animation & Parallax Engine Styles -->
-    <link rel="stylesheet" href="{{ asset("assets/css/parallax-home.css") }}?v={{ time() }}">
-    <link rel="stylesheet" href="{{ asset("assets/css/responsive.css") }}?v={{ time() }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/home-faq.css') }}?v={{ filemtime(public_path('assets/css/home-faq.css')) }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/home-responsive.css') }}?v={{ filemtime(public_path('assets/css/home-responsive.css')) }}">
+
+    <link rel="preload" as="image" href="{{ asset('hero-park-poster.jpg') }}" fetchpriority="high">
     @include('partials.clean-navigation')
+    
+    <link rel="stylesheet" href="{{ asset('assets/css/tailwind.css') }}?v={{ filemtime(public_path('assets/css/tailwind.css')) }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/partner-logos.css') }}?v={{ filemtime(public_path('assets/css/partner-logos.css')) }}">
 </head>
 
 <body class="home-page">
-    <!-- Site Preloader -->
-    <div class="site-preloader">
-        <div class="spinner"></div>
-    </div>
 
     <!-- Header -->
-    <header class="main-header wonder-nav-header">
-        <div class="container">
-            <div class="nav-capsule-wrapper">
-                <div class="site-logo">
-                    <a href="{{ url('/') }}"><img src="{{ asset("assets/img/nlogo.png") }}" alt="Ageless Logo"></a>
-                </div>
-                <div class="header-menu-wrap">
-                    <ul class="nav-menu">
-                        <li>
-                            <a href="{{ url('/') }}">
-                                <i class="las la-home nav-item-icon"></i>
-                                <span>Home</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ url('/about-company') }}">
-                                <i class="las la-building nav-item-icon"></i>
-                                <span>About Us</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ url('/projects') }}">
-                                <i class="las la-layer-group nav-item-icon"></i>
-                                <span>Projects</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ url('/products') }}">
-                                <i class="las la-cubes nav-item-icon"></i>
-                                <span>Products</span>
-                            </a>
-                        </li>
-                        <li class="dropdown_menu">
-                            <a href="{{ route('blog.index') }}">
-                                <i class="las la-newspaper nav-item-icon"></i>
-                                <span>Blog</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ url('/contact') }}">
-                                <i class="las la-envelope nav-item-icon"></i>
-                                <span>Contact</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="nav-right-actions">
-                    <a href="tel:+917025777755" class="nav-call-btn">
-                        <span class="call-icon-wrap"><i class="las la-phone-volume"></i></span>
-                        <span>Call Us</span>
-                    </a>
-                    <button type="button" class="mobile-menu-icon" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-navigation">
-                        <div class="burger-menu">
-                            <div class="line-menu line-half first-line"></div>
-                            <div class="line-menu"></div>
-                            <div class="line-menu line-half last-line"></div>
-                        </div>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </header>
+    @include('partials.navigation')
 
     <!-- Popup Search Box -->
     <div id="popup-search-box">
@@ -118,7 +65,7 @@
          1. HERO SECTION - MULTI-LAYER 3D PARALLAX
          ============================================== -->
     <section class="hero-parallax-wrapper">
-        <video class="hero-bg-layer" autoplay muted loop playsinline preload="metadata" poster="{{ asset('hero-park.png') }}" aria-hidden="true">
+        <video class="hero-bg-layer" autoplay muted loop playsinline preload="metadata" poster="{{ asset('hero-park-poster.jpg') }}" aria-hidden="true">
             <source src="{{ asset('assets/videos/hero-park-clouds.mp4') }}?v={{ filemtime(public_path('assets/videos/hero-park-clouds.mp4')) }}" type="video/mp4">
         </video>
         <canvas id="hero-particle-canvas"></canvas>
@@ -137,6 +84,7 @@
                             <span class="dream-orange">DREAM PARK</span>
                             <span class="dream-small">TODAY!</span>
                         </h1>
+                        <h2 class="hero-small-heading">Amusement park manufacturer in India</h2>
                         <p class="hero-subtitle">
                             Turn extraordinary entertainment visions into reality with world-class engineering, bespoke rides, and immersive attractions designed to captivate every generation.
                         </p>
@@ -214,112 +162,112 @@
                         <div class="image-stack-wrapper">
                             <!-- Roller Coaster 1 (Featured Front) -->
                             <div class="stack-card stack-card-1 is-front" data-index="1">
-                                <img class="img-fluid" src="{{ asset("assets/img/roller1.jpg") }}" alt="Roller Coaster Rides">
+                                <img class="img-fluid" src="{{ asset("assets/img/roller1.jpg") }}" alt="Roller Coaster Rides" loading="lazy" decoding="async">
                                 <span class="card-category-pill">Roller Coasters</span>
                                 
                             </div>
 
                             <!-- Dome Cinema 1 -->
                             <div class="stack-card is-back" data-index="2">
-                                <img class="img-fluid" src="{{ asset("assets/img/dome1.jpg") }}" alt="Dome Cinema 360">
+                                <img class="img-fluid" src="{{ asset("assets/img/dome1.jpg") }}" alt="Dome Cinema 360" loading="lazy" decoding="async">
                                 <span class="card-category-pill">Dome Cinema</span>
                                
                             </div>
 
                             <!-- Flying Cinema 1 -->
                             <div class="stack-card is-hidden-stack" data-index="3">
-                                <img class="img-fluid" src="{{ asset("assets/img/flying1.jpg") }}" alt="Flying Cinema Theatre">
+                                <img class="img-fluid" src="{{ asset("assets/img/flying1.jpg") }}" alt="Flying Cinema Theatre" loading="lazy" decoding="async">
                                 <span class="card-category-pill">Flying Cinema</span>
                                 
                             </div>
 
                             <!-- Rope Rider 1 -->
                             <div class="stack-card is-hidden-stack" data-index="4">
-                                <img class="img-fluid" src="{{ asset("assets/img/IMG_1895.JPG") }}" alt="Rope Rider Glider">
-                                <span class="card-category-pill">Rope Rider</span>
+                                <img class="img-fluid" src="{{ asset("assets/img/rope3.jpg") }}" alt="High Rope Rider" loading="lazy" decoding="async">
+                                <span class="card-category-pill">High Rope Rider</span>
                                 
                             </div>
 
                             <!-- Snow Park 1 -->
                             <div class="stack-card is-hidden-stack" data-index="5">
-                                <img class="img-fluid" src="{{ asset("assets/img/snow1.jpg") }}" alt="Sub-Zero Snow Park">
+                                <img class="img-fluid" src="{{ asset("assets/img/snow1.jpg") }}" alt="Sub-Zero Snow Park" loading="lazy" decoding="async">
                                 <span class="card-category-pill">Snow Park</span>
                                 
                             </div>
 
                             <!-- Toy & Kids Rides 1 -->
                             <div class="stack-card is-hidden-stack" data-index="6">
-                                <img class="img-fluid" src="{{ asset("assets/img/toy1.jpg") }}" alt="Toy & Kids Family Rides">
+                                <img class="img-fluid" src="{{ asset("assets/img/toy1.jpg") }}" alt="Toy & Kids Family Rides" loading="lazy" decoding="async">
                                 <span class="card-category-pill">Toy &amp; Kids Rides</span>
                                 
                             </div>
 
                             <!-- Park Design 1 -->
                             <div class="stack-card is-hidden-stack" data-index="7">
-                                <img class="img-fluid" src="{{ asset("assets/img/parkdesign1.jpg") }}" alt="Turnkey Park Design">
+                                <img class="img-fluid" src="{{ asset("assets/img/parkdesign1.jpg") }}" alt="Turnkey Park Design" loading="lazy" decoding="async">
                                 <span class="card-category-pill">Park Design</span>
                                 
                             </div>
 
                             <!-- 12D & 4D Cinema 1 -->
                             <div class="stack-card is-hidden-stack" data-index="8">
-                                <img class="img-fluid" src="{{ asset("assets/img/12d4d1.jpg") }}" alt="12D / 4D Cinema">
+                                <img class="img-fluid" src="{{ asset("assets/img/12d4d1.jpg") }}" alt="12D / 4D Cinema" loading="lazy" decoding="async">
                                 <span class="card-category-pill">12D / 4D Cinema</span>
                                 
                             </div>
 
                             <!-- Additional Roller Coaster 2 -->
                             <div class="stack-card is-hidden-stack" data-index="9">
-                                <img class="img-fluid" src="{{ asset("assets/img/roller2.jpg") }}" alt="Thrill Roller Coaster">
+                                <img class="img-fluid" src="{{ asset("assets/img/roller2.jpg") }}" alt="Thrill Roller Coaster" loading="lazy" decoding="async">
                                 <span class="card-category-pill">Roller Coasters</span>
                                 
                             </div>
 
                             <!-- Additional Dome Cinema 2 -->
                             <div class="stack-card is-hidden-stack" data-index="10">
-                                <img class="img-fluid" src="{{ asset("assets/img/1920x1080.jpg") }}" alt="Geodesic Dome Cinema">
+                                <img class="img-fluid" src="{{ asset("assets/img/1920x1080.jpg") }}" alt="Geodesic Dome Cinema" loading="lazy" decoding="async">
                                 <span class="card-category-pill">Dome Cinema</span>
                                 
                             </div>
 
                             <!-- Additional Flying Cinema 2 -->
                             <div class="stack-card is-hidden-stack" data-index="11">
-                                <img class="img-fluid" src="{{ asset("assets/img/flying2.jpg") }}" alt="Flight Simulator">
+                                <img class="img-fluid" src="{{ asset("assets/img/flying2.jpg") }}" alt="Flight Simulator" loading="lazy" decoding="async">
                                 <span class="card-category-pill">Flying Cinema</span>
                                 
                             </div>
 
                             <!-- Additional Rope Rider 2 -->
                             <div class="stack-card is-hidden-stack" data-index="12">
-                                <img class="img-fluid" src="{{ asset("assets/img/rope2.jpg") }}" alt="Aerial Cable Glider">
-                                <span class="card-category-pill">Rope Rider</span>
+                                <img class="img-fluid" src="{{ asset("assets/img/rope4.jpg") }}" alt="Low Rope Rider" loading="lazy" decoding="async">
+                                <span class="card-category-pill">Low Rope Rider</span>
                                
                             </div>
 
                             <!-- Additional Snow Park 2 -->
                             <div class="stack-card is-hidden-stack" data-index="13">
-                                <img class="img-fluid" src="{{ asset("assets/img/snow2.jpg") }}" alt="Snow Adventure Arena">
+                                <img class="img-fluid" src="{{ asset("assets/img/snow2.jpg") }}" alt="Snow Adventure Arena" loading="lazy" decoding="async">
                                 <span class="card-category-pill">Snow Park</span>
                           
                             </div>
 
                             <!-- Additional Toy 2 -->
                             <div class="stack-card is-hidden-stack" data-index="14">
-                                <img class="img-fluid" src="{{ asset("assets/img/toy2.jpg") }}" alt="Interactive Kids EV Cars">
+                                <img class="img-fluid" src="{{ asset("assets/img/toy2.jpg") }}" alt="Interactive Kids EV Cars" loading="lazy" decoding="async">
                                 <span class="card-category-pill">Toy &amp; Kids Rides</span>
                                 
                             </div>
 
                             <!-- Additional Park Design 2 -->
                             <div class="stack-card is-hidden-stack" data-index="15">
-                                <img class="img-fluid" src="{{ asset("assets/img/parkdesign2.jpg") }}" alt="Theme Park Master Plan">
+                                <img class="img-fluid" src="{{ asset("assets/img/parkdesign2.jpg") }}" alt="Theme Park Master Plan" loading="lazy" decoding="async">
                                 <span class="card-category-pill">Park Design</span>
                                
                             </div>
 
                             <!-- Additional 12D Cinema 2 -->
                             <div class="stack-card is-hidden-stack" data-index="16">
-                                <img class="img-fluid" src="{{ asset("assets/img/12d4d2.jpg") }}" alt="4D Multi-Sensory Cinema">
+                                <img class="img-fluid" src="{{ asset("assets/img/12d4d2.jpg") }}" alt="4D Multi-Sensory Cinema" loading="lazy" decoding="async">
                                 <span class="card-category-pill">12D / 4D Cinema</span>
                                
                             </div>
@@ -357,7 +305,7 @@
                     <div class="btn-group mt-30">
                         <a href="{{ url('/about-company') }}" class="default-btn wow fade-in-bottom" data-wow-delay="200ms">More About Us</a>
                         <div class="about-author wow fade-in-bottom" data-wow-delay="400ms">
-                            <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=375,h=351,fit=crop/AGBM0Vqo2Ripq5Zk/393083348_1179677340102907_7185821607908418361_n-removebg-preview-Yan1N0zwyWcZ74pv.png" alt="IAAPI Member">
+                            <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=375,h=351,fit=crop/AGBM0Vqo2Ripq5Zk/393083348_1179677340102907_7185821607908418361_n-removebg-preview-Yan1N0zwyWcZ74pv.png" alt="IAAPI Member" loading="lazy" decoding="async">
                             <h3>Proud Member of IAAPI Since 2015</h3>
                         </div>
                     </div>
@@ -382,7 +330,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="service-item-3d tilt-card wow zoom-in">
                         <div class="service-thumb">
-                            <img src="{{ asset("assets/img/amu.png") }}" alt="Amusement Park Rides">
+                            <img src="{{ asset("assets/img/amu.png") }}" alt="Amusement Park Rides" loading="lazy" decoding="async">
                         </div>
                         <div class="service-content">
                             <h3>Amusement Park Rides</h3>
@@ -395,7 +343,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="service-item-3d tilt-card wow fade-in-bottom" data-wow-delay="200ms">
                         <div class="service-thumb">
-                            <img src="{{ asset("assets/img/traffic.png") }}" alt="Traffic Park Vehicles">
+                            <img src="{{ asset("assets/img/traffic.png") }}" alt="Traffic Park Vehicles" loading="lazy" decoding="async">
                         </div>
                         <div class="service-content">
                             <h3>Traffic Park Vehicles</h3>
@@ -408,7 +356,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="service-item-3d tilt-card wow fade-in-bottom" data-wow-delay="300ms">
                         <div class="service-thumb">
-                            <img src="{{ asset("assets/img/water.png") }}" alt="Water Park Attractions">
+                            <img src="{{ asset("assets/img/water.png") }}" alt="Water Park Attractions" loading="lazy" decoding="async">
                         </div>
                         <div class="service-content">
                             <h3>Water Park Attractions</h3>
@@ -421,7 +369,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="service-item-3d tilt-card wow fade-in-bottom" data-wow-delay="400ms">
                         <div class="service-thumb">
-                            <img src="{{ asset("assets/img/adventure.png") }}" alt="Sky and Adventure Rides">
+                            <img src="{{ asset("assets/img/adventure.png") }}" alt="Sky and Adventure Rides" loading="lazy" decoding="async">
                         </div>
                         <div class="service-content">
                             <h3>Sky &amp; Adventure Rides</h3>
@@ -434,7 +382,7 @@
             <!-- Parallax CTA Banner -->
             <div class="service-cta-parallax wow fade-in-bottom" data-wow-delay="300ms">
                 <div class="service-cta-inner">
-                    <h4 style="color: #f5a100 !important;">Ready to build your signature amusement park?</h4>
+                    <h4 class="![color:#f5a100]">Ready to build your signature amusement park?</h4>
                     <a class="btn-glow-primary" href="https://wa.me/+917025777755" target="_blank">
                         <span>Make an Appointment</span>
                         <i class="las la-calendar-check"></i>
@@ -454,7 +402,7 @@
                     <div class="skill-img-parallax-wrap ageless-video-container tilt-card wow fade-in-left" data-wow-delay="200ms" id="ageless-autoload-video-box">
                         <!-- Poster: Logo visible for 3 seconds before video autoload -->
                         <div class="ageless-video-poster" id="ageless-video-poster">
-                            <img src="{{ asset("assets/img/video-poster.png") }}" alt="Ageless Entertainments Logo" class="ageless-poster-img">
+                            <img src="{{ asset("assets/img/video-poster.png") }}" alt="Ageless Entertainments Logo" class="ageless-poster-img" loading="lazy" decoding="async">
                             <button type="button" class="ageless-play-trigger" id="ageless-manual-play-trigger" title="Watch Video Now" aria-label="Watch Video Now">
                                 <i class="las la-play"></i>
                             </button>
@@ -480,7 +428,7 @@
                                 <strong>85%</strong>
                             </div>
                             <div class="progress-box">
-                                <div class="progress-bar-glow" data-count="85%" style="width: 85%;"></div>
+                                <div class="progress-bar-glow ![width:85%]" data-count="85%"></div>
                             </div>
                         </li>
                         <li class="skill-item mt-3">
@@ -489,7 +437,7 @@
                                 <strong>75%</strong>
                             </div>
                             <div class="progress-box">
-                                <div class="progress-bar-glow" data-count="75%" style="width: 75%;"></div>
+                                <div class="progress-bar-glow ![width:75%]" data-count="75%"></div>
                             </div>
                         </li>
                         <li class="skill-item mt-3">
@@ -498,7 +446,7 @@
                                 <strong>95%</strong>
                             </div>
                             <div class="progress-box">
-                                <div class="progress-bar-glow" data-count="95%" style="width: 95%;"></div>
+                                <div class="progress-bar-glow ![width:95%]" data-count="95%"></div>
                             </div>
                         </li>
                     </ul>
@@ -529,7 +477,7 @@
                 <button type="button" class="project-filter-btn active" data-filter="all">All Attractions <span class="filter-count">53</span></button>
                 <button type="button" class="project-filter-btn" data-filter="toy">Toy &amp; Kids Rides <span class="filter-count">7</span></button>
                 <button type="button" class="project-filter-btn" data-filter="snow">Snow Park <span class="filter-count">6</span></button>
-                <button type="button" class="project-filter-btn" data-filter="rope">Rope Rider <span class="filter-count">8</span></button>
+                <button type="button" class="project-filter-btn" data-filter="rope">High &amp; Low Rope Rider <span class="filter-count">8</span></button>
                 <button type="button" class="project-filter-btn" data-filter="roller">Roller Coaster <span class="filter-count">6</span></button>
                 <button type="button" class="project-filter-btn" data-filter="parkdesign">Park Design <span class="filter-count">8</span></button>
                 <button type="button" class="project-filter-btn" data-filter="flying">Flying Cinema <span class="filter-count">7</span></button>
@@ -546,7 +494,7 @@
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
                                     <a class="venobox" href="{{ asset("assets/img/toy1.jpg") }}" data-gall="projects" title="Electric Trackless Family Train">
-                                        <img src="{{ asset("assets/img/toy1.jpg") }}" alt="Electric Trackless Family Train">
+                                        <img src="{{ asset("assets/img/toy1.jpg") }}" alt="Electric Trackless Family Train" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
@@ -561,7 +509,7 @@
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
                                     <a class="venobox" href="{{ asset("assets/img/toy2.jpg") }}" data-gall="projects" title="Interactive Kids Safari EV Cars">
-                                        <img src="{{ asset("assets/img/toy2.jpg") }}" alt="Interactive Kids Safari EV Cars">
+                                        <img src="{{ asset("assets/img/toy2.jpg") }}" alt="Interactive Kids Safari EV Cars" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
@@ -576,7 +524,7 @@
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
                                     <a class="venobox" href="{{ asset("assets/img/toy3.jpg") }}" data-gall="projects" title="Classic Carousel &amp; Theme Ride">
-                                        <img src="{{ asset("assets/img/toy3.jpg") }}" alt="Classic Carousel &amp; Theme Ride">
+                                        <img src="{{ asset("assets/img/toy3.jpg") }}" alt="Classic Carousel &amp; Theme Ride" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
@@ -591,7 +539,7 @@
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
                                     <a class="venobox" href="{{ asset("assets/img/toy4.jpg") }}" data-gall="projects" title="Battery Bumper Cars Arena">
-                                        <img src="{{ asset("assets/img/toy4.jpg") }}" alt="Battery Bumper Cars Arena">
+                                        <img src="{{ asset("assets/img/toy4.jpg") }}" alt="Battery Bumper Cars Arena" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
@@ -606,7 +554,7 @@
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
                                     <a class="venobox" href="{{ asset("assets/img/toy5.jpg") }}" data-gall="projects" title="Junior Electric Go-Kart Vehicles">
-                                        <img src="{{ asset("assets/img/toy5.jpg") }}" alt="Junior Electric Go-Kart Vehicles">
+                                        <img src="{{ asset("assets/img/toy5.jpg") }}" alt="Junior Electric Go-Kart Vehicles" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
@@ -621,7 +569,7 @@
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
                                     <a class="venobox" href="{{ asset("assets/img/toy6.jpg") }}" data-gall="projects" title="Custom Themed Amusement Toy Rides">
-                                        <img src="{{ asset("assets/img/toy6.jpg") }}" alt="Custom Themed Amusement Toy Rides">
+                                        <img src="{{ asset("assets/img/toy6.jpg") }}" alt="Custom Themed Amusement Toy Rides" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
@@ -636,7 +584,7 @@
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
                                     <a class="venobox" href="{{ asset("assets/img/toy7.jpg") }}" data-gall="projects" title="Turnkey Children's Funzone Rides">
-                                        <img src="{{ asset("assets/img/toy7.jpg") }}" alt="Turnkey Children's Funzone Rides">
+                                        <img src="{{ asset("assets/img/toy7.jpg") }}" alt="Turnkey Children's Funzone Rides" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
@@ -652,7 +600,7 @@
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
                                     <a class="venobox" href="{{ asset("assets/img/snow1.jpg") }}" data-gall="projects" title="Sub-Zero Indoor Snow World">
-                                        <img src="{{ asset("assets/img/snow1.jpg") }}" alt="Sub-Zero Indoor Snow World">
+                                        <img src="{{ asset("assets/img/snow1.jpg") }}" alt="Sub-Zero Indoor Snow World" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
@@ -667,7 +615,7 @@
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
                                     <a class="venobox" href="{{ asset("assets/img/snow2.jpg") }}" data-gall="projects" title="Real Snowfall Adventure Arena">
-                                        <img src="{{ asset("assets/img/snow2.jpg") }}" alt="Real Snowfall Adventure Arena">
+                                        <img src="{{ asset("assets/img/snow2.jpg") }}" alt="Real Snowfall Adventure Arena" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
@@ -682,7 +630,7 @@
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
                                     <a class="venobox" href="{{ asset("assets/img/snow3.jpg") }}" data-gall="projects" title="Alpine Sledging &amp; Ice Slides">
-                                        <img src="{{ asset("assets/img/snow3.jpg") }}" alt="Alpine Sledging &amp; Ice Slides">
+                                        <img src="{{ asset("assets/img/snow3.jpg") }}" alt="Alpine Sledging &amp; Ice Slides" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
@@ -697,7 +645,7 @@
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
                                     <a class="venobox" href="{{ asset("assets/img/snow4.jpg") }}" data-gall="projects" title="Cryogenic Snow Play Zone">
-                                        <img src="{{ asset("assets/img/snow4.jpg") }}" alt="Cryogenic Snow Play Zone">
+                                        <img src="{{ asset("assets/img/snow4.jpg") }}" alt="Cryogenic Snow Play Zone" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
@@ -712,7 +660,7 @@
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
                                     <a class="venobox" href="{{ asset("assets/img/snow5.jpg") }}" data-gall="projects" title="Winter Wonderland Family Park">
-                                        <img src="{{ asset("assets/img/snow5.jpg") }}" alt="Winter Wonderland Family Park">
+                                        <img src="{{ asset("assets/img/snow5.jpg") }}" alt="Winter Wonderland Family Park" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
@@ -727,7 +675,7 @@
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
                                     <a class="venobox" href="{{ asset("assets/img/snow6.jpg") }}" data-gall="projects" title="Turnkey Snow Park Architecture">
-                                        <img src="{{ asset("assets/img/snow6.jpg") }}" alt="Turnkey Snow Park Architecture">
+                                        <img src="{{ asset("assets/img/snow6.jpg") }}" alt="Turnkey Snow Park Architecture" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
@@ -742,8 +690,8 @@
                         <div class="swiper-slide" data-category="rope">
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
-                                    <a class="venobox" href="{{ asset("assets/img/IMG_1895.JPG") }}" data-gall="projects" title="Misty Land Aerial Rope Glider">
-                                        <img src="{{ asset("assets/img/IMG_1895.JPG") }}" alt="Misty Land Aerial Rope Glider">
+                                    <a class="venobox" href="{{ asset("assets/img/rope3.jpg") }}" data-gall="projects" title="Misty Land Aerial Rope Glider">
+                                        <img src="{{ asset("assets/img/rope3.jpg") }}" alt="Misty Land Aerial Rope Glider" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
@@ -758,7 +706,7 @@
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
                                     <a class="venobox" href="{{ asset("assets/img/rope2.jpg") }}" data-gall="projects" title="Suspended Gravity Cable Glider">
-                                        <img src="{{ asset("assets/img/rope2.jpg") }}" alt="Suspended Gravity Cable Glider">
+                                        <img src="{{ asset("assets/img/rope2.jpg") }}" alt="Suspended Gravity Cable Glider" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
@@ -773,7 +721,7 @@
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
                                     <a class="venobox" href="{{ asset("assets/img/rope3.jpg") }}" data-gall="projects" title="High-Altitude Aerial Circuit">
-                                        <img src="{{ asset("assets/img/rope3.jpg") }}" alt="High-Altitude Aerial Circuit">
+                                        <img src="{{ asset("assets/img/rope3.jpg") }}" alt="High-Altitude Aerial Circuit" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
@@ -788,7 +736,7 @@
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
                                     <a class="venobox" href="{{ asset("assets/img/rope4.jpg") }}" data-gall="projects" title="Extreme Treetop Adventure Glider">
-                                        <img src="{{ asset("assets/img/rope4.jpg") }}" alt="Extreme Treetop Adventure Glider">
+                                        <img src="{{ asset("assets/img/rope4.jpg") }}" alt="Extreme Treetop Adventure Glider" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
@@ -803,7 +751,7 @@
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
                                     <a class="venobox" href="{{ asset("assets/img/rope5.jpg") }}" data-gall="projects" title="Multi-Track Aerial Rope Ride">
-                                        <img src="{{ asset("assets/img/rope5.jpg") }}" alt="Multi-Track Aerial Rope Ride">
+                                        <img src="{{ asset("assets/img/rope5.jpg") }}" alt="Multi-Track Aerial Rope Ride" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
@@ -818,7 +766,7 @@
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
                                     <a class="venobox" href="{{ asset("assets/img/Munnar%20Net%20park.png") }}" data-gall="projects" title="Munnar Net Park">
-                                        <img src="{{ asset("assets/img/Munnar%20Net%20park.png") }}" alt="Munnar Net Park">
+                                        <img src="{{ asset("assets/img/Munnar%20Net%20park.png") }}" alt="Munnar Net Park" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
@@ -833,7 +781,7 @@
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
                                     <a class="venobox" href="{{ asset("assets/img/Kanyakumari%20activities.png") }}" data-gall="projects" title="Kanyakumari Net Park Activities">
-                                        <img src="{{ asset("assets/img/Kanyakumari%20activities.png") }}" alt="Kanyakumari Net Park Activities">
+                                        <img src="{{ asset("assets/img/Kanyakumari%20activities.png") }}" alt="Kanyakumari Net Park Activities" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
@@ -848,7 +796,7 @@
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
                                     <a class="venobox" href="{{ asset("assets/img/Zipline10.jpg") }}" data-gall="projects" title="Tandem Zipline Adventure">
-                                        <img src="{{ asset("assets/img/Zipline10.jpg") }}" alt="Tandem Zipline Adventure">
+                                        <img src="{{ asset("assets/img/Zipline10.jpg") }}" alt="Tandem Zipline Adventure" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
@@ -864,7 +812,7 @@
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
                                     <a class="venobox" href="{{ asset("assets/img/roller1.jpg") }}" data-gall="projects" title="High-Speed Family Coaster">
-                                        <img src="{{ asset("assets/img/roller1.jpg") }}" alt="High-Speed Family Coaster">
+                                        <img src="{{ asset("assets/img/roller1.jpg") }}" alt="High-Speed Family Coaster" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
@@ -879,7 +827,7 @@
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
                                     <a class="venobox" href="{{ asset("assets/img/roller2.jpg") }}" data-gall="projects" title="Thrill Spiraling Steel Coaster">
-                                        <img src="{{ asset("assets/img/roller2.jpg") }}" alt="Thrill Spiraling Steel Coaster">
+                                        <img src="{{ asset("assets/img/roller2.jpg") }}" alt="Thrill Spiraling Steel Coaster" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
@@ -894,7 +842,7 @@
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
                                     <a class="venobox" href="{{ asset("assets/img/roller3.jpg") }}" data-gall="projects" title="Custom Terrain Amusement Coaster">
-                                        <img src="{{ asset("assets/img/roller3.jpg") }}" alt="Custom Terrain Amusement Coaster">
+                                        <img src="{{ asset("assets/img/roller3.jpg") }}" alt="Custom Terrain Amusement Coaster" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
@@ -909,7 +857,7 @@
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
                                     <a class="venobox" href="{{ asset("assets/img/roller4.jpg") }}" data-gall="projects" title="High-Altitude Loop Coaster">
-                                        <img src="{{ asset("assets/img/roller4.jpg") }}" alt="High-Altitude Loop Coaster">
+                                        <img src="{{ asset("assets/img/roller4.jpg") }}" alt="High-Altitude Loop Coaster" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
@@ -924,7 +872,7 @@
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
                                     <a class="venobox" href="{{ asset("assets/img/roller5.jpg") }}" data-gall="projects" title="Wild Kinetic Family Track Coaster">
-                                        <img src="{{ asset("assets/img/roller5.jpg") }}" alt="Wild Kinetic Family Track Coaster">
+                                        <img src="{{ asset("assets/img/roller5.jpg") }}" alt="Wild Kinetic Family Track Coaster" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
@@ -939,7 +887,7 @@
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
                                     <a class="venobox" href="{{ asset("assets/img/roller6.jpg") }}" data-gall="projects" title="Turnkey Theme Park Roller Coaster">
-                                        <img src="{{ asset("assets/img/roller6.jpg") }}" alt="Turnkey Theme Park Roller Coaster">
+                                        <img src="{{ asset("assets/img/roller6.jpg") }}" alt="Turnkey Theme Park Roller Coaster" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
@@ -955,7 +903,7 @@
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
                                     <a class="venobox" href="{{ asset("assets/img/parkdesign1.jpg") }}" data-gall="projects" title="Turnkey Master Planning &amp; Theming">
-                                        <img src="{{ asset("assets/img/parkdesign1.jpg") }}" alt="Turnkey Master Planning &amp; Theming">
+                                        <img src="{{ asset("assets/img/parkdesign1.jpg") }}" alt="Turnkey Master Planning &amp; Theming" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
@@ -970,7 +918,7 @@
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
                                     <a class="venobox" href="{{ asset("assets/img/parkdesign2.jpg") }}" data-gall="projects" title="3D Thematic Architectural Layout">
-                                        <img src="{{ asset("assets/img/parkdesign2.jpg") }}" alt="3D Thematic Architectural Layout">
+                                        <img src="{{ asset("assets/img/parkdesign2.jpg") }}" alt="3D Thematic Architectural Layout" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
@@ -985,7 +933,7 @@
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
                                     <a class="venobox" href="{{ asset("assets/img/parkdesign3.jpg") }}" data-gall="projects" title="Integrated Amusement Park Design">
-                                        <img src="{{ asset("assets/img/parkdesign3.jpg") }}" alt="Integrated Amusement Park Design">
+                                        <img src="{{ asset("assets/img/parkdesign3.jpg") }}" alt="Integrated Amusement Park Design" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
@@ -1000,7 +948,7 @@
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
                                     <a class="venobox" href="{{ asset("assets/img/parkdesign4.jpg") }}" data-gall="projects" title="Adventure &amp; Water World Blueprint">
-                                        <img src="{{ asset("assets/img/parkdesign4.jpg") }}" alt="Adventure &amp; Water World Blueprint">
+                                        <img src="{{ asset("assets/img/parkdesign4.jpg") }}" alt="Adventure &amp; Water World Blueprint" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
@@ -1015,7 +963,7 @@
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
                                     <a class="venobox" href="{{ asset("assets/img/parkdesign5.jpg") }}" data-gall="projects" title="Futuristic Entertainment Zone Layout">
-                                        <img src="{{ asset("assets/img/parkdesign5.jpg") }}" alt="Futuristic Entertainment Zone Layout">
+                                        <img src="{{ asset("assets/img/parkdesign5.jpg") }}" alt="Futuristic Entertainment Zone Layout" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
@@ -1030,7 +978,7 @@
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
                                     <a class="venobox" href="{{ asset("assets/img/parkdesign6.jpg") }}" data-gall="projects" title="Comprehensive Resort Master Blueprint">
-                                        <img src="{{ asset("assets/img/parkdesign6.jpg") }}" alt="Comprehensive Resort Master Blueprint">
+                                        <img src="{{ asset("assets/img/parkdesign6.jpg") }}" alt="Comprehensive Resort Master Blueprint" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
@@ -1045,7 +993,7 @@
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
                                     <a class="venobox" href="{{ asset("assets/img/parkdesign7.jpg") }}" data-gall="projects" title="Themed Landscape &amp; Attraction Architecture">
-                                        <img src="{{ asset("assets/img/parkdesign7.jpg") }}" alt="Themed Landscape &amp; Attraction Architecture">
+                                        <img src="{{ asset("assets/img/parkdesign7.jpg") }}" alt="Themed Landscape &amp; Attraction Architecture" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
@@ -1060,7 +1008,7 @@
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
                                     <a class="venobox" href="{{ asset("assets/img/parkdesign8.jpg") }}" data-gall="projects" title="Custom Attraction Engineering &amp; Design">
-                                        <img src="{{ asset("assets/img/parkdesign8.jpg") }}" alt="Custom Attraction Engineering &amp; Design">
+                                        <img src="{{ asset("assets/img/parkdesign8.jpg") }}" alt="Custom Attraction Engineering &amp; Design" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
@@ -1076,7 +1024,7 @@
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
                                     <a class="venobox" href="{{ asset("assets/img/flying1.jpg") }}" data-gall="projects" title="Mall of Qatar Flying Theatre">
-                                        <img src="{{ asset("assets/img/flying1.jpg") }}" alt="Mall of Qatar Flying Theatre">
+                                        <img src="{{ asset("assets/img/flying1.jpg") }}" alt="Mall of Qatar Flying Theatre" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
@@ -1091,7 +1039,7 @@
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
                                     <a class="venobox" href="{{ asset("assets/img/flying2.jpg") }}" data-gall="projects" title="Suspended Motion Flying Simulator">
-                                        <img src="{{ asset("assets/img/flying2.jpg") }}" alt="Suspended Motion Flying Simulator">
+                                        <img src="{{ asset("assets/img/flying2.jpg") }}" alt="Suspended Motion Flying Simulator" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
@@ -1106,7 +1054,7 @@
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
                                     <a class="venobox" href="{{ asset("assets/img/flying3.jpg") }}" data-gall="projects" title="Panoramic Sky Flight Adventure">
-                                        <img src="{{ asset("assets/img/flying3.jpg") }}" alt="Panoramic Sky Flight Adventure">
+                                        <img src="{{ asset("assets/img/flying3.jpg") }}" alt="Panoramic Sky Flight Adventure" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
@@ -1121,7 +1069,7 @@
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
                                     <a class="venobox" href="{{ asset("assets/img/flying4.jpg") }}" data-gall="projects" title="Multi-DOF Kinetic Flight System">
-                                        <img src="{{ asset("assets/img/flying4.jpg") }}" alt="Multi-DOF Kinetic Flight System">
+                                        <img src="{{ asset("assets/img/flying4.jpg") }}" alt="Multi-DOF Kinetic Flight System" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
@@ -1136,7 +1084,7 @@
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
                                     <a class="venobox" href="{{ asset("assets/img/flying5.jpg") }}" data-gall="projects" title="Immersive Flying Ride Experience">
-                                        <img src="{{ asset("assets/img/flying5.jpg") }}" alt="Immersive Flying Ride Experience">
+                                        <img src="{{ asset("assets/img/flying5.jpg") }}" alt="Immersive Flying Ride Experience" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
@@ -1151,7 +1099,7 @@
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
                                     <a class="venobox" href="{{ asset("assets/img/flying6.jpg") }}" data-gall="projects" title="Virtual Horizon Flight Theatre">
-                                        <img src="{{ asset("assets/img/flying6.jpg") }}" alt="Virtual Horizon Flight Theatre">
+                                        <img src="{{ asset("assets/img/flying6.jpg") }}" alt="Virtual Horizon Flight Theatre" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
@@ -1166,7 +1114,7 @@
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
                                     <a class="venobox" href="{{ asset("assets/img/flying7.jpg") }}" data-gall="projects" title="Next-Gen Aerial Soaring Simulator">
-                                        <img src="{{ asset("assets/img/flying7.jpg") }}" alt="Next-Gen Aerial Soaring Simulator">
+                                        <img src="{{ asset("assets/img/flying7.jpg") }}" alt="Next-Gen Aerial Soaring Simulator" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
@@ -1182,7 +1130,7 @@
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
                                     <a class="venobox" href="{{ asset("assets/img/dome1.jpg") }}" data-gall="projects" title="Munnar Botanical Garden 360° Dome">
-                                        <img src="{{ asset("assets/img/dome1.jpg") }}" alt="Munnar Botanical Garden 360° Dome">
+                                        <img src="{{ asset("assets/img/dome1.jpg") }}" alt="Munnar Botanical Garden 360° Dome" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
@@ -1197,7 +1145,7 @@
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
                                     <a class="venobox" href="{{ asset("assets/img/1920x1080.jpg") }}" data-gall="projects" title="Panoramic Fulldome Immersion Theatre">
-                                        <img src="{{ asset("assets/img/1920x1080.jpg") }}" alt="Panoramic Fulldome Immersion Theatre">
+                                        <img src="{{ asset("assets/img/1920x1080.jpg") }}" alt="Panoramic Fulldome Immersion Theatre" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
@@ -1212,7 +1160,7 @@
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
                                     <a class="venobox" href="{{ asset("assets/img/WhatsApp%20Image%202026-03-27%20at%206.45.07%20PM.jpeg") }}" data-gall="projects" title="Geodesic Dome Installation">
-                                        <img src="{{ asset("assets/img/WhatsApp%20Image%202026-03-27%20at%206.45.07%20PM.jpeg") }}" alt="Geodesic Dome Installation">
+                                        <img src="{{ asset("assets/img/WhatsApp%20Image%202026-03-27%20at%206.45.07%20PM.jpeg") }}" alt="Geodesic Dome Installation" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
@@ -1227,7 +1175,7 @@
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
                                     <a class="venobox" href="{{ asset("assets/img/WhatsApp%20Image%202026-06-09%20at%204.00.17%20PM%20(1).jpeg") }}" data-gall="projects" title="High-Resolution 360° Visual Dome">
-                                        <img src="{{ asset("assets/img/WhatsApp%20Image%202026-06-09%20at%204.00.17%20PM%20(1).jpeg") }}" alt="High-Resolution 360° Visual Dome">
+                                        <img src="{{ asset("assets/img/WhatsApp%20Image%202026-06-09%20at%204.00.17%20PM%20(1).jpeg") }}" alt="High-Resolution 360° Visual Dome" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
@@ -1242,7 +1190,7 @@
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
                                     <a class="venobox" href="{{ asset("assets/img/WhatsApp%20Image%202026-07-01%20at%2012.33.06%20PM%20(1).jpeg") }}" data-gall="projects" title="Immersive Cinema Dome Installation">
-                                        <img src="{{ asset("assets/img/WhatsApp%20Image%202026-07-01%20at%2012.33.06%20PM%20(1).jpeg") }}" alt="Immersive Cinema Dome Installation">
+                                        <img src="{{ asset("assets/img/WhatsApp%20Image%202026-07-01%20at%2012.33.06%20PM%20(1).jpeg") }}" alt="Immersive Cinema Dome Installation" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
@@ -1257,7 +1205,7 @@
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
                                     <a class="venobox" href="{{ asset("assets/img/WhatsApp%20Image%202026-07-10%20at%209.15.36%20AM.jpeg") }}" data-gall="projects" title="Turnkey Immersive Projection Dome">
-                                        <img src="{{ asset("assets/img/WhatsApp%20Image%202026-07-10%20at%209.15.36%20AM.jpeg") }}" alt="Turnkey Immersive Projection Dome">
+                                        <img src="{{ asset("assets/img/WhatsApp%20Image%202026-07-10%20at%209.15.36%20AM.jpeg") }}" alt="Turnkey Immersive Projection Dome" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
@@ -1273,7 +1221,7 @@
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
                                     <a class="venobox" href="{{ asset("assets/img/12d4d1.jpg") }}" data-gall="projects" title="12D Dynamic Motion Cinema Theatre">
-                                        <img src="{{ asset("assets/img/12d4d1.jpg") }}" alt="12D Dynamic Motion Cinema Theatre">
+                                        <img src="{{ asset("assets/img/12d4d1.jpg") }}" alt="12D Dynamic Motion Cinema Theatre" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
@@ -1288,7 +1236,7 @@
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
                                     <a class="venobox" href="{{ asset("assets/img/12d4d2.jpg") }}" data-gall="projects" title="Multi-Sensory 4D FX Special Effects">
-                                        <img src="{{ asset("assets/img/12d4d2.jpg") }}" alt="Multi-Sensory 4D FX Special Effects">
+                                        <img src="{{ asset("assets/img/12d4d2.jpg") }}" alt="Multi-Sensory 4D FX Special Effects" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
@@ -1303,7 +1251,7 @@
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
                                     <a class="venobox" href="{{ asset("assets/img/12d4d3.jpg") }}" data-gall="projects" title="Hydraulic Motion Platform Simulator">
-                                        <img src="{{ asset("assets/img/12d4d3.jpg") }}" alt="Hydraulic Motion Platform Simulator">
+                                        <img src="{{ asset("assets/img/12d4d3.jpg") }}" alt="Hydraulic Motion Platform Simulator" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
@@ -1318,7 +1266,7 @@
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
                                     <a class="venobox" href="{{ asset("assets/img/12d4d4.jpg") }}" data-gall="projects" title="Interactive Immersive VR &amp; 12D Theatre">
-                                        <img src="{{ asset("assets/img/12d4d4.jpg") }}" alt="Interactive Immersive VR &amp; 12D Theatre">
+                                        <img src="{{ asset("assets/img/12d4d4.jpg") }}" alt="Interactive Immersive VR &amp; 12D Theatre" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
@@ -1333,7 +1281,7 @@
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
                                     <a class="venobox" href="{{ asset("assets/img/12d4d5.jpg") }}" data-gall="projects" title="Turnkey 12D / 4D Cinema Installation">
-                                        <img src="{{ asset("assets/img/12d4d5.jpg") }}" alt="Turnkey 12D / 4D Cinema Installation">
+                                        <img src="{{ asset("assets/img/12d4d5.jpg") }}" alt="Turnkey 12D / 4D Cinema Installation" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
@@ -1360,31 +1308,38 @@
             <div class="outside-spacing">
                 <div class="sponsor-carousel">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="https://www.snowfantasy.in/themes/public/img/logo.png" alt="Snow Fantasy" width="180" height="90" loading="lazy" decoding="async"></div>
-                        <div class="swiper-slide"><img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=220,fit=crop,q=95/m7V5zpaQzrip7On8/iridoogo-YyvZZXxQLEfOwo0l.png" alt="Partner logo 2" width="180" height="90" loading="lazy" decoding="async"></div>
-                        <div class="swiper-slide"><img src="https://thumbs2.imgbox.com/0d/a1/xmBZL8kX_t.jpg" alt="Partner logo 3" width="180" height="90" loading="lazy" decoding="async"></div>
-                        <div class="swiper-slide"><img src="https://thumbs2.imgbox.com/ba/26/ysxjzDGR_t.jpg" alt="Partner logo 4" width="180" height="90" loading="lazy" decoding="async"></div>
-                        <div class="swiper-slide"><img src="https://f005.backblazeb2.com/file/bmpcdn90/academy/316/316redkitessportsacademy.jpeg" alt="Red Kites Sports Academy" width="180" height="90" loading="lazy" decoding="async"></div>
-                        <div class="swiper-slide"><img src="https://i.ibb.co/d4FjYcCN/fly-over-wonders-logo.png" alt="Fly Over Wonders" width="180" height="90" loading="lazy" decoding="async"></div>
-                        <div class="swiper-slide"><img src="https://i.ibb.co/70qHWxp/active-planet-park-1-1687596827.webp" alt="Active Planet Park" width="180" height="90" loading="lazy" decoding="async"></div>
-                        <div class="swiper-slide"><img src="https://thumbs2.imgbox.com/d3/40/gZtcGsgZ_t.jpg" alt="Partner logo 8" width="180" height="90" loading="lazy" decoding="async"></div>
-                        <div class="swiper-slide"><img src="https://thumbs2.imgbox.com/bb/48/fpG6Ffag_t.jpg" alt="Partner logo 9" width="180" height="90" loading="lazy" decoding="async"></div>
-                        <div class="swiper-slide"><img src="https://thumbs2.imgbox.com/27/f3/jkOPNWeT_t.jpg" alt="Partner logo 10" width="180" height="90" loading="lazy" decoding="async"></div>
-                        <div class="swiper-slide"><img src="https://vythiripark.com/static/web/images/logo.png" alt="Vythiri Park" width="180" height="90" loading="lazy" decoding="async"></div>
-                        <div class="swiper-slide"><img src="https://thumbs2.imgbox.com/70/62/HilmD9VF_t.jpg" alt="Partner logo 12" width="180" height="90" loading="lazy" decoding="async"></div>
-                        <div class="swiper-slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJVhnT9XoxaYkRH0XyHgD4DEnB-chTcVD_cA&amp;s" alt="Partner logo 13" width="180" height="90" loading="lazy" decoding="async"></div>
-                        <div class="swiper-slide"><img src="https://storage.googleapis.com/moq-bucket-moq-skwid/Mall_Of_Qatar_Logo_626px_5839461237/Mall_Of_Qatar_Logo_626px_5839461237.jpg" alt="Mall of Qatar" width="180" height="90" loading="lazy" decoding="async"></div>
-                        <div class="swiper-slide"><img src="https://i.ibb.co/8gcbjTXy/472154867-27961923506788217-2541636831095699378-n.jpg" alt="Partner logo 15" width="180" height="90" loading="lazy" decoding="async"></div>
-                        <div class="swiper-slide"><img src="https://cowboypark.in/wp-content/uploads/2024/10/coboy-logo.webp" alt="Cowboy Park" width="180" height="90" loading="lazy" decoding="async"></div>
-                        <div class="swiper-slide"><img src="https://thumbs2.imgbox.com/22/be/v6aaVc7C_t.jpg" alt="Partner logo 17" width="180" height="90" loading="lazy" decoding="async"></div>
-                        <div class="swiper-slide"><img src="https://thumbs2.imgbox.com/e9/8d/6TG3hqtl_t.jpg" alt="Partner logo 18" width="180" height="90" loading="lazy" decoding="async"></div>
-                        <div class="swiper-slide"><img src="https://thumbs2.imgbox.com/29/16/X61Ffvno_t.jpg" alt="Partner logo 19" width="180" height="90" loading="lazy" decoding="async"></div>
-                        <div class="swiper-slide"><img src="https://thumbs2.imgbox.com/00/f7/3LND0bsn_t.jpg" alt="Partner logo 20" width="180" height="90" loading="lazy" decoding="async"></div>
-                        <div class="swiper-slide"><img src="https://thumbs2.imgbox.com/92/ec/2WL5lgDX_t.jpg" alt="Partner logo 21" width="180" height="90" loading="lazy" decoding="async"></div>
-                        <div class="swiper-slide"><img src="https://thumbs2.imgbox.com/a8/70/fkZ2eQ0k_t.jpg" alt="Partner logo 22" width="180" height="90" loading="lazy" decoding="async"></div>
-                        <div class="swiper-slide"><img src="https://thumbs2.imgbox.com/9d/2d/QlA7WYiG_t.jpg" alt="Partner logo 23" width="180" height="90" loading="lazy" decoding="async"></div>
-                        <div class="swiper-slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8FcVuJ-yqRHHGLhPXyJhEuSTBgY2pqLZ65Q&amp;s" alt="Partner logo 24" width="180" height="90" loading="lazy" decoding="async"></div>
-                        <div class="swiper-slide"><img src="https://www.keralatourism.org/ktadmin/images/Portfolios/dtpc.png" alt="DTPC" width="180" height="90" loading="lazy" decoding="async"></div>
+                        <div class="swiper-slide"><img src="{{ asset('assets/img/partners/irido.png') }}" alt="Irido" width="180" height="90" loading="eager" decoding="async"></div>
+                        <div class="swiper-slide"><img class="brochure-partner-logo" src="{{ asset('assets/img/partners/01_Kerala_Bank.png') }}" alt="Kerala Bank" width="180" height="90" loading="eager" decoding="async"></div>
+                        <div class="swiper-slide"><img class="brochure-partner-logo" src="{{ asset('assets/img/partners/02_Magic_Planet.png') }}" alt="Magic Planet" width="180" height="90" loading="eager" decoding="async"></div>
+                        <div class="swiper-slide"><img class="brochure-partner-logo" src="{{ asset('assets/img/partners/03_Fantasy_Park.png') }}" alt="Fantasy Park" width="180" height="90" loading="eager" decoding="async"></div>
+                        <div class="swiper-slide"><img class="brochure-partner-logo" src="{{ asset('assets/img/partners/04_Oberon_Mall.png') }}" alt="Oberon Mall" width="180" height="90" loading="eager" decoding="async"></div>
+                        <div class="swiper-slide"><img class="brochure-partner-logo" src="{{ asset('assets/img/partners/05_Dream_World_Water_Park.png') }}" alt="Dream World Water Park" width="180" height="90" loading="eager" decoding="async"></div>
+                        <div class="swiper-slide"><img class="brochure-partner-logo" src="{{ asset('assets/img/partners/06_E3_Theme_Parks.png') }}" alt="E3 Theme Parks" width="180" height="90" loading="eager" decoding="async"></div>
+                        <div class="swiper-slide"><img class="brochure-partner-logo" src="{{ asset('assets/img/partners/07_Elephant_Valley.png') }}" alt="Elephant Valley" width="180" height="90" loading="eager" decoding="async"></div>
+                        <div class="swiper-slide"><img class="brochure-partner-logo" src="{{ asset('assets/img/partners/08_Wonder_Valley.png') }}" alt="Wonder Valley" width="180" height="90" loading="eager" decoding="async"></div>
+                        <div class="swiper-slide"><img class="brochure-partner-logo" src="{{ asset('assets/img/partners/09_DTPC_Palakkad.png') }}" alt="DTPC Palakkad" width="180" height="90" loading="eager" decoding="async"></div>
+                        <div class="swiper-slide"><img class="brochure-partner-logo" src="{{ asset('assets/img/partners/10_Happyland.png') }}" alt="Happyland" width="180" height="90" loading="eager" decoding="async"></div>
+                        <div class="swiper-slide"><img class="brochure-partner-logo" src="{{ asset('assets/img/partners/11_KITCO.png') }}" alt="KITCO" width="180" height="90" loading="eager" decoding="async"></div>
+                        <div class="swiper-slide"><img class="brochure-partner-logo" src="{{ asset('assets/img/partners/12_Jatayu_Tourism_Centre.png') }}" alt="Jatayu Tourism Centre" width="180" height="90" loading="eager" decoding="async"></div>
+                        <div class="swiper-slide"><img class="brochure-partner-logo" src="{{ asset('assets/img/partners/13_Dreamland_Fun_Adventure.png') }}" alt="Dreamland Fun Adventure" width="180" height="90" loading="eager" decoding="async"></div>
+                        <div class="swiper-slide"><img class="brochure-partner-logo" src="{{ asset('assets/img/partners/14_Udan_Khatola.png') }}" alt="Udan Khatola" width="180" height="90" loading="eager" decoding="async"></div>
+                        <div class="swiper-slide"><img class="brochure-partner-logo" src="{{ asset('assets/img/partners/15_DTPC.png') }}" alt="DTPC" width="180" height="90" loading="eager" decoding="async"></div>
+                        <div class="swiper-slide"><img class="brochure-partner-logo" src="{{ asset('assets/img/partners/16_Forum_Fiza.png') }}" alt="Forum Fiza" width="180" height="90" loading="eager" decoding="async"></div>
+                        <div class="swiper-slide"><img class="brochure-partner-logo" src="{{ asset('assets/img/partners/17_DTPC_Malappuram.png') }}" alt="DTPC Malappuram" width="180" height="90" loading="eager" decoding="async"></div>
+                        <div class="swiper-slide"><img class="brochure-partner-logo" src="{{ asset('assets/img/partners/18_Green_Valley_Water_Theme_Park.png') }}" alt="Green Valley Water Theme Park" width="180" height="90" loading="eager" decoding="async"></div>
+                        <div class="swiper-slide"><img class="brochure-partner-logo" src="{{ asset('assets/img/partners/19_Grand_Centre_Mall.png') }}" alt="Grand Centre Mall" width="180" height="90" loading="eager" decoding="async"></div>
+                        <div class="swiper-slide"><img class="brochure-partner-logo" src="{{ asset('assets/img/partners/20_Cochin_Childrens_Science_Park.png') }}" alt="Cochin Children's Science Park" width="180" height="90" loading="eager" decoding="async"></div>
+                        <div class="swiper-slide"><img class="brochure-partner-logo" src="{{ asset('assets/img/partners/21_Paramount_Technologies.png') }}" alt="Paramount Technologies" width="180" height="90" loading="eager" decoding="async"></div>
+                        <div class="swiper-slide"><img class="brochure-partner-logo" src="{{ asset('assets/img/partners/22_HiLITE_Mall.png') }}" alt="HiLITE Mall" width="180" height="90" loading="eager" decoding="async"></div>
+                        <div class="swiper-slide"><img class="brochure-partner-logo" src="{{ asset('assets/img/partners/23_Hydel_Tourism.png') }}" alt="Hydel Tourism" width="180" height="90" loading="eager" decoding="async"></div>
+                        <div class="swiper-slide"><img class="brochure-partner-logo" src="{{ asset('assets/img/partners/24_Brookefields.png') }}" alt="Brookefields" width="180" height="90" loading="eager" decoding="async"></div>
+                        <div class="swiper-slide"><img src="{{ asset('assets/img/partners/snow-fantasy.png') }}" alt="Snow Fantasy" width="180" height="90" loading="eager" decoding="async"></div>
+                        <div class="swiper-slide"><img src="{{ asset('assets/img/partners/red-kites-sports-academy.jpg') }}" alt="Red Kites Sports Academy" width="180" height="90" loading="eager" decoding="async"></div>
+                        <div class="swiper-slide"><img src="{{ asset('assets/img/partners/fly-over-wonders.png') }}" alt="Fly Over Wonders" width="180" height="90" loading="eager" decoding="async"></div>
+                        <div class="swiper-slide"><img src="{{ asset('assets/img/partners/active-planet-park.webp') }}" alt="Active Planet Park" width="180" height="90" loading="eager" decoding="async"></div>
+                        <div class="swiper-slide"><img src="{{ asset('assets/img/partners/vythiri-park.png') }}" alt="Vythiri Park" width="180" height="90" loading="eager" decoding="async"></div>
+                        <div class="swiper-slide"><img src="{{ asset('assets/img/partners/mall-of-qatar.jpg') }}" alt="Mall of Qatar" width="180" height="90" loading="eager" decoding="async"></div>
+                        <div class="swiper-slide"><img src="{{ asset('assets/img/partners/cowboy-park.webp') }}" alt="Cowboy Park" width="180" height="90" loading="eager" decoding="async"></div>
                     </div>
                 </div>
             </div>
@@ -1396,48 +1351,9 @@
          ============================================== -->
     <div class="floating-buttons">
         <a href="https://wa.me/+917025777755" class="whatsapp" target="_blank" title="Chat on WhatsApp">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" loading="lazy" decoding="async">
         </a>
     </div>
-
-    <style>
-    .floating-buttons {
-        position: fixed;
-        bottom: 170px;
-        right: 25px;
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        z-index: 1000;
-    }
-    .floating-buttons a {
-        position: relative;
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
-    .floating-buttons a:hover {
-        transform: scale(1.12);
-    }
-    .whatsapp img {
-        width: 56px;
-        height: 56px;
-        border-radius: 50%;
-        box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
-    }
-    @media (max-width: 767px) {
-        .floating-buttons {
-            bottom: 160px;
-            right: 16px;
-            gap: 10px;
-        }
-        .whatsapp img {
-            width: 44px;
-            height: 44px;
-        }
-    }
-    </style>
 
     @include('partials.home-faq')
 
@@ -1528,7 +1444,7 @@
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
 
     <!-- Parallax & Kinetic Animation Controller -->
-    <script src="{{ asset("assets/js/parallax-engine.js") }}?v={{ time() }}"></script>
+    <script src="{{ asset("assets/js/parallax-engine.js") }}?v={{ filemtime(public_path('assets/js/parallax-engine.js')) }}"></script>
 
     <!-- Project Carousel Filter Controller -->
     <script>

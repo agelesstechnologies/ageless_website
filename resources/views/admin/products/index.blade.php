@@ -32,7 +32,7 @@
                     <td>
                         <a href="{{ route('admin.products.edit', $product) }}" class="btn btn-sm btn-warning">Edit</a>
 
-                        <form action="{{ route('admin.products.destroy', $product) }}" method="POST" style="display:inline-block">
+                        <form class="!tw-inline-block" action="{{ route('admin.products.destroy', $product) }}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button class="btn btn-sm btn-danger" onclick="return confirm('Delete product?')">Delete</button>

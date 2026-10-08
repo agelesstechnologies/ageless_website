@@ -1,0 +1,10 @@
+/* Blend the brochure logos' pale paper backgrounds into the white carousel. */
+.home-page .sponsor-section {
+    background-color: #fff;
+}
+.home-page .sponsor-carousel .swiper-slide img.brochure-partner-logo,
+.home-page .sponsor-carousel .swiper-slide:hover img.brochure-partner-logo {
+    filter: brightness(1.08);
+    mix-blend-mode: multiply;
+    background-color: transparent;
+}

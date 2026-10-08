@@ -21,6 +21,10 @@ trait HasCatalogImage
             return asset('assets/img/'.rawurlencode($replacements[$this->image]));
         }
 
+        if ($this->image && str_starts_with($this->image, 'assets/img/')) {
+            return asset($this->image);
+        }
+
         return $this->image
             ? asset('storage/'.$this->image)
             : asset('assets/img/roller1.jpg');

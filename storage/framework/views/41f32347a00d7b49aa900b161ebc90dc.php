@@ -7,7 +7,7 @@
 <!-- ==============================================
      PROJECT DETAILS HERO SECTION
      ============================================== -->
-<section class="projects-hero-wrapper" style="min-height: 52vh; padding: 130px 0 65px 0; background-image: url('<?php echo e(asset('hero-park-ferriswheel.jpg')); ?>');">
+<section class="projects-hero-wrapper ![min-height:52vh] ![padding:130px_0_65px_0] ![background-image:var(--hero-image)]" style="--hero-image: url('<?php echo e(asset('hero-park-ferriswheel.jpg')); ?>');">
     <div class="projects-hero-overlay"></div>
     <div class="projects-hero-mesh"></div>
 
@@ -16,10 +16,10 @@
             <div class="col-lg-10">
                 <div class="projects-hero-badge wow fadeInDown" data-wow-delay="100ms">
                     <span class="badge-pulse-dot"></span>
-                    <span><a href="<?php echo e(url('/projects')); ?>" style="color: inherit; text-decoration: none;">Projects Portfolio</a> • Case Study</span>
+                    <span><a class="!tw-text-inherit !tw-no-underline" href="<?php echo e(url('/projects')); ?>">Projects Portfolio</a> • Case Study</span>
                 </div>
 
-                <h1 class="projects-hero-title wow fadeInUp" data-wow-delay="200ms" style="font-size: clamp(2.2rem, 4.2vw, 3.6rem);">
+                <h1 class="projects-hero-title wow fadeInUp ![font-size:clamp(2.2rem,_4.2vw,_3.6rem)]" data-wow-delay="200ms">
                     <?php echo e($project->title); ?>
 
                 </h1>
@@ -38,16 +38,16 @@
 <!-- ==============================================
      PROJECT DETAILS CONTENT & SPECS
      ============================================== -->
-<section class="padding" style="background: #ffffff; padding: 80px 0;">
+<section class="padding ![background:#ffffff] ![padding:80px_0]">
     <div class="container">
         <div class="row gy-5 align-items-center">
             <!-- Project Media Frame -->
             <div class="col-lg-6">
                 <div class="story-media-showcase">
-                    <div class="story-main-img-card" style="box-shadow: 0 20px 50px rgba(11, 23, 39, 0.12);">
-                        <img src="<?php echo e($project->image_url); ?>" alt="<?php echo e($project->title); ?>" style="height: 460px;">
+                    <div class="story-main-img-card ![box-shadow:0_20px_50px_rgba(11,_23,_39,_0.12)]">
+                        <img class="![height:460px]" src="<?php echo e($project->image_url); ?>" alt="<?php echo e($project->title); ?>">
                     </div>
-                    <div class="story-floating-badge" style="bottom: -15px; left: -10px;">
+                    <div class="story-floating-badge ![bottom:-15px] ![left:-10px]">
                         <div class="floating-badge-icon">
                             <i class="las la-award"></i>
                         </div>
@@ -66,12 +66,12 @@
 
                 </div>
                 
-                <h2 style="font-family: 'Poppins', sans-serif; font-size: 2.2rem; text-transform: uppercase; color: #0b1727; margin-bottom: 20px;">
+                <h2 class="![font-family:'Poppins',_sans-serif] ![font-size:2.2rem] !tw-uppercase ![color:#0b1727] ![margin-bottom:20px]">
                     <?php echo e($project->title); ?>
 
                 </h2>
 
-                <div class="story-body-para mb-4" style="font-size: 1rem; line-height: 1.8; color: #475569;">
+                <div class="story-body-para mb-4 ![font-size:1rem] ![line-height:1.8] ![color:#475569]">
                     <?php if($project->description): ?>
                         <?php echo nl2br(e($project->description)); ?>
 
@@ -107,7 +107,7 @@
                         <i class="las la-phone-volume"></i>
                         <span>Plan a Similar Project</span>
                     </a>
-                    <a href="<?php echo e(route('projects.index')); ?>" class="btn-card-details" style="padding: 12px 24px;">
+                    <a href="<?php echo e(route('projects.index')); ?>" class="btn-card-details ![padding:12px_24px]">
                         <i class="las la-arrow-left"></i>
                         <span>Back to All Projects</span>
                     </a>
@@ -120,8 +120,8 @@
 <!-- ==============================================
      DEVELOPER PARTNERSHIP ADVANTAGES
      ============================================== -->
-<section class="about-advantage-section" style="padding: 70px 0;">
-    <div class="container position-relative" style="z-index: 2;">
+<section class="about-advantage-section ![padding:70px_0]">
+    <div class="container position-relative ![z-index:2]">
         <div class="row g-4">
             <div class="col-md-4">
                 <div class="advantage-card">

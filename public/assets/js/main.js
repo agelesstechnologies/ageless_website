@@ -4,8 +4,8 @@
 (function ($) {
     "use strict";
 
-    // Preloader
-    $(window).on('load', function () {
+    // Show the page when its DOM is ready; media can continue loading.
+    $(document).ready(function () {
         $('body').addClass('loaded');
     });
 
@@ -493,7 +493,7 @@
     });
 
     // Auto-load Animated Kite Cursor
-    if (!document.getElementById('kite-cursor-js') && window.matchMedia && !window.matchMedia('(pointer: coarse)').matches) {
+    if (!document.body.classList.contains('contact-page') && !document.getElementById('kite-cursor-js') && window.matchMedia && !window.matchMedia('(pointer: coarse)').matches) {
         var ks = document.createElement('script');
         ks.id = 'kite-cursor-js';
         ks.src = document.querySelector('script[src*="main.js"]') ? document.querySelector('script[src*="main.js"]').src.replace('main.js', 'kite-cursor.js') : '/assets/js/kite-cursor.js';

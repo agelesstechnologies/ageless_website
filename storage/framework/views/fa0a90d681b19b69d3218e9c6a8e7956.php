@@ -1,13 +1,15 @@
+<?php $__env->startPush('tailwind_styles'); ?>
+<?php echo $__env->make('partials.tailwind.aos', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.blog-page', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.blog-responsive', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php $__env->stopPush(); ?>
+
+
+
 <?php $__env->startSection('title', 'Amusement Park Industry Insights & Guides | Ageless'); ?>
 <?php $__env->startSection('meta_description', 'Explore amusement park industry insights, ride planning guides and entertainment project ideas from Ageless Entertainments in India.'); ?>
 <?php $__env->startSection('canonical', url('/blog')); ?>
 <?php $__env->startSection('body_class', 'blog-page'); ?>
-
-<?php $__env->startPush('styles'); ?>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
-<link rel="stylesheet" href="<?php echo e(asset('assets/css/blog-page.css')); ?>?v=<?php echo e(filemtime(public_path('assets/css/blog-page.css'))); ?>">
-<link rel="stylesheet" href="<?php echo e(asset('assets/css/blog-responsive.css')); ?>?v=<?php echo e(filemtime(public_path('assets/css/blog-responsive.css'))); ?>">
-<?php $__env->stopPush(); ?>
 
 <?php $__env->startSection('content'); ?>
 

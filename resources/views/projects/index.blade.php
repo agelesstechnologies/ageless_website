@@ -1,3 +1,9 @@
+@push('tailwind_styles')
+@include('partials.tailwind.projects-responsive')
+@include('partials.tailwind.aos')
+@include('partials.tailwind.projects-index-1')
+@endpush
+
 @extends('layouts.app')
 
 @section('title', 'Amusement Park Projects in India | Ageless')
@@ -6,16 +12,7 @@
 @section('canonical', url('/projects'))
 @section('body_class', 'projects-page')
 
-@push('styles')
-<link rel="stylesheet" href="{{ asset('assets/css/projects-responsive.css') }}?v={{ filemtime(public_path('assets/css/projects-responsive.css')) }}">
-@endpush
-
 @section('content')
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
-<style>
-    [data-aos]:not(.aos-init) { opacity: 1; transform: none; }
-</style>
 
 <!-- ==============================================
      1. PROJECTS PORTFOLIO HERO SECTION
@@ -120,7 +117,7 @@
 <!-- ==============================================
      2. SELECTED PROJECTS PORTFOLIO SECTION
      ============================================== -->
-<section class="padding" id="portfolio" style="background: #f8fafc; padding: 90px 0;">
+<section class="padding ![background:#f8fafc] ![padding:90px_0]" id="portfolio">
     <div class="container">
         
         <!-- Header -->
@@ -128,10 +125,10 @@
             <div class="section-pill-tag">
                 <i class="las la-layer-group"></i> Selected Works
             </div>
-            <h2 class="about-story-heading" style="margin-bottom: 12px;">
+            <h2 class="about-story-heading ![margin-bottom:12px]">
                 Engineered Landmarks. <span class="gradient-word">Measurable Outcomes.</span>
             </h2>
-            <p style="font-family: 'Poppins', sans-serif; font-size: 1.05rem; color: #64748b; max-width: 750px; margin: 0 auto;">
+            <p class="![font-family:'Poppins',_sans-serif] ![font-size:1.05rem] ![color:#64748b] ![max-width:750px] ![margin:0_auto]">
                 Explore representative amusement park projects in India across outdoor, aerial, immersive and indoor formats.
             </p>
         </div>
@@ -178,9 +175,9 @@
      ============================================== -->
 <section class="about-cta-section projects-cta-section">
     <div class="about-cta-glow"></div>
-    <div class="container position-relative" style="z-index: 2;">
+    <div class="container position-relative ![z-index:2]">
         <div class="about-cta-box" data-aos="fade-up">
-            <div class="section-pill-tag" style="background: rgba(245, 161, 0, 0.15); color: #f5a100; border-color: rgba(245, 161, 0, 0.35);">
+            <div class="section-pill-tag ![background:rgba(245,_161,_0,_0.15)] ![color:#f5a100] ![border-color:rgba(245,_161,_0,_0.35)]">
                 <i class="las la-rocket"></i> Your Next Landmark Starts Here
             </div>
 
@@ -201,7 +198,7 @@
                     <i class="las la-cubes"></i>
                     <span>Explore Ride Catalog</span>
                 </a>
-                <a href="tel:+917025777755" class="btn-glass-secondary" style="border-color: rgba(245, 161, 0, 0.4); color: #f5a100;">
+                <a href="tel:+917025777755" class="btn-glass-secondary ![border-color:rgba(245,_161,_0,_0.4)] ![color:#f5a100]">
                     <i class="las la-phone-volume"></i>
                     <span>+91 7025 777 755</span>
                 </a>
@@ -222,7 +219,7 @@
             <img src="{{ asset('assets/img/roller1.jpg') }}" alt="Project preview" id="caseStudyModalImg">
             <div class="modal-media-overlay"></div>
             <div class="modal-media-info">
-                <p class="text-uppercase fw-bold mb-1" style="font-size: 0.8rem; letter-spacing: 0.15em; color: #f5a100;" id="caseStudyModalMeta">
+                <p class="text-uppercase fw-bold mb-1 ![font-size:0.8rem] ![letter-spacing:0.15em] ![color:#f5a100]" id="caseStudyModalMeta">
                     Location • Year
                 </p>
                 <h3 class="modal-project-title" id="caseStudyModalTitle">Project Name</h3>
@@ -233,14 +230,14 @@
             <div class="row g-4">
                 <!-- Left: Overview & Scope -->
                 <div class="col-lg-7">
-                    <h4 class="text-uppercase fw-bold mb-2" style="font-size: 0.85rem; letter-spacing: 0.1em; color: #f5a100;">
+                    <h4 class="text-uppercase fw-bold mb-2 ![font-size:0.85rem] ![letter-spacing:0.1em] ![color:#f5a100]">
                         Project Overview &amp; Client Goal
                     </h4>
-                    <p class="text-light" style="font-size: 0.95rem; line-height: 1.8;" id="caseStudyModalOverview">
+                    <p class="text-light ![font-size:0.95rem] ![line-height:1.8]" id="caseStudyModalOverview">
                         Project overview text goes here.
                     </p>
 
-                    <h4 class="text-uppercase fw-bold mt-4 mb-3" style="font-size: 0.85rem; letter-spacing: 0.1em; color: #f5a100;">
+                    <h4 class="text-uppercase fw-bold mt-4 mb-3 ![font-size:0.85rem] ![letter-spacing:0.1em] ![color:#f5a100]">
                         Scope of Work
                     </h4>
                     <div id="caseStudyModalScope" class="d-flex flex-column gap-2">
@@ -250,8 +247,8 @@
 
                 <!-- Right: Technical Specs -->
                 <div class="col-lg-5">
-                    <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 20px;">
-                        <h4 class="text-uppercase fw-bold mb-3" style="font-size: 0.85rem; letter-spacing: 0.1em; color: #f5a100;">
+                    <div class="![background:rgba(255,255,255,0.05)] ![border:1px_solid_rgba(255,255,255,0.1)] ![border-radius:16px] ![padding:20px]">
+                        <h4 class="text-uppercase fw-bold mb-3 ![font-size:0.85rem] ![letter-spacing:0.1em] ![color:#f5a100]">
                             Technical Specs
                         </h4>
                         <table class="specs-data-table" id="caseStudyModalSpecsTable">
@@ -329,7 +326,7 @@
                 <span>Request Initial Consultation</span>
                 <i class="las la-paper-plane"></i>
             </button>
-            <p class="text-center text-muted small mt-2 mb-0" style="font-size: 0.78rem;">
+            <p class="text-center text-muted small mt-2 mb-0 ![font-size:0.78rem]">
                 Your details are kept strictly confidential and used only to respond to this project enquiry.
             </p>
         </form>

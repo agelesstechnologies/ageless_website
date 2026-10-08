@@ -33,7 +33,7 @@
                     <td>
                         <a href="{{ route('admin.projects.edit', $project) }}" class="btn btn-sm btn-warning">Edit</a>
 
-                        <form action="{{ route('admin.projects.destroy', $project) }}" method="POST" style="display:inline-block">
+                        <form class="!tw-inline-block" action="{{ route('admin.projects.destroy', $project) }}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button class="btn btn-sm btn-danger" onclick="return confirm('Delete project?')">Delete</button>

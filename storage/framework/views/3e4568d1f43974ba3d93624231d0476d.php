@@ -1,5 +1,22 @@
 <!doctype html>
-    <html class="no-js" lang="en">
+    <html lang="en" class="no-js <?php echo $__env->make('partials.tailwind.bootstrap', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.animate', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.keyframe-animation', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.line-awesome', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.construction-icons', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.odometer', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.nice-select', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.swiper', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.venobox', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.slider', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.common-style', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.main', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.parallax-home', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.responsive', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.partials-clean-navigation-1', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.website-chat', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.kite-cursor', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->yieldPushContent('tailwind_styles'); ?>">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,26 +25,13 @@
 
         <title>Agelessindia</title>
 
-        <link rel="shortcut icon" type="image/png" href="<?php echo e(asset('assets/img/favicon.png')); ?>?v=<?php echo e(time()); ?>">
-    <link rel="icon" type="image/png" href="<?php echo e(asset('assets/img/favicon.png')); ?>?v=<?php echo e(time()); ?>">
+        <link rel="shortcut icon" type="image/png" href="<?php echo e(asset('assets/img/favicon.png')); ?>?v=<?php echo e(filemtime(public_path('assets/img/favicon.png'))); ?>">
+    <link rel="icon" type="image/png" href="<?php echo e(asset('assets/img/favicon.png')); ?>?v=<?php echo e(filemtime(public_path('assets/img/favicon.png'))); ?>">
 
-        <link rel="stylesheet" href="<?php echo e(asset("assets/css/bootstrap.min.css")); ?>">
-        <link rel="stylesheet" href="<?php echo e(asset("assets/css/animate.min.css")); ?>">
-        <link rel="stylesheet" href="<?php echo e(asset("assets/css/keyframe-animation.css")); ?>">
-        <link rel="stylesheet" href="<?php echo e(asset("assets/css/line-awesome.min.css")); ?>">
-        <link rel="stylesheet" href="<?php echo e(asset("assets/css/construction-icons.css")); ?>">
-        <link rel="stylesheet" href="<?php echo e(asset("assets/css/odometer.min.css")); ?>">
-        <link rel="stylesheet" href="<?php echo e(asset("assets/css/nice-select.css")); ?>">
-        <link rel="stylesheet" href="<?php echo e(asset("assets/css/swiper.min.css")); ?>">
-        <link rel="stylesheet" href="<?php echo e(asset("assets/css/venobox.min.css")); ?>">
-        <link rel="stylesheet" href="<?php echo e(asset("assets/css/slider.css")); ?>">
-        <link rel="stylesheet" href="<?php echo e(asset("assets/css/common-style.css")); ?>">
-        <link rel="stylesheet" href="<?php echo e(asset("assets/css/main.css")); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/parallax-home.css')); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/scroll-animate.css')); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/responsive.css')); ?>?v=<?php echo e(time()); ?>">
-
-    </head>
+        <?php echo $__env->make('partials.clean-navigation', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+    
+    <link rel="stylesheet" href="<?php echo e(asset('assets/css/tailwind.css')); ?>?v=<?php echo e(filemtime(public_path('assets/css/tailwind.css'))); ?>">
+</head>
 
     <body>
         
@@ -36,38 +40,7 @@
         </div>
         <!-- Site Preloader -->
 
-           <header class="main-header wonder-nav-header">
-        <div class="container">
-            <div class="nav-capsule-wrapper">
-                <div class="site-logo">
-                    <a href="<?php echo e(url('/')); ?>"><img src="<?php echo e(asset("assets/img/nlogo.png")); ?>" alt="Ageless Logo"></a>
-                </div>
-                <div class="header-menu-wrap">
-                    <ul class="nav-menu">
-                        <li><a href="<?php echo e(url('/')); ?>"><i class="las la-home nav-item-icon"></i><span>Home</span></a></li>
-                        <li><a href="<?php echo e(url('/about-company')); ?>"><i class="las la-building nav-item-icon"></i><span>About Us</span></a></li>
-                        <li><a href="<?php echo e(url('/projects')); ?>"><i class="las la-layer-group nav-item-icon"></i><span>Projects</span></a></li>
-                        <li><a href="<?php echo e(url('/products')); ?>"><i class="las la-cubes nav-item-icon"></i><span>Products</span></a></li>
-                        <li class="dropdown_menu"><a href="<?php echo e(route('blog.index')); ?>"><i class="las la-newspaper nav-item-icon"></i><span>Blog</span></a></li>
-                        <li><a href="<?php echo e(url('/contact')); ?>"><i class="las la-envelope nav-item-icon"></i><span>Contact</span></a></li>
-                    </ul>
-                </div>
-                <div class="nav-right-actions">
-                    <a href="tel:+917025777755" class="nav-call-btn">
-                        <span class="call-icon-wrap"><i class="las la-phone-volume"></i></span>
-                        <span>Call Us</span>
-                    </a>
-                    <div class="mobile-menu-icon">
-                        <div class="burger-menu">
-                            <div class="line-menu line-half first-line"></div>
-                            <div class="line-menu"></div>
-                            <div class="line-menu line-half last-line"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+           <?php echo $__env->make('partials.navigation', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
 
      <!--/.main-header-->
 
@@ -117,7 +90,7 @@
                             <h4>Factory Manufacture</h4>
                             <div class="progress-box">
                                 <div class="progress">
-                                    <div class="progress-bar wow progress-bar-anim" data-wow-delay="0ms" data-wow-duration="2000ms" role="progressbar" style="--progress-bar-count: 85%">
+                                    <div class="progress-bar wow progress-bar-anim ![--progress-bar-count:85%]" data-wow-delay="0ms" data-wow-duration="2000ms" role="progressbar">
                                         <span>85%</span>
                                     </div>
                                 </div>
@@ -127,7 +100,7 @@
                             <h4>General Construction</h4>
                             <div class="progress-box">
                                 <div class="progress">
-                                    <div class="progress-bar wow progress-bar-anim" data-wow-delay="200ms" data-wow-duration="2000ms" role="progressbar" style="--progress-bar-count: 75%">
+                                    <div class="progress-bar wow progress-bar-anim ![--progress-bar-count:75%]" data-wow-delay="200ms" data-wow-duration="2000ms" role="progressbar">
                                         <span>75%</span>
                                     </div>
                                 </div>

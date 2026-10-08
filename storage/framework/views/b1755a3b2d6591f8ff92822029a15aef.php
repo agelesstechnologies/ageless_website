@@ -1,56 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html class="<?php echo $__env->make('partials.tailwind.pages-test-1', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.website-chat', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->yieldPushContent('tailwind_styles'); ?>">
 <head>
 <meta charset="UTF-8">
 <title>Instagram Hack</title>
-<style>
-    body {
-        background: #000;
-        color: #0f0;
-        font-family: monospace;
-        text-align: center;
-    }
 
-    .box {
-        margin-top: 80px;
-    }
-
-    input {
-        padding: 10px;
-        width: 250px;
-        border: 2px solid #0f0;
-        background: #000;
-        color: #0f0;
-        font-size: 18px;
-    }
-
-    button {
-        margin-top: 20px;
-        padding: 10px 30px;
-        border: 2px solid #0f0;
-        background: #000;
-        color: #0f0;
-        font-size: 18px;
-        cursor: pointer;
-    }
-
-    #terminal {
-        margin-top: 40px;
-        width: 80%;
-        height: 320px;
-        border: 2px solid #0f0;
-        padding: 10px;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: left;
-        overflow-y: auto;
-        white-space: pre-line;
-    }
-
-    .hide {
-        display: none;
-    }
-</style>
+    
+    <link rel="stylesheet" href="<?php echo e(asset('assets/css/tailwind.css')); ?>?v=<?php echo e(filemtime(public_path('assets/css/tailwind.css'))); ?>">
 </head>
 <body>
 

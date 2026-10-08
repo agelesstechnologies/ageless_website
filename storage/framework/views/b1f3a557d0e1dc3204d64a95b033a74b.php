@@ -1,5 +1,5 @@
 <!-- website-chat:start -->
-<link rel="stylesheet" href="<?php echo e(asset('assets/css/website-chat.css')); ?>?v=<?php echo e(filemtime(public_path('assets/css/website-chat.css'))); ?>">
+
 <div id="website-chat" data-endpoint="<?php echo e(route('chat.answer')); ?>" data-token="<?php echo e(csrf_token()); ?>" data-timeout="<?php echo e(config('chat.provider') === 'ollama' ? (config('chat.ollama_timeout') + 15) * 1000 : 40000); ?>">
     <section id="website-chat-panel" class="website-chat-panel" aria-label="Ageless website assistant" hidden>
         <header class="website-chat-header">

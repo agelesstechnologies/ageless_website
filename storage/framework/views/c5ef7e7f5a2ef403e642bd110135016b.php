@@ -1,5 +1,20 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html lang="en" class="no-js <?php echo $__env->make('partials.tailwind.poppins-font', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.bootstrap', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.animate', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.keyframe-animation', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.line-awesome', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.construction-icons', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.common-style', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.main', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.parallax-home', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.contact-page', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.responsive', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.contact-responsive', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.partials-clean-navigation-1', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.website-chat', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.kite-cursor', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->yieldPushContent('tailwind_styles'); ?>">
 
 <head>
     <meta charset="utf-8">
@@ -20,25 +35,17 @@
     <meta property="og:image" content="<?php echo e(asset('hero-park.png')); ?>">
 
     <!-- Favicon & Google Fonts -->
-    <link rel="shortcut icon" type="image/png" href="<?php echo e(asset('assets/img/favicon.png')); ?>?v=<?php echo e(time()); ?>">
-    <link rel="icon" type="image/png" href="<?php echo e(asset('assets/img/favicon.png')); ?>?v=<?php echo e(time()); ?>">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="<?php echo e(asset('assets/img/favicon.png')); ?>?v=<?php echo e(filemtime(public_path('assets/img/favicon.png'))); ?>">
+    <link rel="icon" type="image/png" href="<?php echo e(asset('assets/img/favicon.png')); ?>?v=<?php echo e(filemtime(public_path('assets/img/favicon.png'))); ?>">
+    
 
     <!-- Core Styles -->
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/bootstrap.min.css')); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/animate.min.css')); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/keyframe-animation.css')); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/line-awesome.min.css')); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/construction-icons.css')); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/common-style.css')); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/main.css')); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/parallax-home.css')); ?>?v=<?php echo e(time()); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/contact-page.css')); ?>?v=<?php echo e(time()); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/responsive.css')); ?>?v=<?php echo e(time()); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/contact-responsive.css')); ?>?v=<?php echo e(filemtime(public_path('assets/css/contact-responsive.css'))); ?>">
 
     <!-- SweetAlert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <?php echo $__env->make('partials.clean-navigation', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+    
+    <link rel="stylesheet" href="<?php echo e(asset('assets/css/tailwind.css')); ?>?v=<?php echo e(filemtime(public_path('assets/css/tailwind.css'))); ?>">
 </head>
 
 <body class="contact-page">
@@ -48,68 +55,7 @@
     </div>
 
     <!-- Main Navigation Header (Wonderla Capsule Navbar) -->
-    <header class="main-header wonder-nav-header">
-        <div class="container">
-            <div class="nav-capsule-wrapper">
-                <div class="site-logo">
-                    <a href="<?php echo e(url('/')); ?>"><img src="<?php echo e(asset('assets/img/nlogo.png')); ?>" alt="Ageless Entertainments Logo"></a>
-                </div>
-                <div class="header-menu-wrap">
-                    <ul class="nav-menu">
-                        <li>
-                            <a href="<?php echo e(url('/')); ?>">
-                                <i class="las la-home nav-item-icon"></i>
-                                <span>Home</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="<?php echo e(url('/about-company')); ?>">
-                                <i class="las la-building nav-item-icon"></i>
-                                <span>About Us</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="<?php echo e(url('/projects')); ?>">
-                                <i class="las la-layer-group nav-item-icon"></i>
-                                <span>Projects</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="<?php echo e(url('/products')); ?>">
-                                <i class="las la-cubes nav-item-icon"></i>
-                                <span>Products</span>
-                            </a>
-                        </li>
-                        <li class="dropdown_menu">
-                            <a href="<?php echo e(route('blog.index')); ?>">
-                                <i class="las la-newspaper nav-item-icon"></i>
-                                <span>Blog</span>
-                            </a>
-                        </li>
-                        <li class="active">
-                            <a href="<?php echo e(url('/contact')); ?>">
-                                <i class="las la-envelope nav-item-icon"></i>
-                                <span>Contact</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="nav-right-actions">
-                    <a href="tel:+917025777755" class="nav-call-btn">
-                        <span class="call-icon-wrap"><i class="las la-phone-volume"></i></span>
-                        <span>Call Us</span>
-                    </a>
-                    <button type="button" class="mobile-menu-icon" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-navigation">
-                        <span class="burger-menu" aria-hidden="true">
-                            <span class="line-menu line-half first-line"></span>
-                            <span class="line-menu"></span>
-                            <span class="line-menu line-half last-line"></span>
-                        </span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </header>
+    <?php echo $__env->make('partials.navigation', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
 
     <!-- Popup Search Box -->
     <div id="popup-search-box">
@@ -160,7 +106,7 @@
                 <div class="col-lg-5">
                     <div class="contact-info-panel wow fadeInLeft" data-wow-delay="200ms">
                         <div>
-                            <div class="section-pill-tag mb-2" style="background: rgba(245, 161, 0, 0.15); color: #f5a100; border-color: rgba(245, 161, 0, 0.35);">
+                            <div class="section-pill-tag mb-2 ![background:rgba(245,_161,_0,_0.15)] ![color:#f5a100] ![border-color:rgba(245,_161,_0,_0.35)]">
                                 <i class="las la-headset"></i> Quick Connect
                             </div>
                             <h2 class="info-panel-title">
@@ -237,27 +183,6 @@
                         <form id="cleanContactForm" action="<?php echo e(route('contact.submit')); ?>" method="POST">
                             <?php echo csrf_field(); ?>
 
-                            <!-- Project Type Selection -->
-                            <label class="clean-input-label mb-2">What type of entertainment project are you planning?</label>
-                            <div class="form-project-pills">
-                                <div>
-                                    <input type="radio" name="project_type" value="Theme & Amusement Park" id="proj_theme" class="project-pill-input d-none" checked>
-                                    <label for="proj_theme" class="project-pill-label">Theme Park</label>
-                                </div>
-                                <div>
-                                    <input type="radio" name="project_type" value="Adventure & Aerial Park" id="proj_adv" class="project-pill-input d-none">
-                                    <label for="proj_adv" class="project-pill-label">Adventure Park</label>
-                                </div>
-                                <div>
-                                    <input type="radio" name="project_type" value="Indoor FEC & Edutainment" id="proj_fec" class="project-pill-input d-none">
-                                    <label for="proj_fec" class="project-pill-label">Indoor FEC</label>
-                                </div>
-                                <div>
-                                    <input type="radio" name="project_type" value="12D Cinema / Dome" id="proj_cinema" class="project-pill-input d-none">
-                                    <label for="proj_cinema" class="project-pill-label">Cinema / Dome</label>
-                                </div>
-                            </div>
-
                             <!-- Inputs Grid -->
                             <div class="row g-3">
                                 <div class="col-sm-6">
@@ -314,9 +239,6 @@
                                 <i class="las la-paper-plane"></i>
                             </button>
 
-                            <p class="text-center text-muted small mt-3 mb-0" style="font-size: 0.8rem;">
-                                <i class="las la-lock text-warning"></i> We respect your privacy. Your information is securely encrypted and used strictly to respond to this inquiry.
-                            </p>
                         </form>
                     </div>
                 </div>

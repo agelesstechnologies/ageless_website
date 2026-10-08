@@ -1,19 +1,18 @@
+<?php $__env->startPush('tailwind_styles'); ?>
+<?php echo $__env->make('partials.tailwind.products-responsive', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.aos', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.products-index-1', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php $__env->stopPush(); ?>
+
+
+
 <?php $__env->startSection('title', 'Amusement Park Rides & Attractions Manufacturer India | Ageless'); ?>
 <?php $__env->startSection('meta_description', 'Ageless Entertainments manufactures and installs world-class amusement rides, high-altitude adventure courses, 12D/360° cinemas, and turnkey indoor entertainment centers across India.'); ?>
 <?php $__env->startSection('meta_keywords', 'amusement park rides manufacturer, buy amusement park rides, amusement rides for sale, amusement park equipment, indoor amusement rides, adventure park manufacturer'); ?>
 <?php $__env->startSection('canonical', url('/products')); ?>
 <?php $__env->startSection('body_class', 'products-page'); ?>
 
-<?php $__env->startPush('styles'); ?>
-<link rel="stylesheet" href="<?php echo e(asset('assets/css/products-responsive.css')); ?>?v=<?php echo e(filemtime(public_path('assets/css/products-responsive.css'))); ?>">
-<?php $__env->stopPush(); ?>
-
 <?php $__env->startSection('content'); ?>
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
-<style>
-    [data-aos]:not(.aos-init) { opacity: 1; transform: none; }
-</style>
 
 <!-- ==============================================
      1. PRODUCTS & SOLUTIONS HERO SECTION
@@ -114,12 +113,16 @@
 <!-- ==============================================
      2. PRODUCTS & SOLUTIONS SHOWCASE CATALOG
      ============================================== -->
-<section class="padding products-catalog-section" style="background: var(--primary-white, #ffff); padding: 80px 0;">
+<section class="padding products-catalog-section ![background:var(--primary-white,_#ffff)] ![padding:80px_0]">
     <div class="container">
         
+        <div class="text-center mb-4">
+            <h2 class="four-worlds-title">Explore <span class="![color:#f5a100]">Our Solutions</span></h2>
+        </div>
+
         <!-- Interactive Category Filter Bar -->
-        <div class="product-filter-bar wow fadeInUp" data-wow-delay="100ms">
-            <button type="button" class="filter-tab-btn is-active" data-filter="all">
+        <div class="product-filter-bar wow fadeInUp" data-wow-delay="100ms" role="group" aria-label="Filter solutions by category">
+            <button type="button" class="filter-tab-btn is-active" data-filter="all" aria-pressed="true" aria-controls="product-results">
                 <i class="las la-border-all"></i>
                 <span>All Solutions</span>
             </button>
@@ -142,14 +145,14 @@
         </div>
 
         <!-- Four Worlds Highlight Banner (Dynamic based on selected category) -->
-        <div class="four-worlds-banner" data-aos="zoom-out-up" id="category-intro-banner">
+        <div class="four-worlds-banner" data-aos="zoom-out-up" id="category-intro-banner" aria-live="polite" aria-atomic="true">
             <div class="row align-items-center">
                 <div class="col-lg-8">
-                    <div class="section-pill-tag mb-2" style="background: rgba(245, 161, 0, 0.15); color: #f5a100; border-color: rgba(245, 161, 0, 0.35);">
+                    <div class="section-pill-tag mb-2 ![background:rgba(245,_161,_0,_0.15)] ![color:#f5a100] ![border-color:rgba(245,_161,_0,_0.35)]">
                         <i class="las la-star"></i> <span id="banner-category-tag">Complete Attraction Portfolio</span>
                     </div>
                     <h2 class="four-worlds-title" id="banner-category-title">
-                        Four Worlds. <span style="color: #f5a100;">One Engineering Partner.</span>
+                        All <span class="![color:#f5a100]">Solutions</span>
                     </h2>
                     <p class="four-worlds-desc" id="banner-category-desc">
                         Explore our end-to-end turnkey park attraction ecosystems, certified mechanical fabrication, and high-capacity entertainment platforms.
@@ -165,7 +168,7 @@
         </div>
 
         <!-- Product Grid -->
-        <div class="product-showcase-grid">
+        <div class="product-showcase-grid" id="product-results" aria-labelledby="banner-category-title">
             
             <?php $__empty_1 = true; $__currentLoopData = $products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
                 <?php echo $__env->make('products.card', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
@@ -174,6 +177,7 @@
             <?php endif; ?>
 
         </div>
+        <p id="product-filter-empty" class="text-center mt-4 !tw-hidden" role="status">No solutions are available in this category yet. Please explore another category.</p>
     </div>
 </section>
 
@@ -186,10 +190,10 @@
             <div class="section-pill-tag">
                 <i class="las la-project-diagram"></i> Execution Methodology
             </div>
-            <h2 class="about-story-heading" style="margin-bottom: 12px;">
+            <h2 class="about-story-heading ![margin-bottom:12px]">
                 A Disciplined Path From <span class="gradient-word">Idea to Opening Day</span>
             </h2>
-            <p style="font-family: 'Poppins', sans-serif; font-size: 1.05rem; color: #030d28; max-width: 750px; margin: 0 auto;">
+            <p class="![font-family:'Poppins',_sans-serif] ![font-size:1.05rem] ![color:#030d28] ![max-width:750px] ![margin:0_auto]">
                 A battle-tested 5-step delivery process ensuring your rides and entertainment destinations open on time, within budget, and fully certified.
             </p>
         </div>
@@ -245,9 +249,9 @@
      ============================================== -->
 <section class="about-cta-section products-cta-section">
     <div class="about-cta-glow"></div>
-    <div class="container position-relative" style="z-index: 2;">
+    <div class="container position-relative ![z-index:2]">
         <div class="about-cta-box" data-aos="fade-up">
-            <div class="section-pill-tag" style="background: #030d28; color: #f5a100; border-color: #030d28;">
+            <div class="section-pill-tag ![background:#030d28] ![color:#f5a100] ![border-color:#030d28]">
                 <i class="las la-rocket"></i> Your Next Landmark Starts Here
             </div>
 
@@ -268,7 +272,7 @@
                     <i class="las la-layer-group"></i>
                     <span>Explore Flagship Projects</span>
                 </a>
-                <a href="tel:+917025777755" class="btn-glass-secondary" style="border-color: rgba(245, 161, 0, 0.4); color: #f5a100;">
+                <a href="tel:+917025777755" class="btn-glass-secondary ![border-color:rgba(245,_161,_0,_0.4)] ![color:#f5a100]">
                     <i class="las la-phone-volume"></i>
                     <span>+91 7025 777 755</span>
                 </a>
@@ -293,7 +297,7 @@
         <form action="<?php echo e(route('contact.submit')); ?>" method="POST" class="modal-form-body" id="parkQuoteForm">
             <?php echo csrf_field(); ?>
             
-            <label class="d-block text-dark fw-bold mb-2" style="font-size: 0.9rem;">What are you planning?</label>
+            <label class="d-block text-dark fw-bold mb-2 ![font-size:0.9rem]">What are you planning?</label>
             <div class="type-select-pills">
                 <div>
                     <input type="radio" name="project_type" value="Amusement Park" id="type_amusement" class="type-pill-input d-none" checked>
@@ -341,7 +345,7 @@
                 <span>Submit Consultation Request</span>
                 <i class="las la-paper-plane"></i>
             </button>
-            <p class="text-center text-muted small mt-2 mb-0" style="font-size: 0.78rem;">
+            <p class="text-center text-muted small mt-2 mb-0 ![font-size:0.78rem]">
                 Your details are kept strictly confidential and used only to respond to this enquiry.
             </p>
         </form>
@@ -357,39 +361,46 @@ document.addEventListener('DOMContentLoaded', function() {
     var bannerTag = document.getElementById('banner-category-tag');
     var bannerTitle = document.getElementById('banner-category-title');
     var bannerDesc = document.getElementById('banner-category-desc');
+    var emptyMessage = document.getElementById('product-filter-empty');
 
     var categoryData = {
         all: {
             tag: 'Complete Attraction Portfolio',
-            title: 'Four Worlds. <span style="color: #f5a100;">One Engineering Partner.</span>',
+            title: 'All <span class="![color:#f5a100]">Solutions</span>',
             desc: 'Explore our end-to-end turnkey park attraction ecosystems, certified mechanical fabrication, and high-capacity entertainment platforms.'
         },
         outdoor: {
             tag: 'Outdoor Theme Parks & Rides',
-            title: 'Outdoor Theme Parks & <span style="color: #f5a100;">High-Thrill Rides</span>',
+            title: 'Outdoor <span class="![color:#f5a100]">Theme Parks</span>',
             desc: 'High-impact attractions engineered for reliability, peak guest capacity, and repeatable delight across outdoor terrains.'
         },
         adventure: {
             tag: 'Adventure & Sky Rides',
-            title: 'Adventure & <span style="color: #f5a100;">Aerial Sky Rides</span>',
+            title: 'Adventure & <span class="![color:#f5a100]">Aerial Parks</span>',
             desc: 'Terrain-led adventure experiences designed around controlled thrills, continuous-belay systems, and robust international safety.'
         },
         cinema: {
             tag: 'Immersive Cinema & VR',
-            title: 'Immersive Cinema & <span style="color: #f5a100;">Next-Gen VR Domes</span>',
+            title: 'Immersive Cinema & <span class="![color:#f5a100]">VR</span>',
             desc: 'Multi-sensory 12D theatres, 360° geodesic domes, and flying platforms that turn storytelling into unforgettable high-throughput anchors.'
         },
         indoor: {
             tag: 'Indoor Family Entertainment',
-            title: 'Indoor FECs & <span style="color: #f5a100;">Edutainment Centers</span>',
+            title: 'Indoor FEC & <span class="![color:#f5a100]">Edutainment</span>',
             desc: 'All-weather destinations blending interactive active play, children’s traffic education, sub-zero snow parks, and strong commercial ROI.'
         }
     };
 
     filterBtns.forEach(function(btn) {
+        btn.setAttribute('aria-pressed', btn.classList.contains('is-active') ? 'true' : 'false');
+        btn.setAttribute('aria-controls', 'product-results');
         btn.addEventListener('click', function() {
-            filterBtns.forEach(function(b) { b.classList.remove('is-active'); });
+            filterBtns.forEach(function(b) {
+                b.classList.remove('is-active');
+                b.setAttribute('aria-pressed', 'false');
+            });
             this.classList.add('is-active');
+            this.setAttribute('aria-pressed', 'true');
 
             var filterValue = this.getAttribute('data-filter');
 
@@ -401,14 +412,17 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             // Filter Product Items
+            var visibleCount = 0;
             productItems.forEach(function(item) {
                 var itemCat = item.getAttribute('data-category');
                 if (filterValue === 'all' || itemCat === filterValue) {
                     item.style.display = 'flex';
+                    visibleCount++;
                 } else {
                     item.style.display = 'none';
                 }
             });
+            emptyMessage.style.display = visibleCount === 0 && productItems.length > 0 ? 'block' : 'none';
             if (window.AOS) AOS.refresh();
         });
     });

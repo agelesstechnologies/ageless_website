@@ -1,5 +1,27 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html lang="en" class="no-js <?php echo $__env->make('partials.tailwind.poppins-font', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.aos', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.pages-about-company-1', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.bootstrap', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.animate', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.keyframe-animation', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.line-awesome', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.construction-icons', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.odometer', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.nice-select', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.swiper', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.venobox', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.slider', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.common-style', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.main', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.parallax-home', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.about-page', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.kite-cursor', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.responsive', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.about-responsive', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.partials-clean-navigation-1', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.website-chat', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->yieldPushContent('tailwind_styles'); ?>">
 
 <head>
     <meta charset="utf-8">
@@ -26,32 +48,11 @@
     <meta name="twitter:image" content="<?php echo e(asset('hero-park.png')); ?>">
 
     <!-- Favicon & Google Fonts -->
-    <link rel="shortcut icon" type="image/png" href="<?php echo e(asset('assets/img/favicon.png')); ?>?v=<?php echo e(time()); ?>">
-    <link rel="icon" type="image/png" href="<?php echo e(asset('assets/img/favicon.png')); ?>?v=<?php echo e(time()); ?>">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="<?php echo e(asset('assets/img/favicon.png')); ?>?v=<?php echo e(filemtime(public_path('assets/img/favicon.png'))); ?>">
+    <link rel="icon" type="image/png" href="<?php echo e(asset('assets/img/favicon.png')); ?>?v=<?php echo e(filemtime(public_path('assets/img/favicon.png'))); ?>">
+    
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
-    <style>
-        [data-aos]:not(.aos-init) { opacity: 1; transform: none; }
-    </style>
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/bootstrap.min.css')); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/animate.min.css')); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/keyframe-animation.css')); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/line-awesome.min.css')); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/construction-icons.css')); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/odometer.min.css')); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/nice-select.css')); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/swiper.min.css')); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/venobox.min.css')); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/slider.css')); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/common-style.css')); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/main.css')); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/parallax-home.css')); ?>?v=<?php echo e(time()); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/about-page.css')); ?>?v=<?php echo e(time()); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/kite-cursor.css')); ?>?v=<?php echo e(time()); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/responsive.css')); ?>?v=<?php echo e(time()); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('assets/css/about-responsive.css')); ?>?v=<?php echo e(filemtime(public_path('assets/css/about-responsive.css'))); ?>">
 
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
@@ -76,6 +77,9 @@
       "email": "sales@agelessind.com"
     }
     </script>
+    <?php echo $__env->make('partials.clean-navigation', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+    
+    <link rel="stylesheet" href="<?php echo e(asset('assets/css/tailwind.css')); ?>?v=<?php echo e(filemtime(public_path('assets/css/tailwind.css'))); ?>">
 </head>
 
 <body class="about-page">
@@ -85,68 +89,7 @@
     </div>
 
     <!-- Main Navigation Header (Wonderla-Style Capsule Navbar) -->
-    <header class="main-header wonder-nav-header">
-        <div class="container">
-            <div class="nav-capsule-wrapper">
-                <div class="site-logo">
-                    <a href="<?php echo e(url('/')); ?>"><img src="<?php echo e(asset('assets/img/nlogo.png')); ?>" alt="Ageless Entertainments Logo"></a>
-                </div>
-                <div class="header-menu-wrap">
-                    <ul class="nav-menu">
-                        <li>
-                            <a href="<?php echo e(url('/')); ?>">
-                                <i class="las la-home nav-item-icon"></i>
-                                <span>Home</span>
-                            </a>
-                        </li>
-                        <li class="active">
-                            <a href="<?php echo e(url('/about-company')); ?>">
-                                <i class="las la-building nav-item-icon"></i>
-                                <span>About Us</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="<?php echo e(url('/projects')); ?>">
-                                <i class="las la-layer-group nav-item-icon"></i>
-                                <span>Projects</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="<?php echo e(url('/products')); ?>">
-                                <i class="las la-cubes nav-item-icon"></i>
-                                <span>Products</span>
-                            </a>
-                        </li>
-                        <li class="dropdown_menu">
-                            <a href="<?php echo e(route('blog.index')); ?>">
-                                <i class="las la-newspaper nav-item-icon"></i>
-                                <span>Blog</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="<?php echo e(url('/contact')); ?>">
-                                <i class="las la-envelope nav-item-icon"></i>
-                                <span>Contact</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="nav-right-actions">
-                    <a href="tel:+917025777755" class="nav-call-btn">
-                        <span class="call-icon-wrap"><i class="las la-phone-volume"></i></span>
-                        <span>Call Us</span>
-                    </a>
-                    <button type="button" class="mobile-menu-icon" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-navigation">
-                        <span class="burger-menu" aria-hidden="true">
-                            <span class="line-menu line-half first-line"></span>
-                            <span class="line-menu"></span>
-                            <span class="line-menu line-half last-line"></span>
-                        </span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </header>
+    <?php echo $__env->make('partials.navigation', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
 
     <!-- Popup Search Box -->
     <div id="popup-search-box">
@@ -221,7 +164,7 @@
                             </div>
                             <div class="stats-text-content">
                                 <div class="stats-number">10<span class="accent-plus">+</span></div>
-                                <p class="stats-label">Years of Industry Experience <br><span style="color: #f5a100; font-size: 0.8rem; font-weight: 600;">(Est. 2011)</span></p>
+                                <p class="stats-label">Years of Industry Experience <br><span class="![color:#f5a100] ![font-size:0.8rem] !tw-font-semibold">(Est. 2011)</span></p>
                             </div>
                         </div>
                     </div>
@@ -246,7 +189,7 @@
                                 <i class="las la-globe-asia"></i>
                             </div>
                             <div class="stats-text-content">
-                                <div class="stats-number" style="font-size: 1.6rem; margin-top: 4px;">PAN-INDIA<span class="accent-plus">& GLOBAL</span></div>
+                                <div class="stats-number ![font-size:1.6rem] ![margin-top:4px]">PAN-INDIA<span class="accent-plus">& GLOBAL</span></div>
                                 <p class="stats-label">Project Footprint</p>
                             </div>
                         </div>
@@ -348,13 +291,13 @@
          4. VISION & MISSION
          ============================================== -->
     <section class="about-vision-section">
-        <div class="container position-relative" style="z-index: 2;">
+        <div class="container position-relative ![z-index:2]">
             <div class="text-center mb-50" data-aos="fade-up">
-                <div class="section-pill-tag" style="background: rgba(11, 23, 39, 0.08); color: #0b1727; border-color: rgba(11, 23, 39, 0.25);">
+                <div class="section-pill-tag ![background:rgba(11,_23,_39,_0.08)] ![color:#0b1727] ![border-color:rgba(11,_23,_39,_0.25)]">
                     <i class="las la-bullseye"></i> Our North Star
                 </div>
-                <h2 style="font-family: 'Poppins', sans-serif; font-size: clamp(2rem, 3.5vw, 2.8rem); text-transform: uppercase; color: #0b1727; margin-top: 10px;">
-                    Driven by Purpose, <span style="color: #0b1727;">Guided by Excellence</span>
+                <h2 class="![font-family:'Poppins',_sans-serif] ![font-size:clamp(2rem,_3.5vw,_2.8rem)] !tw-uppercase ![color:#0b1727] ![margin-top:10px]">
+                    Driven by Purpose, <span class="![color:#0b1727]">Guided by Excellence</span>
                 </h2>
             </div>
 
@@ -369,11 +312,11 @@
                             <h3 class="vision-card-title">Our <span>Vision</span></h3>
                         </div>
                         <div class="vision-card-body">
-                            <p style="font-size: 1.05rem; line-height: 1.85; color: #475569;">
+                            <p class="![font-size:1.05rem] ![line-height:1.85] ![color:#475569]">
                                 To be the benchmark amusement park and experiential attraction builder in India and beyond, setting new standards for guest thrills, family safety, and operational longevity.
                             </p>
-                            <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid #e2e8f0; display: flex; align-items: center; gap: 12px; color: #64748b; font-size: 0.88rem;">
-                                <i class="las la-star" style="color: #f5a100; font-size: 1.2rem;"></i>
+                            <div class="![margin-top:24px] ![padding-top:20px] ![border-top:1px_solid_#e2e8f0] !tw-flex !tw-items-center ![gap:12px] ![color:#64748b] ![font-size:0.88rem]">
+                                <i class="las la-star ![color:#f5a100] ![font-size:1.2rem]"></i>
                                 <span>Setting global standards in amusement innovation</span>
                             </div>
                         </div>
@@ -384,31 +327,31 @@
                 <div class="col-lg-7" data-aos="fade-left">
                     <div class="vision-card">
                         <div class="vision-card-header">
-                            <div class="vision-card-icon" style="background: linear-gradient(135deg, rgba(0, 210, 255, 0.25), rgba(0, 210, 255, 0.05)); border-color: rgba(0, 210, 255, 0.4); color: #00d2ff;">
+                            <div class="vision-card-icon ![background:linear-gradient(135deg,_rgba(0,_210,_255,_0.25),_rgba(0,_210,_255,_0.05))] ![border-color:rgba(0,_210,_255,_0.4)] ![color:#00d2ff]">
                                 <i class="las la-rocket"></i>
                             </div>
-                            <h3 class="vision-card-title">Our <span style="color: #00d2ff;">Mission</span></h3>
+                            <h3 class="vision-card-title">Our <span class="![color:#00d2ff]">Mission</span></h3>
                         </div>
                         <div class="vision-card-body">
                             <ul class="mission-points-list">
                                 <li class="mission-point-item">
                                     <div class="mission-check-icon"><i class="las la-check"></i></div>
                                     <div>
-                                        <strong style="color: #0b1727; display: block; margin-bottom: 2px;">Tailored Engineering for Indian Conditions</strong>
+                                        <strong class="![color:#0b1727] !tw-block ![margin-bottom:2px]">Tailored Engineering for Indian Conditions</strong>
                                         To engineer world-class rides and entertainment concepts tailored to Indian climate conditions, budgets, and operational demands.
                                     </div>
                                 </li>
                                 <li class="mission-point-item">
                                     <div class="mission-check-icon"><i class="las la-check"></i></div>
                                     <div>
-                                        <strong style="color: #0b1727; display: block; margin-bottom: 2px;">End-to-End Reliability &amp; High ROI</strong>
+                                        <strong class="![color:#0b1727] !tw-block ![margin-bottom:2px]">End-to-End Reliability &amp; High ROI</strong>
                                         To deliver end-to-end reliability for park owners—maximizing footfalls, dwell time, and return on investment.
                                     </div>
                                 </li>
                                 <li class="mission-point-item">
                                     <div class="mission-check-icon"><i class="las la-check"></i></div>
                                     <div>
-                                        <strong style="color: #0b1727; display: block; margin-bottom: 2px;">Rigorous International Safety Protocols</strong>
+                                        <strong class="![color:#0b1727] !tw-block ![margin-bottom:2px]">Rigorous International Safety Protocols</strong>
                                         To uphold rigorous international safety protocols so that every ride delivers pure, worry-free joy.
                                     </div>
                                 </li>
@@ -429,10 +372,10 @@
                 <div class="section-pill-tag">
                     <i class="las la-layer-group"></i> What We Build &amp; Deliver
                 </div>
-                <h2 class="about-story-heading" style="margin-bottom: 12px;">
+                <h2 class="about-story-heading ![margin-bottom:12px]">
                     Comprehensive Park Solutions <br><span class="gradient-word">Across Every Entertainment Category</span>
                 </h2>
-                <p style="font-family: 'Poppins', sans-serif; font-size: 1.05rem; color: #0b1727; max-width: 750px; margin: 0 auto;">
+                <p class="![font-family:'Poppins',_sans-serif] ![font-size:1.05rem] ![color:#0b1727] ![max-width:750px] ![margin:0_auto]">
                     We design, manufacture, and commission attraction ecosystems built for high capacity and maximum replay value.
                 </p>
             </div>
@@ -521,15 +464,15 @@
          6. THE AGELESS ADVANTAGE (WHY CHOOSE US)
          ============================================== -->
     <section class="about-advantage-section">
-        <div class="container position-relative" style="z-index: 2;">
+        <div class="container position-relative ![z-index:2]">
             <div class="text-center mb-50" data-aos="fade-up">
-                <div class="section-pill-tag" style="background: #0b1727; color: #ffffff; border-color: #0b1727;">
+                <div class="section-pill-tag ![background:#0b1727] ![color:#ffffff] ![border-color:#0b1727]">
                     <i class="las la-award"></i> The Ageless Advantage
                 </div>
-                <h2 style="font-family: 'Poppins', sans-serif; font-size: clamp(2rem, 3.8vw, 3rem); text-transform: uppercase; color: #0b1727; margin-top: 10px;">
-                    Why Park Developers Choose <span style="color: #0b1727;">Ageless Entertainments</span>
+                <h2 class="![font-family:'Poppins',_sans-serif] ![font-size:clamp(2rem,_3.8vw,_3rem)] !tw-uppercase ![color:#0b1727] ![margin-top:10px]">
+                    Why Park Developers Choose <span class="![color:#0b1727]">Ageless Entertainments</span>
                 </h2>
-                <p style="font-family: 'Poppins', sans-serif; font-size: 1rem; color: #0b1727; max-width: 720px; margin: 0 auto;">
+                <p class="![font-family:'Poppins',_sans-serif] ![font-size:1rem] ![color:#0b1727] ![max-width:720px] ![margin:0_auto]">
                     We bring decades of combined engineering ingenuity, commercial acumen, and relentless safety dedication to every square foot.
                 </p>
             </div>
@@ -599,10 +542,10 @@
                 <div class="section-pill-tag">
                     <i class="las la-project-diagram"></i> Execution Methodology
                 </div>
-                <h2 class="about-story-heading" style="margin-bottom: 12px;">
+                <h2 class="about-story-heading ![margin-bottom:12px]">
                     How We Bring Your <span class="gradient-word">Park to Life</span>
                 </h2>
-                <p style="font-family: 'Poppins', sans-serif; font-size: 1.05rem; color: #64748b; max-width: 750px; margin: 0 auto;">
+                <p class="![font-family:'Poppins',_sans-serif] ![font-size:1.05rem] ![color:#64748b] ![max-width:750px] ![margin:0_auto]">
                     A rigorous 5-step engineering and deployment framework developed to deliver world-class amusement destinations on time and within budget.
                 </p>
             </div>
@@ -673,9 +616,9 @@
          ============================================== -->
     <section class="about-cta-section about-company-cta">
         <div class="about-cta-glow"></div>
-        <div class="container position-relative" style="z-index: 2;">
+        <div class="container position-relative ![z-index:2]">
             <div class="about-cta-box" data-aos="fade-up">
-                <div class="section-pill-tag" style="background: #0b1727; color: #ffffff; border-color: #0b1727;">
+                <div class="section-pill-tag ![background:#0b1727] ![color:#ffffff] ![border-color:#0b1727]">
                     <i class="las la-handshake"></i> Let's Build Together
                 </div>
 
@@ -696,7 +639,7 @@
                         <i class="las la-layer-group"></i>
                         <span>Explore Our Projects</span>
                     </a>
-                    <a href="tel:+917025777755" class="btn-glass-secondary" style="border-color: rgba(245, 161, 0, 0.4); color: #f5a100;">
+                    <a href="tel:+917025777755" class="btn-glass-secondary ![border-color:rgba(245,_161,_0,_0.4)] ![color:#f5a100]">
                         <i class="las la-phone-volume"></i>
                         <span>+91 7025 777 755</span>
                     </a>
@@ -785,7 +728,7 @@
     <script src="<?php echo e(asset('assets/js/vendor/wow.min.js')); ?>"></script>
     <script src="<?php echo e(asset('assets/js/mailchimp.js')); ?>"></script>
     <script src="<?php echo e(asset('assets/js/main.js')); ?>?v=<?php echo e(filemtime(public_path('assets/js/main.js'))); ?>"></script>
-    <script src="<?php echo e(asset('assets/js/kite-cursor.js')); ?>?v=<?php echo e(time()); ?>"></script>
+    <script src="<?php echo e(asset('assets/js/kite-cursor.js')); ?>?v=<?php echo e(filemtime(public_path('assets/js/kite-cursor.js'))); ?>"></script>
     <script src="<?php echo e(asset('assets/js/park-parallax.js')); ?>?v=<?php echo e(filemtime(public_path('assets/js/park-parallax.js'))); ?>"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>

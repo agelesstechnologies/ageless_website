@@ -1,56 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html class="@include('partials.tailwind.pages-test-1')
+@include('partials.tailwind.website-chat')
+@stack('tailwind_styles')">
 <head>
 <meta charset="UTF-8">
 <title>Instagram Hack</title>
-<style>
-    body {
-        background: #000;
-        color: #0f0;
-        font-family: monospace;
-        text-align: center;
-    }
 
-    .box {
-        margin-top: 80px;
-    }
-
-    input {
-        padding: 10px;
-        width: 250px;
-        border: 2px solid #0f0;
-        background: #000;
-        color: #0f0;
-        font-size: 18px;
-    }
-
-    button {
-        margin-top: 20px;
-        padding: 10px 30px;
-        border: 2px solid #0f0;
-        background: #000;
-        color: #0f0;
-        font-size: 18px;
-        cursor: pointer;
-    }
-
-    #terminal {
-        margin-top: 40px;
-        width: 80%;
-        height: 320px;
-        border: 2px solid #0f0;
-        padding: 10px;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: left;
-        overflow-y: auto;
-        white-space: pre-line;
-    }
-
-    .hide {
-        display: none;
-    }
-</style>
+    
+    <link rel="stylesheet" href="{{ asset('assets/css/tailwind.css') }}?v={{ filemtime(public_path('assets/css/tailwind.css')) }}">
 </head>
 <body>
 
