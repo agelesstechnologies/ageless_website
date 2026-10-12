@@ -1,3 +1,54 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Keep catalog photos fully visible inside the homepage's animated stack. */
+.home-page .about-image-stack {
+    max-width: 520px;
+    padding: 28px 24px 32px;
+}
+
+.home-page .image-stack-wrapper {
+    height: auto;
+    aspect-ratio: 4 / 3;
+}
+
+.home-page .stack-card {
+    width: calc(100% - 16px);
+    display: flex;
+    flex-direction: column;
+    background: #f3f5f7;
+}
+
+.home-page .stack-card img,
+.home-page .stack-card:hover img,
+.home-page .about-image-stack:hover .stack-card.is-front img {
+    width: 100%;
+    height: 0;
+    min-height: 0;
+    flex: 1 1 auto;
+    object-fit: contain;
+    transform: none;
+}
+
+.home-page .stack-card .card-category-pill {
+    position: static;
+    flex: 0 0 auto;
+    align-self: flex-start;
+    max-width: calc(100% - 24px);
+    margin: 8px 12px;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+.home-page .stack-card.is-front,
+.home-page .about-image-stack:hover .stack-card.is-front {
+    transform: translate3d(16px, 12px, 0);
+}
+
+@media (max-width: 767.98px) {
+    .home-page .about-image-stack {
+        max-width: 420px;
+        padding: 28px 20px 32px;
+    }
+}

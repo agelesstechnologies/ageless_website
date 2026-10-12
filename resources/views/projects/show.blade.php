@@ -1,3 +1,8 @@
+@push('tailwind_styles')
+@include('partials.tailwind.projects-responsive')
+@include('partials.tailwind.projects-index-1')
+@endpush
+
 @extends('layouts.app')
 
 @section('title', ($project->title ?? 'Landmark Project') . ' | Ageless Entertainments')
@@ -47,13 +52,23 @@
                     <div class="story-main-img-card ![box-shadow:0_20px_50px_rgba(11,_23,_39,_0.12)]">
                         <img class="![height:460px]" src="{{ $project->image_url }}" alt="{{ $project->title }}">
                     </div>
+                    <div class="project-detail-photo-strip" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:16px;">
+                        @foreach($project->gallery_images as $photo)
+                            <a href="{{ $photo }}" target="_blank" rel="noopener" aria-label="Open {{ $project->title }} photo {{ $loop->iteration }}">
+                                <img src="{{ $photo }}" alt="{{ $project->title }} ? photo {{ $loop->iteration }}" style="width:100%;height:110px;object-fit:cover;border-radius:12px;" loading="lazy">
+                            </a>
+                        @endforeach
+                    </div>
+                    @if($project->slug === 'funtoppia')
+                        <p class="small text-muted mt-3">Illustrative gaming photographs; final Funtoppia interiors and equipment may differ. Photos by <a href="https://unsplash.com/photos/m3hn2Kn5Bns" target="_blank" rel="noopener">Carl Raw</a> and <a href="https://unsplash.com/photos/YpRj5w60zBY" target="_blank" rel="noopener">Ciaran O'Brien</a> on Unsplash.</p>
+                    @endif
                     <div class="story-floating-badge ![bottom:-15px] ![left:-10px]">
                         <div class="floating-badge-icon">
                             <i class="las la-award"></i>
                         </div>
                         <div class="floating-badge-text">
-                            <h4>Flagship Landmark</h4>
-                            <p>Delivered on Turnkey Schedule</p>
+                            <h4>{{ $project->slug === 'funtoppia' ? 'Funtoppia Kochi' : 'Flagship Landmark' }}</h4>
+                            <p>{{ $project->slug === 'funtoppia' ? 'Planned Gaming Destination' : 'Delivered on Turnkey Schedule' }}</p>
                         </div>
                     </div>
                 </div>

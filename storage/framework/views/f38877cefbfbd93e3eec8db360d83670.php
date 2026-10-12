@@ -8,7 +8,7 @@
     </div>
     <div class="swiper-pagination"></div>
 </div>
-<?php if (! $__env->hasRenderedOnce('25ba99c8-d0db-4b97-9aae-7266d6a04f42')): $__env->markAsRenderedOnce('25ba99c8-d0db-4b97-9aae-7266d6a04f42'); ?>
+<?php if (! $__env->hasRenderedOnce('205394a3-3a5d-4eba-a6b0-84f2aca57e70')): $__env->markAsRenderedOnce('205394a3-3a5d-4eba-a6b0-84f2aca57e70'); ?>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.shooting-archery-gallery').forEach(function (gallery) {

@@ -160,117 +160,12 @@
                             <span>Years of Experience</span>
                         </div>
                         <div class="image-stack-wrapper">
-                            <!-- Roller Coaster 1 (Featured Front) -->
-                            <div class="stack-card stack-card-1 is-front" data-index="1">
-                                <img class="img-fluid" src="{{ asset("assets/img/roller1.jpg") }}" alt="Roller Coaster Rides" loading="lazy" decoding="async">
-                                <span class="card-category-pill">Roller Coasters</span>
-                                
+                            @foreach($aboutProducts as $product)
+                            <div class="stack-card {{ $loop->first ? 'stack-card-1 is-front' : ($loop->iteration === 2 ? 'is-back' : 'is-hidden-stack') }}" data-index="{{ $loop->iteration }}">
+                                <img class="img-fluid" src="{{ $product->image_url }}" alt="{{ $product->name }}" loading="lazy" decoding="async">
+                                <span class="card-category-pill">{{ $product->name }}</span>
                             </div>
-
-                            <!-- Dome Cinema 1 -->
-                            <div class="stack-card is-back" data-index="2">
-                                <img class="img-fluid" src="{{ asset("assets/img/dome1.jpg") }}" alt="Dome Cinema 360" loading="lazy" decoding="async">
-                                <span class="card-category-pill">Dome Cinema</span>
-                               
-                            </div>
-
-                            <!-- Flying Cinema 1 -->
-                            <div class="stack-card is-hidden-stack" data-index="3">
-                                <img class="img-fluid" src="{{ asset("assets/img/flying1.jpg") }}" alt="Flying Cinema Theatre" loading="lazy" decoding="async">
-                                <span class="card-category-pill">Flying Cinema</span>
-                                
-                            </div>
-
-                            <!-- Rope Rider 1 -->
-                            <div class="stack-card is-hidden-stack" data-index="4">
-                                <img class="img-fluid" src="{{ asset("assets/img/rope3.jpg") }}" alt="High Rope Rider" loading="lazy" decoding="async">
-                                <span class="card-category-pill">High Rope Rider</span>
-                                
-                            </div>
-
-                            <!-- Snow Park 1 -->
-                            <div class="stack-card is-hidden-stack" data-index="5">
-                                <img class="img-fluid" src="{{ asset("assets/img/snow1.jpg") }}" alt="Sub-Zero Snow Park" loading="lazy" decoding="async">
-                                <span class="card-category-pill">Snow Park</span>
-                                
-                            </div>
-
-                            <!-- Toy & Kids Rides 1 -->
-                            <div class="stack-card is-hidden-stack" data-index="6">
-                                <img class="img-fluid" src="{{ asset("assets/img/toy1.jpg") }}" alt="Toy & Kids Family Rides" loading="lazy" decoding="async">
-                                <span class="card-category-pill">Toy &amp; Kids Rides</span>
-                                
-                            </div>
-
-                            <!-- Park Design 1 -->
-                            <div class="stack-card is-hidden-stack" data-index="7">
-                                <img class="img-fluid" src="{{ asset("assets/img/parkdesign1.jpg") }}" alt="Turnkey Park Design" loading="lazy" decoding="async">
-                                <span class="card-category-pill">Park Design</span>
-                                
-                            </div>
-
-                            <!-- 12D & 4D Cinema 1 -->
-                            <div class="stack-card is-hidden-stack" data-index="8">
-                                <img class="img-fluid" src="{{ asset("assets/img/12d4d1.jpg") }}" alt="12D / 4D Cinema" loading="lazy" decoding="async">
-                                <span class="card-category-pill">12D / 4D Cinema</span>
-                                
-                            </div>
-
-                            <!-- Additional Roller Coaster 2 -->
-                            <div class="stack-card is-hidden-stack" data-index="9">
-                                <img class="img-fluid" src="{{ asset("assets/img/roller2.jpg") }}" alt="Thrill Roller Coaster" loading="lazy" decoding="async">
-                                <span class="card-category-pill">Roller Coasters</span>
-                                
-                            </div>
-
-                            <!-- Additional Dome Cinema 2 -->
-                            <div class="stack-card is-hidden-stack" data-index="10">
-                                <img class="img-fluid" src="{{ asset("assets/img/1920x1080.jpg") }}" alt="Geodesic Dome Cinema" loading="lazy" decoding="async">
-                                <span class="card-category-pill">Dome Cinema</span>
-                                
-                            </div>
-
-                            <!-- Additional Flying Cinema 2 -->
-                            <div class="stack-card is-hidden-stack" data-index="11">
-                                <img class="img-fluid" src="{{ asset("assets/img/flying2.jpg") }}" alt="Flight Simulator" loading="lazy" decoding="async">
-                                <span class="card-category-pill">Flying Cinema</span>
-                                
-                            </div>
-
-                            <!-- Additional Rope Rider 2 -->
-                            <div class="stack-card is-hidden-stack" data-index="12">
-                                <img class="img-fluid" src="{{ asset("assets/img/rope4.jpg") }}" alt="Low Rope Rider" loading="lazy" decoding="async">
-                                <span class="card-category-pill">Low Rope Rider</span>
-                               
-                            </div>
-
-                            <!-- Additional Snow Park 2 -->
-                            <div class="stack-card is-hidden-stack" data-index="13">
-                                <img class="img-fluid" src="{{ asset("assets/img/snow2.jpg") }}" alt="Snow Adventure Arena" loading="lazy" decoding="async">
-                                <span class="card-category-pill">Snow Park</span>
-                          
-                            </div>
-
-                            <!-- Additional Toy 2 -->
-                            <div class="stack-card is-hidden-stack" data-index="14">
-                                <img class="img-fluid" src="{{ asset("assets/img/toy2.jpg") }}" alt="Interactive Kids EV Cars" loading="lazy" decoding="async">
-                                <span class="card-category-pill">Toy &amp; Kids Rides</span>
-                                
-                            </div>
-
-                            <!-- Additional Park Design 2 -->
-                            <div class="stack-card is-hidden-stack" data-index="15">
-                                <img class="img-fluid" src="{{ asset("assets/img/parkdesign2.jpg") }}" alt="Theme Park Master Plan" loading="lazy" decoding="async">
-                                <span class="card-category-pill">Park Design</span>
-                               
-                            </div>
-
-                            <!-- Additional 12D Cinema 2 -->
-                            <div class="stack-card is-hidden-stack" data-index="16">
-                                <img class="img-fluid" src="{{ asset("assets/img/12d4d2.jpg") }}" alt="4D Multi-Sensory Cinema" loading="lazy" decoding="async">
-                                <span class="card-category-pill">12D / 4D Cinema</span>
-                               
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -330,7 +225,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="service-item-3d tilt-card wow zoom-in">
                         <div class="service-thumb">
-                            <img src="{{ asset("assets/img/amu.png") }}" alt="Amusement Park Rides" loading="lazy" decoding="async">
+                            <img src="{{ asset("assets/img/roller1.jpg") }}" alt="Amusement Park" loading="lazy" decoding="async">
                         </div>
                         <div class="service-content">
                             <h3>Amusement Park Rides</h3>
@@ -341,13 +236,13 @@
 
                 <!-- Service 2 -->
                 <div class="col-lg-3 col-md-6">
-                    <div class="service-item-3d tilt-card wow fade-in-bottom" data-wow-delay="200ms">
+                    <div class="service-item-3d tilt-card wow fade-in-bottom" data-wow-delay="300ms">
                         <div class="service-thumb">
-                            <img src="{{ asset("assets/img/traffic.png") }}" alt="Traffic Park Vehicles" loading="lazy" decoding="async">
+                            <img src="{{ asset("assets/img/products/kayaks.jpg") }}" alt="Water Park Attractions" loading="lazy" decoding="async">
                         </div>
                         <div class="service-content">
-                            <h3>Traffic Park Vehicles</h3>
-                            <p>Interactive electric vehicles designed for kids and families to learn and enjoy safe, authentic driving fun.</p>
+                            <h3>Water Park Attractions</h3>
+                            <p>From dynamic splash pads to wave pools and lazy rivers, we build refreshing aquatic adventures for all ages.</p>
                         </div>
                     </div>
                 </div>
@@ -356,11 +251,11 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="service-item-3d tilt-card wow fade-in-bottom" data-wow-delay="300ms">
                         <div class="service-thumb">
-                            <img src="{{ asset("assets/img/water.png") }}" alt="Water Park Attractions" loading="lazy" decoding="async">
+                            <img src="{{ asset("assets/img/snow3.jpg") }}" alt="Theme Parks" loading="lazy" decoding="async">
                         </div>
                         <div class="service-content">
-                            <h3>Water Park Attractions</h3>
-                            <p>From dynamic splash pads to wave pools and lazy rivers, we build refreshing aquatic adventures for all ages.</p>
+                            <h3>Theme Parks</h3>
+                            <p>Immersive themed worlds, from snow parks to fantasy zones, designed to wow visitors of every age.</p>
                         </div>
                     </div>
                 </div>
@@ -421,35 +316,6 @@
                         <h2>Manage everything for brand and <span>trademark!</span></h2>
                         <p>With cutting-edge engineering, precision 3D architectural planning, and custom manufacturing, we build world-class entertainment centers from the ground up.</p>
                     </div>
-                    <ul class="skill-wrap mb-40 wow fade-in-bottom" data-wow-delay="300ms">
-                        <li class="skill-item">
-                            <div class="d-flex justify-content-between mb-2">
-                                <h4 class="mb-0">Factory Manufacture &amp; Ride Engineering</h4>
-                                <strong>85%</strong>
-                            </div>
-                            <div class="progress-box">
-                                <div class="progress-bar-glow ![width:85%]" data-count="85%"></div>
-                            </div>
-                        </li>
-                        <li class="skill-item mt-3">
-                            <div class="d-flex justify-content-between mb-2">
-                                <h4 class="mb-0">Turnkey Construction &amp; Safety Compliance</h4>
-                                <strong>75%</strong>
-                            </div>
-                            <div class="progress-box">
-                                <div class="progress-bar-glow ![width:75%]" data-count="75%"></div>
-                            </div>
-                        </li>
-                        <li class="skill-item mt-3">
-                            <div class="d-flex justify-content-between mb-2">
-                                <h4 class="mb-0">Architecture Planning &amp; Immersive Theming</h4>
-                                <strong>95%</strong>
-                            </div>
-                            <div class="progress-box">
-                                <div class="progress-bar-glow ![width:95%]" data-count="95%"></div>
-                            </div>
-                        </li>
-                    </ul>
                     <a class="default-btn wow fade-in-bottom" data-wow-delay="400ms" href="{{ url('/about-company') }}">More About Us</a>
                 </div>
             </div>
@@ -476,7 +342,7 @@
             <div class="project-filter-wrap mb-40 wow fade-in-bottom" data-wow-delay="250ms">
                 <button type="button" class="project-filter-btn active" data-filter="all">All Attractions <span class="filter-count">53</span></button>
                 <button type="button" class="project-filter-btn" data-filter="toy">Toy &amp; Kids Rides <span class="filter-count">7</span></button>
-                <button type="button" class="project-filter-btn" data-filter="snow">Snow Park <span class="filter-count">6</span></button>
+                <button type="button" class="project-filter-btn" data-filter="snow">Snow Fantasy <span class="filter-count">6</span></button>
                 <button type="button" class="project-filter-btn" data-filter="rope">High &amp; Low Rope Rider <span class="filter-count">8</span></button>
                 <button type="button" class="project-filter-btn" data-filter="roller">Roller Coaster <span class="filter-count">6</span></button>
                 <button type="button" class="project-filter-btn" data-filter="parkdesign">Park Design <span class="filter-count">8</span></button>
@@ -594,17 +460,17 @@
                             </div>
                         </div>
 
-                        <!-- ================= SNOW PARK (1 to 6) ================= -->
+                        <!-- ================= SNOW FANTASY (1 to 6) ================= -->
                         <!-- Snow 1 -->
                         <div class="swiper-slide" data-category="snow">
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
-                                    <a class="venobox" href="{{ asset("assets/img/snow1.jpg") }}" data-gall="projects" title="Sub-Zero Indoor Snow World">
-                                        <img src="{{ asset("assets/img/snow1.jpg") }}" alt="Sub-Zero Indoor Snow World" loading="lazy" decoding="async">
+                                    <a class="venobox" href="{{ asset("assets/img/snow1.jpeg") }}" data-gall="projects" title="Sub-Zero Indoor Snow World">
+                                        <img src="{{ asset("assets/img/snow1.jpeg") }}" alt="Sub-Zero Indoor Snow World" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
-                                    <span class="category">Snow Park Attractions</span>
+                                    <span class="category">Snow Fantasy Attractions</span>
                                     <h3><a href="{{ url('/projects') }}">Sub-Zero Indoor Snow World</a></h3>
                                 </div>
                             </div>
@@ -614,12 +480,12 @@
                         <div class="swiper-slide" data-category="snow">
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
-                                    <a class="venobox" href="{{ asset("assets/img/snow2.jpg") }}" data-gall="projects" title="Real Snowfall Adventure Arena">
-                                        <img src="{{ asset("assets/img/snow2.jpg") }}" alt="Real Snowfall Adventure Arena" loading="lazy" decoding="async">
+                                    <a class="venobox" href="{{ asset("assets/img/snow2.jpeg") }}" data-gall="projects" title="Real Snowfall Adventure Arena">
+                                        <img src="{{ asset("assets/img/snow2.jpeg") }}" alt="Real Snowfall Adventure Arena" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
-                                    <span class="category">Snow Park Attractions</span>
+                                    <span class="category">Snow Fantasy Attractions</span>
                                     <h3><a href="{{ url('/projects') }}">Real Snowfall Adventure Arena</a></h3>
                                 </div>
                             </div>
@@ -629,12 +495,12 @@
                         <div class="swiper-slide" data-category="snow">
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
-                                    <a class="venobox" href="{{ asset("assets/img/snow3.jpg") }}" data-gall="projects" title="Alpine Sledging &amp; Ice Slides">
-                                        <img src="{{ asset("assets/img/snow3.jpg") }}" alt="Alpine Sledging &amp; Ice Slides" loading="lazy" decoding="async">
+                                    <a class="venobox" href="{{ asset("assets/img/snow3.jpeg") }}" data-gall="projects" title="Alpine Sledging &amp; Ice Slides">
+                                        <img src="{{ asset("assets/img/snow3.jpeg") }}" alt="Alpine Sledging &amp; Ice Slides" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
-                                    <span class="category">Snow Park Attractions</span>
+                                    <span class="category">Snow Fantasy Attractions</span>
                                     <h3><a href="{{ url('/projects') }}">Alpine Sledging &amp; Ice Slides</a></h3>
                                 </div>
                             </div>
@@ -649,7 +515,7 @@
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
-                                    <span class="category">Snow Park Attractions</span>
+                                    <span class="category">Snow Fantasy Attractions</span>
                                     <h3><a href="{{ url('/projects') }}">Cryogenic Snow Play Zone</a></h3>
                                 </div>
                             </div>
@@ -664,7 +530,7 @@
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
-                                    <span class="category">Snow Park Attractions</span>
+                                    <span class="category">Snow Fantasy Attractions</span>
                                     <h3><a href="{{ url('/projects') }}">Winter Wonderland Family Park</a></h3>
                                 </div>
                             </div>
@@ -674,13 +540,13 @@
                         <div class="swiper-slide" data-category="snow">
                             <div class="project-card-3d tilt-card">
                                 <div class="project-thumb">
-                                    <a class="venobox" href="{{ asset("assets/img/snow6.jpg") }}" data-gall="projects" title="Turnkey Snow Park Architecture">
-                                        <img src="{{ asset("assets/img/snow6.jpg") }}" alt="Turnkey Snow Park Architecture" loading="lazy" decoding="async">
+                                    <a class="venobox" href="{{ asset("assets/img/snow6.jpg") }}" data-gall="projects" title="Turnkey Snow Fantasy Architecture">
+                                        <img src="{{ asset("assets/img/snow6.jpg") }}" alt="Turnkey Snow Fantasy Architecture" loading="lazy" decoding="async">
                                     </a>
                                 </div>
                                 <div class="project-glass-info">
-                                    <span class="category">Snow Park Attractions</span>
-                                    <h3><a href="{{ url('/projects') }}">Turnkey Snow Park Architecture</a></h3>
+                                    <span class="category">Snow Fantasy Attractions</span>
+                                    <h3><a href="{{ url('/projects') }}">Turnkey Snow Fantasy Architecture</a></h3>
                                 </div>
                             </div>
                         </div>
@@ -1366,7 +1232,7 @@
                         <a class="footer-logo" href="{{ url('/') }}"><img src="{{ asset("assets/img/nlogo.png") }}" alt="logo"></a>
                         <p>Our success in creating business solutions is due in part spacially to talented committed team.</p>
                         <ul class="footer-social">
-                            <li><a href="https://www.facebook.com/agelessindia"><i class="lab la-facebook-f"></i></a></li>
+                            <li><a href="https://www.facebook.com/agelessentertainment/"><i class="lab la-facebook-f"></i></a></li>
                             <li><a href="https://www.instagram.com/ageless_entertainments_"><i class="lab la-instagram"></i></a></li>
                             <li><a href="https://www.youtube.com/@agelessentertainments"><i class="lab la-youtube"></i></a></li>
                             <li><a href="https://www.linkedin.com/in/ageless-entertainments-582290367/"><i class="lab la-linkedin-in"></i></a></li>

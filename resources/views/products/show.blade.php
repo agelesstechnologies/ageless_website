@@ -50,21 +50,33 @@
             <div class="col-lg-6">
                 <div class="story-media-showcase">
                     <div class="story-main-img-card ![box-shadow:0_20px_50px_rgba(11,_23,_39,_0.12)]">
-                        @if($product->slug === 'shooting-and-archery')
+                        @if($product->slug === 'paddle-boats')
+                            @include('products.paddle-boats-gallery', ['galleryHeight' => '440px'])
+                        @elseif($product->slug === 'marine-drive-express')
+                            @include('products.marine-drive-express-gallery', ['galleryHeight' => '440px'])
+                        @elseif($product->slug === 'jaint-swing')
+                            @include('products.jaint-swing-gallery', ['galleryHeight' => '440px'])
+                        @elseif($product->slug === 'steel-slide-hi-lite-mall-kozhikode')
+                            @include('products.steel-slide-gallery', ['galleryHeight' => '440px'])
+                        @elseif($product->slug === 'shooting-and-archery')
                             @include('products.shooting-archery-gallery', ['galleryHeight' => '440px'])
+                        @elseif(str_contains(strtolower($product->name), 'dome') && str_contains(strtolower($product->name), 'cinema'))
+                            @include('products.dome-cinema-gallery', ['galleryHeight' => '440px'])
                         @else
                             <img class="![height:440px]" src="{{ $product->image_url }}" alt="{{ $product->name }}">
                         @endif
                     </div>
+                    @if(!in_array($product->slug, ['steel-slide-hi-lite-mall-kozhikode', 'jaint-swing', 'marine-drive-express', 'paddle-boats', 'kayaks']))
                     <div class="story-floating-badge ![bottom:-15px] ![left:-10px]">
                         <div class="floating-badge-icon">
                             <i class="las la-shield-alt"></i>
                         </div>
                         <div class="floating-badge-text">
-                            <h4>{{ match ($product->slug) { 'shooting-and-archery' => 'Custom Target Zones', 'interactive-entertainments' => 'Immersive Digital Play', 'bumper-cars' => 'Classic Dodgem Fun', default => 'EN / ASTM Certified' } }}</h4>
-                            <p>{{ match ($product->slug) { 'shooting-and-archery' => 'Indoor & Outdoor Planning', 'interactive-entertainments' => 'Custom Floor & Wall Experiences', 'bumper-cars' => 'Custom Cars & Arena Planning', default => 'Full Statutory Compliance' } }}</p>
+                            <h4>{{ match ($product->slug) { 'shooting-and-archery' => 'Custom Target Zones', 'interactive-entertainments' => 'Immersive Digital Play', 'interactive-immersive-zone' => 'Interactive Digital Worlds', 'bumper-cars' => 'Classic Dodgem Fun', 'alpine-coaster' => 'Scenic Coaster Experience', default => 'EN / ASTM Certified' } }}</h4>
+                            <p>{{ match ($product->slug) { 'shooting-and-archery' => 'Indoor & Outdoor Planning', 'interactive-entertainments' => 'Custom Floor & Wall Experiences', 'interactive-immersive-zone' => 'Themed Visual Experiences', 'bumper-cars' => 'Custom Cars & Arena Planning', 'alpine-coaster' => 'Outdoor Track & Terrain Planning', default => 'Full Statutory Compliance' } }}</p>
                         </div>
                     </div>
+                    @endif
                 </div>
             </div>
 
@@ -87,6 +99,7 @@
                 </div>
 
                 <!-- Highlights Checklist -->
+                @if(!in_array($product->slug, ['interactive-immersive-zone', 'marine-drive-express', 'alpine-coaster', 'paddle-boats', 'kayaks']) && filled($product->features))
                 <div class="story-features-list mb-4">
                     @foreach(preg_split('/\r\n|\r|\n/', $product->features ?? '', -1, PREG_SPLIT_NO_EMPTY) as $feature)
                     <div class="story-feature-item">
@@ -96,6 +109,7 @@
                     @endforeach
                 </div>
 
+                @endif
                 <!-- Actions -->
                 <div class="d-flex flex-wrap gap-3 align-items-center pt-3">
                     <a href="{{ url('/contact') }}" class="btn-glow-primary">

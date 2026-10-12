@@ -1,8 +1,15 @@
+    <style>
+        .wonder-nav-header .site-logo img { max-height: clamp(40px, 4.5vw, 60px) !important; width: auto; }
+        @media (max-width: 991px) { .wonder-nav-header .site-logo img { max-height: 44px !important; } }
+        @media (max-width: 480px) { .wonder-nav-header .site-logo img { max-height: 38px !important; } }
+        html { scrollbar-gutter: stable; }
+        .footer-logo img { max-height: 90px; width: auto; }
+    </style>
 <header class="main-header wonder-nav-header">
         <div class="container">
             <div class="nav-capsule-wrapper">
                 <div class="site-logo">
-                    <a href="{{ url('/') }}"><img src="{{ asset("assets/img/nlogo.png") }}" alt="Ageless Logo"></a>
+                    <a href="{{ url('/') }}"><img src="{{ asset("assets/img/nlogo.png") }}" alt="Ageless Logo" width="1559" height="563"></a>
                 </div>
                 <div class="header-menu-wrap">
                     <ul class="nav-menu">

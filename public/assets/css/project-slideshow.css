@@ -1,0 +1,83 @@
+#projectSlideshow { position:relative; display:block; height:530px; max-width:none; margin:0 -20px; padding:0; overflow:hidden; perspective:1800px; touch-action:pan-y; cursor:grab; isolation:isolate; }
+#projectSlideshow.is-dragging { cursor:grabbing; }
+.project-ring { position:absolute; left:50%; top:40px; width:300px; height:430px; margin-left:-150px; transform-style:preserve-3d; transition:transform .8s cubic-bezier(.22,.68,0,1); }
+.is-dragging .project-ring { transition:none; }
+#projectSlideshow .project-portfolio-item { position:absolute; inset:0; width:300px; height:430px; min-width:0; display:flex; flex-direction:column; opacity:1!important; margin:0; backface-visibility:visible; border:1px solid #e2e8f0; border-radius:18px; background:#fff; box-shadow:0 18px 35px #0b17271a; transition:box-shadow .3s; user-select:none; }
+#projectSlideshow .project-portfolio-item:hover { box-shadow:0 22px 45px #0b17272b; }
+#projectSlideshow .project-portfolio-item[hidden] { display:none!important; }
+#projectSlideshow .project-card-thumb-wrap { height:220px; min-height:220px; border-radius:17px 17px 0 0; overflow:hidden; }
+#projectSlideshow img { width:100%; height:100%; object-fit:cover; pointer-events:none; }
+#projectSlideshow .project-card-body { padding:20px; flex:1; min-height:0; }
+#projectSlideshow .project-card-title { font-size:20px; line-height:1.3; margin:8px 0; }
+#projectSlideshow .project-meta-strip { font-size:10px; gap:8px; flex-wrap:wrap; }
+#projectSlideshow .project-card-summary { font-size:12px; line-height:1.6; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; margin-bottom:12px; }
+#projectSlideshow .btn-view-study { font-size:12px; }
+.project-ring-hint { text-align:center; color:#64748b; font-size:12px; letter-spacing:.04em; margin:26px 0 0; }
+.project-ring-hint span { color:#f5a100; padding:0 10px; }
+.project-slideshow-controls { display:flex; justify-content:center; align-items:center; gap:18px; margin-top:8px; }
+.project-slideshow-controls[hidden] { display:none; }
+.project-slideshow-controls button { width:44px; height:44px; border:1px solid #e2e8f0; border-radius:50%; background:#fff; color:#0b1727; font-size:22px; cursor:pointer; transition:background .2s; }
+.project-slideshow-controls button:hover { background:#f5a100; }
+.project-slideshow-controls button:disabled { opacity:.35; cursor:default; }
+.project-slideshow-controls button:focus-visible, #projectSlideshow:focus-visible { outline:2px solid #f5a100; outline-offset:4px; }
+#projectSlideStatus { color:#475569; font-size:13px; min-width:110px; text-align:center; font-variant-numeric:tabular-nums; }
+.project-ring-empty { text-align:center; padding:100px 20px; }
+@media(max-width:767px) { #projectSlideshow { height:490px; margin:0 -12px; } .project-ring { width:260px; height:410px; margin-left:-130px; } #projectSlideshow .project-portfolio-item { width:260px; height:410px; } #projectSlideshow .project-card-thumb-wrap { height:200px; min-height:200px; } .project-ring-hint { font-size:10px; } }
+@media(prefers-reduced-motion:reduce) { .project-ring { transition:none; } }
+/* Portfolio cards follow the rounded image, pill badge and two-action layout. */
+#projectSlideshow { height:590px; }
+.project-ring { width:440px; height:510px; margin-left:-220px; }
+#projectSlideshow .project-portfolio-item { width:440px; height:510px; border-radius:26px; overflow:hidden; }
+#projectSlideshow .project-card-thumb-wrap { display:block; position:relative; height:270px; min-height:270px; border-radius:25px 25px 0 0; }
+#projectSlideshow .project-category-pill { position:absolute; top:16px; left:16px; max-width:calc(100% - 32px); padding:9px 17px; border-radius:30px; border:1px solid #31dc79; background:#102c3b; color:#31dc79; font-size:12px; font-weight:700; line-height:1.4; letter-spacing:.035em; text-transform:uppercase; }
+#projectSlideshow .project-card-body { display:flex; flex-direction:column; padding:25px; }
+#projectSlideshow .project-card-title { font-size:22px; font-weight:600; line-height:1.3; letter-spacing:.02em; text-transform:uppercase; color:#142031; margin:0 0 12px; }
+#projectSlideshow .project-card-summary { color:#6c7f9d; font-size:16px; line-height:1.5; margin:0 0 18px; }
+.project-card-actions { display:flex; align-items:center; gap:12px; margin-top:auto; padding-top:18px; border-top:1px solid #edf1f7; }
+.project-card-quote, .project-card-read-more { display:flex; align-items:center; justify-content:center; gap:8px; height:54px; border-radius:30px; font-size:14px; font-weight:600; white-space:nowrap; text-decoration:none; cursor:pointer; }
+.project-card-quote { flex:1; border:0; color:#0b1727; background:#f5a100; box-shadow:0 6px 12px #f5a10026; }
+.project-card-read-more { padding:0 18px; border:1px solid #dfe7f2; background:#f8fafc; color:#142031; }
+.project-card-quote:hover { background:#ffb31a; }
+.project-card-read-more:hover { border-color:#f5a100; color:#142031; }
+.project-card-actions :focus-visible { outline:2px solid #142031; outline-offset:3px; }
+@media(max-width:767px) { #projectSlideshow { height:530px; } .project-ring { width:300px; height:450px; margin-left:-150px; } #projectSlideshow .project-portfolio-item { width:300px; height:450px; } #projectSlideshow .project-card-thumb-wrap { height:230px; min-height:230px; } #projectSlideshow .project-card-body { padding:19px; } #projectSlideshow .project-card-title { font-size:18px; } #projectSlideshow .project-card-summary { font-size:13px; } #projectSlideshow .project-category-pill { font-size:10px; padding:8px 12px; } .project-card-quote, .project-card-read-more { height:48px; font-size:12px; } .project-card-read-more { padding:0 12px; } .project-card-actions { gap:8px; padding-top:15px; } }
+#projectSlideshow .project-photo-track { display:flex; width:100%; height:100%; transition:transform .65s cubic-bezier(.22,.68,0,1); }
+#projectSlideshow .project-photo-track img { flex:0 0 100%; width:100%; min-width:100%; height:100%; object-fit:cover; }
+.project-photo-dots { position:absolute; bottom:15px; left:50%; transform:translateX(-50%); display:flex; gap:7px; padding:7px 10px; border-radius:20px; background:#0b172766; }
+.project-photo-dots span { width:6px; height:6px; border-radius:50%; background:#ffffff80; }
+.project-photo-dots span.is-active { background:#fff; }
+#projectSlideshow .project-card-summary { -webkit-line-clamp:3; }
+@media(prefers-reduced-motion:reduce) { #projectSlideshow .project-photo-track { transition:none; } }
+.project-ring, #projectSlideshow .project-portfolio-item { height:550px; }
+#projectSlideshow { height:630px; }
+@media(max-width:767px) { .project-ring, #projectSlideshow .project-portfolio-item { height:490px; } #projectSlideshow { height:570px; } }
+/* Logo artwork is shown whole on white instead of being cropped. */
+#projectSlideshow .project-card-thumb-wrap.is-logo { background:#fff; }
+#projectSlideshow .project-card-thumb-wrap.is-logo img { object-fit:contain; padding:14px; }
+/* 3D ring: short landscape cards on a cylinder you spin with a drag (ring-slider.js sets the transforms). */
+#projectSlideshow { position:relative; display:block; height:500px; max-width:none; margin:10px -20px 0; padding:0; overflow:hidden; perspective:2300px; perspective-origin:50% 40%; touch-action:pan-y; cursor:grab; user-select:none; -webkit-user-select:none; }
+#projectSlideshow.is-dragging { cursor:grabbing; }
+#projectSlideshow .project-ring { position:absolute; left:50%; top:100px; width:540px; height:300px; margin:0 0 0 -270px; transform-style:preserve-3d; transform:none; transition:none; display:block; }
+#projectSlideshow .project-portfolio-item { position:absolute; inset:0; width:540px; height:300px; min-height:0; margin:0; flex-direction:row; border-radius:18px; backface-visibility:visible; -webkit-backface-visibility:visible; transition:filter .3s, box-shadow .3s; }
+#projectSlideshow .project-portfolio-item.is-back { pointer-events:none; filter:brightness(.8); }
+#projectSlideshow .project-card-thumb-wrap { flex:0 0 42%; width:42%; height:100%; min-height:0; border-radius:17px 0 0 17px; }
+#projectSlideshow .project-card-body { flex:1; min-width:0; min-height:0; padding:20px 20px 18px; }
+#projectSlideshow .project-card-title { font-size:18px; margin:0 0 8px; letter-spacing:.01em; }
+#projectSlideshow .project-card-summary { font-size:13.5px; line-height:1.5; margin:0 0 12px; -webkit-line-clamp:3; }
+#projectSlideshow .project-category-pill { top:10px; left:10px; max-width:calc(100% - 20px); padding:6px 12px; font-size:10px; }
+#projectSlideshow .project-photo-dots { bottom:9px; padding:5px 8px; }
+#projectSlideshow .project-card-actions { padding-top:10px; gap:8px; }
+#projectSlideshow .project-card-quote, #projectSlideshow .project-card-read-more { height:42px; font-size:12px; gap:5px; }
+#projectSlideshow .project-card-read-more { padding:0 11px; }
+@media(max-width:767px) {
+    #projectSlideshow { height:340px; margin:10px -12px 0; perspective:1500px; }
+    #projectSlideshow .project-ring { width:350px; height:220px; margin-left:-175px; top:60px; }
+    #projectSlideshow .project-portfolio-item { width:350px; height:220px; border-radius:14px; }
+    #projectSlideshow .project-card-thumb-wrap { border-radius:13px 0 0 13px; }
+    #projectSlideshow .project-card-body { padding:13px; }
+    #projectSlideshow .project-card-title { font-size:14.5px; margin-bottom:5px; }
+    #projectSlideshow .project-card-summary { font-size:11.5px; margin-bottom:8px; -webkit-line-clamp:3; }
+    #projectSlideshow .project-card-quote, #projectSlideshow .project-card-read-more { height:34px; font-size:11px; }
+    #projectSlideshow .project-card-read-more { padding:0 8px; }
+    #projectSlideshow .project-category-pill { font-size:8px; padding:4px 7px; }
+}

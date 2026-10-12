@@ -1,2 +1,13 @@
-<?php $__env->startSection('content'); ?><div class="card p-4"><h4><?php echo e(isset($blog) ? 'Edit Blog' : 'Add Blog'); ?></h4><form method="POST" enctype="multipart/form-data" action="<?php echo e(isset($blog) ? route('admin.blogs.update',$blog) : route('admin.blogs.store')); ?>"><?php echo csrf_field(); ?> <?php if(isset($blog)): ?> <?php echo method_field('PUT'); ?> <?php endif; ?> <div class="mb-3"><label>Title</label><input class="form-control" name="title" value="<?php echo e(old('title',$blog->title ?? '')); ?>" required></div><div class="mb-3"><label>Excerpt</label><textarea class="form-control" name="excerpt" rows="3"><?php echo e(old('excerpt',$blog->excerpt ?? '')); ?></textarea></div><div class="mb-3"><label>Content</label><textarea class="form-control" name="content" rows="10" required><?php echo e(old('content',$blog->content ?? '')); ?></textarea></div><div class="mb-3"><label>Image</label><input class="form-control" type="file" name="image" accept="image/*"></div><div class="mb-3"><label>Status</label><select class="form-control" name="status"><option value="published" <?php if(old('status',$blog->status ?? '')=='published'): echo 'selected'; endif; ?>>Published</option><option value="draft" <?php if(old('status',$blog->status ?? '')=='draft'): echo 'selected'; endif; ?>>Draft</option></select></div><div class="mb-3"><label>Published Date</label><input class="form-control" type="date" name="published_at" value="<?php echo e(old('published_at', isset($blog) && $blog->published_at ? $blog->published_at->format('Y-m-d') : now()->format('Y-m-d'))); ?>"></div><button class="btn btn-primary">Save</button><a class="btn btn-secondary" href="<?php echo e(route('admin.blogs.index')); ?>">Back</a></form></div><?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+<div class="card p-4">
+    <h4>Add Blog</h4>
+    <form method="POST" enctype="multipart/form-data" action="<?php echo e(route('admin.blogs.store')); ?>">
+        <?php echo csrf_field(); ?>
+        <?php echo $__env->make('admin.blogs._form', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+        <button type="submit" class="btn btn-primary">Save</button>
+        <a class="btn btn-secondary" href="<?php echo e(route('admin.blogs.index')); ?>">Back</a>
+    </form>
+</div>
+<?php $__env->stopSection(); ?>
+
 <?php echo $__env->make('admin.layout', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH C:\xampp\htdocs\ageless_website\resources\views\admin\blogs\create.blade.php ENDPATH**/ ?>

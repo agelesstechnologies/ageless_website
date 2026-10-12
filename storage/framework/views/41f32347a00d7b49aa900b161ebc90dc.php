@@ -1,3 +1,10 @@
+<?php $__env->startPush('tailwind_styles'); ?>
+<?php echo $__env->make('partials.tailwind.projects-responsive', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php echo $__env->make('partials.tailwind.projects-index-1', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php $__env->stopPush(); ?>
+
+
+
 <?php $__env->startSection('title', ($project->title ?? 'Landmark Project') . ' | Ageless Entertainments'); ?>
 <?php $__env->startSection('meta_description', $project->short_description ?? 'Landmark amusement park and ride installation case study by Ageless Entertainments.'); ?>
 <?php $__env->startSection('canonical', url('/projects/' . ($project->slug ?? ''))); ?>
@@ -47,13 +54,23 @@
                     <div class="story-main-img-card ![box-shadow:0_20px_50px_rgba(11,_23,_39,_0.12)]">
                         <img class="![height:460px]" src="<?php echo e($project->image_url); ?>" alt="<?php echo e($project->title); ?>">
                     </div>
+                    <div class="project-detail-photo-strip" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:16px;">
+                        <?php $__currentLoopData = $project->gallery_images; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $photo): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <a href="<?php echo e($photo); ?>" target="_blank" rel="noopener" aria-label="Open <?php echo e($project->title); ?> photo <?php echo e($loop->iteration); ?>">
+                                <img src="<?php echo e($photo); ?>" alt="<?php echo e($project->title); ?> ? photo <?php echo e($loop->iteration); ?>" style="width:100%;height:110px;object-fit:cover;border-radius:12px;" loading="lazy">
+                            </a>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    </div>
+                    <?php if($project->slug === 'funtoppia'): ?>
+                        <p class="small text-muted mt-3">Illustrative gaming photographs; final Funtoppia interiors and equipment may differ. Photos by <a href="https://unsplash.com/photos/m3hn2Kn5Bns" target="_blank" rel="noopener">Carl Raw</a> and <a href="https://unsplash.com/photos/YpRj5w60zBY" target="_blank" rel="noopener">Ciaran O'Brien</a> on Unsplash.</p>
+                    <?php endif; ?>
                     <div class="story-floating-badge ![bottom:-15px] ![left:-10px]">
                         <div class="floating-badge-icon">
                             <i class="las la-award"></i>
                         </div>
                         <div class="floating-badge-text">
-                            <h4>Flagship Landmark</h4>
-                            <p>Delivered on Turnkey Schedule</p>
+                            <h4><?php echo e($project->slug === 'funtoppia' ? 'Funtoppia Kochi' : 'Flagship Landmark'); ?></h4>
+                            <p><?php echo e($project->slug === 'funtoppia' ? 'Planned Gaming Destination' : 'Delivered on Turnkey Schedule'); ?></p>
                         </div>
                     </div>
                 </div>

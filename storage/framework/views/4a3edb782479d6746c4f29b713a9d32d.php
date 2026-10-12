@@ -333,7 +333,7 @@
                 <div class="col-sm-6 col-lg-4">
                     <div class="seo-prod-card">
                         <div class="seo-prod-thumb">
-                            <img src="<?php echo e(asset('assets/img/snow1.jpg')); ?>" alt="Indoor Snow Park">
+                            <img src="<?php echo e(asset('assets/img/snow1.jpeg')); ?>" alt="Indoor Snow Park">
                         </div>
                         <div class="seo-prod-content">
                             <h5>Indoor Snow Park Design &amp; Installation in India | Ageless</h5>

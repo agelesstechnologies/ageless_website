@@ -273,7 +273,7 @@
                         <a class="footer-logo" href="{{ url('/') }}"><img src="{{ asset('assets/img/nlogo.png') }}" alt="Ageless Logo"></a>
                         <p>Turnkey amusement park builder, ride manufacturer, and experiential entertainment specialist delivering landmark attractions across India.</p>
                         <ul class="footer-social">
-                            <li><a href="https://www.facebook.com/agelessindia"><i class="lab la-facebook-f"></i></a></li>
+                            <li><a href="https://www.facebook.com/agelessentertainment/"><i class="lab la-facebook-f"></i></a></li>
                             <li><a href="https://www.instagram.com/ageless_entertainments_"><i class="lab la-instagram"></i></a></li>
                             <li><a href="https://www.youtube.com/@agelessentertainments"><i class="lab la-youtube"></i></a></li>
                             <li><a href="https://www.linkedin.com/in/ageless-entertainments-582290367/"><i class="lab la-linkedin-in"></i></a></li>

@@ -52,7 +52,7 @@
                                 <time datetime="{{ $blog->published_at->toDateString() }}"><i class="las la-calendar" aria-hidden="true"></i> {{ $blog->published_at->format('d M Y') }}</time>
                             @endif
                             <h3><a href="{{ route('blog.show', $blog->slug) }}">{{ $blog->title }}</a></h3>
-                            <p>{{ $blog->excerpt }}</p>
+                            <p>{!! nl2br(e($blog->excerpt)) !!}</p>
                             <a class="journal-read-link" href="{{ route('blog.show', $blog->slug) }}">Read Article <i class="las la-arrow-right" aria-hidden="true"></i></a>
                         </div>
                     </article>

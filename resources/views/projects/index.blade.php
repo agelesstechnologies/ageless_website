@@ -6,6 +6,10 @@
 
 @extends('layouts.app')
 
+@push('styles')
+<link rel="stylesheet" href="{{ asset('assets/css/project-slideshow.css') }}?v={{ filemtime(public_path('assets/css/project-slideshow.css')) }}">
+@endpush
+
 @section('title', 'Amusement Park Projects in India | Ageless')
 @section('meta_description', 'Explore landmark amusement park, theme park, and adventure ride projects across India and worldwide, delivered turnkey by Ageless Entertainments.')
 @section('meta_keywords', 'amusement park projects india, theme park projects, adventure park installation, amusement rides portfolio, park builder case studies')
@@ -133,39 +137,16 @@
             </p>
         </div>
 
-        <!-- Filter Bar -->
-        <div class="product-filter-bar wow fadeInUp" data-wow-delay="200ms">
-            <button type="button" class="filter-tab-btn is-active" data-filter="all">
-                <i class="las la-border-all"></i>
-                <span>All Projects</span>
-            </button>
-            <button type="button" class="filter-tab-btn" data-filter="theme">
-                <i class="las la-ticket-alt"></i>
-                <span>Theme &amp; Amusement Parks</span>
-            </button>
-            <button type="button" class="filter-tab-btn" data-filter="adventure">
-                <i class="las la-hiking"></i>
-                <span>Adventure &amp; Aerial Parks</span>
-            </button>
-            <button type="button" class="filter-tab-btn" data-filter="cinema">
-                <i class="las la-vr-cardboard"></i>
-                <span>Immersive Cinema &amp; Domes</span>
-            </button>
-            <button type="button" class="filter-tab-btn" data-filter="indoor">
-                <i class="las la-building"></i>
-                <span>Indoor FECs &amp; Edutainment</span>
-            </button>
-        </div>
+        <!-- Project cards: each card auto-slides through its three photos -->
 
-        <!-- Projects Grid -->
-        <div class="projects-portfolio-grid">
-            
+        <div class="projects-portfolio-grid project-slideshow" id="projectSlideshow" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Selected projects">
+            <div class="project-ring">
             @forelse($projects as $project)
                 @include('projects.card')
             @empty
                 <p>No projects available yet.</p>
             @endforelse
-
+            </div>
         </div>
     </div>
 </section>
@@ -333,30 +314,32 @@
     </div>
 </div>
 
+<script src="{{ asset('assets/js/ring-slider.js') }}?v={{ filemtime(public_path('assets/js/ring-slider.js')) }}"></script>
 <!-- Scripts for Filtering & Case Study Modals -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // 1. Projects Category Filtering
-    var filterBtns = document.querySelectorAll('.filter-tab-btn');
-    var projectItems = document.querySelectorAll('.project-portfolio-item');
+    window.initRingSlider();
 
-    filterBtns.forEach(function(btn) {
-        btn.addEventListener('click', function() {
-            filterBtns.forEach(function(b) { b.classList.remove('is-active'); });
-            this.classList.add('is-active');
-
-            var filterValue = this.getAttribute('data-filter');
-
-            projectItems.forEach(function(item) {
-                var itemCat = item.getAttribute('data-category');
-                if (filterValue === 'all' || itemCat === filterValue) {
-                    item.style.display = 'flex';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-            if (window.AOS) AOS.refresh();
-        });
+    // Each project card auto-slides through its three photos.
+    document.querySelectorAll('.project-portfolio-item').forEach(function(card, cardIndex) {
+        var track = card.querySelector('.project-photo-track');
+        var dots = card.querySelectorAll('.project-photo-dots span');
+        var total = track ? track.children.length : 0;
+        if (total < 2) return;
+        var photo = 0, hovering = false;
+        var reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+        function show(index) {
+            photo = (index + total) % total;
+            track.style.transform = 'translateX(-' + (photo * 100) + '%)';
+            dots.forEach(function(dot, i) { dot.classList.toggle('is-active', i === photo); });
+        }
+        card.addEventListener('mouseenter', function() { hovering = true; });
+        card.addEventListener('mouseleave', function() { hovering = false; });
+        if (!reduceMotion) {
+            setTimeout(function() {
+                setInterval(function() { if (!hovering && !document.hidden) show(photo + 1); }, 3000);
+            }, cardIndex * 700);
+        }
     });
 
     // 2. Case Study Modal Drawer
@@ -385,9 +368,11 @@ document.addEventListener('DOMContentLoaded', function() {
             var specs = this.getAttribute('data-specs');
 
             if (modalImg && image) modalImg.src = image;
+            if (modalImg) modalImg.alt = name;
             if (modalMeta) modalMeta.textContent = [location, year, category].filter(Boolean).join(' • ');
             if (modalTitle) modalTitle.textContent = name;
             if (modalOverview) modalOverview.textContent = overview;
+            if (capacity) modalMeta.textContent += ' · ' + capacity;
 
             // Render Scope items
             if (modalScope) {

@@ -28,5 +28,5 @@
 </select></div>
 <div class="mb-3"><label for="status">Status</label><select id="status" name="status" class="form-control"><option value="1" @selected(old('status', $project->status ?? 1) == 1)>Active</option><option value="0" @selected(old('status', $project->status ?? 1) == 0)>Inactive</option></select></div>
 <div class="mb-3"><label for="image">Image</label>
-@if(isset($project) && $project->image)<div><img src="{{ asset('storage/'.$project->image) }}" width="150" alt="Current image"></div>@endif
+@if(isset($project) && $project->image)<div><img src="{{ $project->image_url }}" width="150" alt="Current image"></div>@endif
 <input id="image" name="image" type="file" accept="image/*" class="form-control"><small>Maximum 4 MB. Leave empty to keep the current image.</small></div>

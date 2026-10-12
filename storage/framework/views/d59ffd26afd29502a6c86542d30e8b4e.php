@@ -28,8 +28,13 @@
                 <h1><?php echo e($blog->title); ?></h1>
 
                 <div class="blog-content">
-                    <?php echo $blog->content; ?>
+                    <?php if($blog->content === strip_tags($blog->content)): ?>
+                        <?php echo nl2br(e($blog->content)); ?>
 
+                    <?php else: ?>
+                        <?php echo $blog->content; ?>
+
+                    <?php endif; ?>
                 </div>
 
                 <div class="blog-actions">

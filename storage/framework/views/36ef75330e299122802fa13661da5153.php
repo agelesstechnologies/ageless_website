@@ -6,6 +6,10 @@
 
 
 
+<?php $__env->startPush('styles'); ?>
+<link rel="stylesheet" href="<?php echo e(asset('assets/css/project-slideshow.css')); ?>?v=<?php echo e(filemtime(public_path('assets/css/project-slideshow.css'))); ?>">
+<?php $__env->stopPush(); ?>
+
 <?php $__env->startSection('title', 'Amusement Park Projects in India | Ageless'); ?>
 <?php $__env->startSection('meta_description', 'Explore landmark amusement park, theme park, and adventure ride projects across India and worldwide, delivered turnkey by Ageless Entertainments.'); ?>
 <?php $__env->startSection('meta_keywords', 'amusement park projects india, theme park projects, adventure park installation, amusement rides portfolio, park builder case studies'); ?>
@@ -157,15 +161,24 @@
             </button>
         </div>
 
-        <!-- Projects Grid -->
-        <div class="projects-portfolio-grid">
+        <!-- Circular project gallery -->
+<p class="project-ring-hint">Three photos per project <span aria-hidden="true">&harr;</span> Swipe the image to explore</p>
+        <div class="projects-portfolio-grid project-slideshow" id="projectSlideshow" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Selected projects">
             
+            <div class="project-ring">
             <?php $__empty_1 = true; $__currentLoopData = $projects; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $project): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
                 <?php echo $__env->make('projects.card', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
                 <p>No projects available yet.</p>
             <?php endif; ?>
+            </div>
 
+        </div>
+        <div class="project-slideshow-controls" <?php if($projects->isEmpty()): ?> hidden <?php endif; ?>>
+            <button type="button" id="previousProjectSlide" aria-label="Previous projects" aria-controls="projectSlideshow"><i class="las la-arrow-left" aria-hidden="true"></i></button>
+            <span id="projectSlideStatus" aria-live="polite"></span>
+            <button type="button" id="nextProjectSlide" aria-label="Next projects" aria-controls="projectSlideshow"><i class="las la-arrow-right" aria-hidden="true"></i></button>
+            <button type="button" id="toggleProjectAutoplay" aria-label="Pause automatic slides" aria-pressed="false"><i class="las la-pause" aria-hidden="true"></i></button>
         </div>
     </div>
 </section>
@@ -333,31 +346,11 @@
     </div>
 </div>
 
+<script src="<?php echo e(asset('assets/js/project-ring.js')); ?>?v=<?php echo e(filemtime(public_path('assets/js/project-ring.js'))); ?>"></script>
 <!-- Scripts for Filtering & Case Study Modals -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // 1. Projects Category Filtering
-    var filterBtns = document.querySelectorAll('.filter-tab-btn');
-    var projectItems = document.querySelectorAll('.project-portfolio-item');
-
-    filterBtns.forEach(function(btn) {
-        btn.addEventListener('click', function() {
-            filterBtns.forEach(function(b) { b.classList.remove('is-active'); });
-            this.classList.add('is-active');
-
-            var filterValue = this.getAttribute('data-filter');
-
-            projectItems.forEach(function(item) {
-                var itemCat = item.getAttribute('data-category');
-                if (filterValue === 'all' || itemCat === filterValue) {
-                    item.style.display = 'flex';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-            if (window.AOS) AOS.refresh();
-        });
-    });
+    window.initProjectRing();
 
     // 2. Case Study Modal Drawer
     var caseModalOverlay = document.getElementById('caseStudyModalOverlay');
@@ -385,9 +378,11 @@ document.addEventListener('DOMContentLoaded', function() {
             var specs = this.getAttribute('data-specs');
 
             if (modalImg && image) modalImg.src = image;
+            if (modalImg) modalImg.alt = name;
             if (modalMeta) modalMeta.textContent = [location, year, category].filter(Boolean).join(' • ');
             if (modalTitle) modalTitle.textContent = name;
             if (modalOverview) modalOverview.textContent = overview;
+            if (capacity) modalMeta.textContent += ' · ' + capacity;
 
             // Render Scope items
             if (modalScope) {

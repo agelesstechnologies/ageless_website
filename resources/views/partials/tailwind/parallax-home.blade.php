@@ -472,12 +472,12 @@ s-parallax-home-00242:[text-shadow:0_2px_6px_rgba(0,_0,_0,_0.45)]
 {{--
 s-parallax-home-00243:![color:#000000]
 s-parallax-home-00244:![font-family:'Poppins',_sans-serif]
-s-parallax-home-00245:![font-size:clamp(16px,_1.2vw,_20px)]
+s-parallax-home-00245:![font-size:clamp(14px,_1.1vw,_18px)]
 s-parallax-home-00246:[line-height:1.55]
 s-parallax-home-00247:[margin-top:25px]
 s-parallax-home-00248:[max-width:650px]
-s-parallax-home-00249:tw-font-medium
-s-parallax-home-00250:[-webkit-text-stroke:1px_#ffffff]
+s-parallax-home-00249:tw-font-bold
+s-parallax-home-00250:[-webkit-text-stroke:0]
 s-parallax-home-00251:[paint-order:stroke_fill]
 s-parallax-home-00252:[text-shadow:none]
 --}}

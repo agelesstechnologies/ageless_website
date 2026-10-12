@@ -10,7 +10,8 @@
         const previous = controls.querySelector('[data-arc-prev]');
         const next = controls.querySelector('[data-arc-next]');
         const counter = controls.querySelector('.journal-carousel-count');
-        let active = 0;
+        // Start near the middle so the available cards fan out on both sides.
+        let active = Math.floor((cards.length - 1) / 2);
         let step = 13;
         let drag = null;
         let suppressClick = false;
@@ -59,7 +60,7 @@
         controls.hidden = false;
         carousel.querySelector('.journal-carousel-hint').hidden = cards.length < 2;
         measure();
-        select(0);
+        select(active);
 
         previous.addEventListener('click', () => select(active - 1));
         next.addEventListener('click', () => select(active + 1));

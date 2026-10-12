@@ -1,1 +1,14 @@
-@extends('admin.layout')@section('content')<div class="card p-4"><h4>{{ isset($blog) ? 'Edit Blog' : 'Add Blog' }}</h4><form method="POST" enctype="multipart/form-data" action="{{ isset($blog) ? route('admin.blogs.update',$blog) : route('admin.blogs.store') }}">@csrf @isset($blog) @method('PUT') @endisset <div class="mb-3"><label>Title</label><input class="form-control" name="title" value="{{ old('title',$blog->title ?? '') }}" required></div><div class="mb-3"><label>Excerpt</label><textarea class="form-control" name="excerpt" rows="3">{{ old('excerpt',$blog->excerpt ?? '') }}</textarea></div><div class="mb-3"><label>Content</label><textarea class="form-control" name="content" rows="10" required>{{ old('content',$blog->content ?? '') }}</textarea></div><div class="mb-3"><label>Image</label><input class="form-control" type="file" name="image" accept="image/*"></div><div class="mb-3"><label>Status</label><select class="form-control" name="status"><option value="published" @selected(old('status',$blog->status ?? '')=='published')>Published</option><option value="draft" @selected(old('status',$blog->status ?? '')=='draft')>Draft</option></select></div><div class="mb-3"><label>Published Date</label><input class="form-control" type="date" name="published_at" value="{{ old('published_at', isset($blog) && $blog->published_at ? $blog->published_at->format('Y-m-d') : now()->format('Y-m-d')) }}"></div><button class="btn btn-primary">Save</button><a class="btn btn-secondary" href="{{ route('admin.blogs.index') }}">Back</a></form></div>@endsection
+@extends('admin.layout')
+
+@section('content')
+<div class="card p-4">
+    <h4>Edit Blog</h4>
+    <form method="POST" enctype="multipart/form-data" action="{{ route('admin.blogs.update', $blog) }}">
+        @csrf
+        @method('PUT')
+        @include('admin.blogs._form')
+        <button type="submit" class="btn btn-primary">Save</button>
+        <a class="btn btn-secondary" href="{{ route('admin.blogs.index') }}">Back</a>
+    </form>
+</div>
+@endsection

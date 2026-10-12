@@ -24,6 +24,23 @@ class DatabaseSeeder extends Seeder
         $this->call(ArcadeGamesSeeder::class);
         $this->call(RopeRiderSeeder::class);
         $this->call(RainbowSlideProductSeeder::class);
+        $this->call(SteelSlideProductSeeder::class);
+        $this->call(JaintSwingProductSeeder::class);
+        $this->call(SoftplayProductSeeder::class);
+        $this->call(InteractiveImmersiveZoneProductSeeder::class);
+        $this->call(MarineDriveExpressProductSeeder::class);
+        $this->call(AlpineCoasterProductSeeder::class);
+        $this->call(PaddleBoatsProductSeeder::class);
+        $this->call(KayaksProductSeeder::class);
+        $this->call(IndriyaAdventureProjectsSeeder::class);
+        $this->call(FuntoppiaProjectSeeder::class);
+        $this->call(ActivePlanetProjectSeeder::class);
+        $this->call(FantasyParkProjectSeeder::class);
+        $this->call(GrandLemurianParkProjectSeeder::class);
+        $this->call(MistyLandProjectSeeder::class);
+        $this->call(HiliteBoulevardProjectSeeder::class);
+        $this->call(DtpcErnakulamProjectSeeder::class);
+        $this->call(SeaviewParkProjectSeeder::class);
 
         // Ensure storage directories exist
         $productDir = public_path('storage/products');
@@ -51,9 +68,9 @@ class DatabaseSeeder extends Seeder
         // -------------------------------------------------------------
         $products = [
             [
-                'name' => 'Indoor Snow Park Design & Installation',
+                'name' => 'Snow Fantasy',
                 'slug' => 'indoor-snow-park-design-installation',
-                'image' => 'products/' . $copyImg('snow1.jpg', $productDir, 'snow-park-attraction.jpg'),
+                'image' => 'products/' . $copyImg('snow1.jpeg', $productDir, 'snow-park-attraction.jpg'),
                 'short_description' => 'Sub-zero snow play arenas, ice slides, snowfall chambers, and arctic-themed family entertainment attractions.',
                 'description' => "Ageless Entertainments engineers complete turnkey indoor snow parks featuring real snowfall generation chambers, sub-zero insulated arenas, ice slides, snow play zones, and arctic climbing walls.\n\nDesigned for malls, resorts, and standalone entertainment centers, each project includes complete thermal insulation engineering, eco-friendly refrigeration, and full guest equipment handling.",
                 'sort_order' => 1,
@@ -148,7 +165,7 @@ class DatabaseSeeder extends Seeder
                 'title' => 'Arctic World Turnkey Sub-Zero Snow Experience Arena',
                 'slug' => 'arctic-world-snow-arena',
                 'category' => 'Indoor FEC',
-                'image' => 'projects/' . $copyImg('snow1.jpg', $projectDir, 'arctic-snow-project.jpg'),
+                'image' => 'projects/' . $copyImg('snow1.jpeg', $projectDir, 'arctic-snow-project.jpg'),
                 'short_description' => 'Sub-zero indoor snow entertainment center with dual ice slides, blizzard chamber, and ice cafe.',
                 'description' => "Thermal insulation envelope, industrial cryogenic snow guns, temperature management control, and turnkey guest changing infrastructure drawing thousands of visitors daily.",
             ],
@@ -165,7 +182,7 @@ class DatabaseSeeder extends Seeder
         $faqs = [
             [
                 'question' => 'What is the estimated cost to build an amusement park in India?',
-                'answer' => 'The investment varies based on land size, attraction mix, and scale. A boutique indoor family entertainment center (FEC) starts from ₹50 Lakhs to ₹2 Crores, while comprehensive regional outdoor theme parks with major rides and roller coasters range from ₹5 Crores to ₹50+ Crores. Ageless Entertainments provides end-to-end feasibility studies and budget planning.',
+                'answer' => 'The investment varies based on land size, attraction mix, and scale. A boutique indoor family entertainment center (FEC) starts from ₹50 Lakhs, while comprehensive regional outdoor theme parks with major rides and roller coasters start from ₹5 Crores. Ageless Entertainments provides end-to-end feasibility studies and budget planning.',
                 'sort_order' => 1,
                 'status' => 1,
             ],

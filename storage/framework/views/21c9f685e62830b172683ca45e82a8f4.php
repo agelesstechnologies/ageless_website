@@ -28,6 +28,6 @@
 </select></div>
 <div class="mb-3"><label for="status">Status</label><select id="status" name="status" class="form-control"><option value="1" <?php if(old('status', $project->status ?? 1) == 1): echo 'selected'; endif; ?>>Active</option><option value="0" <?php if(old('status', $project->status ?? 1) == 0): echo 'selected'; endif; ?>>Inactive</option></select></div>
 <div class="mb-3"><label for="image">Image</label>
-<?php if(isset($project) && $project->image): ?><div><img src="<?php echo e(asset('storage/'.$project->image)); ?>" width="150" alt="Current image"></div><?php endif; ?>
+<?php if(isset($project) && $project->image): ?><div><img src="<?php echo e($project->image_url); ?>" width="150" alt="Current image"></div><?php endif; ?>
 <input id="image" name="image" type="file" accept="image/*" class="form-control"><small>Maximum 4 MB. Leave empty to keep the current image.</small></div>
 <?php /**PATH C:\xampp\htdocs\ageless_website\resources\views\admin\projects\_form.blade.php ENDPATH**/ ?>

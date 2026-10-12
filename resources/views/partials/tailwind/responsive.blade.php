@@ -679,7 +679,7 @@ s-responsive-00345:[letter-spacing:clamp(1px,_0.3vw,_4px)]
 
 {{--  .hero-subtitle --}}
 {{--
-s-responsive-00346:![font-size:clamp(16px,_1.2vw,_20px)]
+s-responsive-00346:![font-size:clamp(14px,_1.1vw,_18px)]
 s-responsive-00347:[line-height:1.55]
 s-responsive-00348:[margin-bottom:clamp(16px,_2vw,_30px)]
 --}}

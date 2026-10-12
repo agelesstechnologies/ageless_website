@@ -50,21 +50,33 @@
             <div class="col-lg-6">
                 <div class="story-media-showcase">
                     <div class="story-main-img-card ![box-shadow:0_20px_50px_rgba(11,_23,_39,_0.12)]">
-                        <?php if($product->slug === 'shooting-and-archery'): ?>
+                        <?php if($product->slug === 'paddle-boats'): ?>
+                            <?php echo $__env->make('products.paddle-boats-gallery', ['galleryHeight' => '440px'], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+                        <?php elseif($product->slug === 'marine-drive-express'): ?>
+                            <?php echo $__env->make('products.marine-drive-express-gallery', ['galleryHeight' => '440px'], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+                        <?php elseif($product->slug === 'jaint-swing'): ?>
+                            <?php echo $__env->make('products.jaint-swing-gallery', ['galleryHeight' => '440px'], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+                        <?php elseif($product->slug === 'steel-slide-hi-lite-mall-kozhikode'): ?>
+                            <?php echo $__env->make('products.steel-slide-gallery', ['galleryHeight' => '440px'], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+                        <?php elseif($product->slug === 'shooting-and-archery'): ?>
                             <?php echo $__env->make('products.shooting-archery-gallery', ['galleryHeight' => '440px'], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+                        <?php elseif(str_contains(strtolower($product->name), 'dome') && str_contains(strtolower($product->name), 'cinema')): ?>
+                            <?php echo $__env->make('products.dome-cinema-gallery', ['galleryHeight' => '440px'], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
                         <?php else: ?>
                             <img class="![height:440px]" src="<?php echo e($product->image_url); ?>" alt="<?php echo e($product->name); ?>">
                         <?php endif; ?>
                     </div>
+                    <?php if(!in_array($product->slug, ['steel-slide-hi-lite-mall-kozhikode', 'jaint-swing', 'marine-drive-express', 'paddle-boats', 'kayaks'])): ?>
                     <div class="story-floating-badge ![bottom:-15px] ![left:-10px]">
                         <div class="floating-badge-icon">
                             <i class="las la-shield-alt"></i>
                         </div>
                         <div class="floating-badge-text">
-                            <h4><?php echo e(match ($product->slug) { 'shooting-and-archery' => 'Custom Target Zones', 'interactive-entertainments' => 'Immersive Digital Play', 'bumper-cars' => 'Classic Dodgem Fun', default => 'EN / ASTM Certified' }); ?></h4>
-                            <p><?php echo e(match ($product->slug) { 'shooting-and-archery' => 'Indoor & Outdoor Planning', 'interactive-entertainments' => 'Custom Floor & Wall Experiences', 'bumper-cars' => 'Custom Cars & Arena Planning', default => 'Full Statutory Compliance' }); ?></p>
+                            <h4><?php echo e(match ($product->slug) { 'shooting-and-archery' => 'Custom Target Zones', 'interactive-entertainments' => 'Immersive Digital Play', 'interactive-immersive-zone' => 'Interactive Digital Worlds', 'bumper-cars' => 'Classic Dodgem Fun', 'alpine-coaster' => 'Scenic Coaster Experience', default => 'EN / ASTM Certified' }); ?></h4>
+                            <p><?php echo e(match ($product->slug) { 'shooting-and-archery' => 'Indoor & Outdoor Planning', 'interactive-entertainments' => 'Custom Floor & Wall Experiences', 'interactive-immersive-zone' => 'Themed Visual Experiences', 'bumper-cars' => 'Custom Cars & Arena Planning', 'alpine-coaster' => 'Outdoor Track & Terrain Planning', default => 'Full Statutory Compliance' }); ?></p>
                         </div>
                     </div>
+                    <?php endif; ?>
                 </div>
             </div>
 
@@ -90,6 +102,7 @@
                 </div>
 
                 <!-- Highlights Checklist -->
+                <?php if(!in_array($product->slug, ['interactive-immersive-zone', 'marine-drive-express', 'alpine-coaster', 'paddle-boats', 'kayaks']) && filled($product->features)): ?>
                 <div class="story-features-list mb-4">
                     <?php $__currentLoopData = preg_split('/\r\n|\r|\n/', $product->features ?? '', -1, PREG_SPLIT_NO_EMPTY); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $feature): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <div class="story-feature-item">
@@ -99,6 +112,7 @@
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
 
+                <?php endif; ?>
                 <!-- Actions -->
                 <div class="d-flex flex-wrap gap-3 align-items-center pt-3">
                     <a href="<?php echo e(url('/contact')); ?>" class="btn-glow-primary">

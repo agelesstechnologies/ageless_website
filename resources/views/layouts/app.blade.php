@@ -58,7 +58,7 @@
                             <a class="footer-logo" href="{{ url('/') }}"><img src="{{ asset("assets/img/nlogo.png") }}" alt="logo"></a>
                             <p>Our success in creating business solutions is due in part spacially to talented committed team.</p>
                             <ul class="footer-social">
-                                <li><a href="https://www.facebook.com/agelessindia"><i class="lab la-facebook-f"></i></a></li>
+                                <li><a href="https://www.facebook.com/agelessentertainment/"><i class="lab la-facebook-f"></i></a></li>
                                 <li><a href="https://www.instagram.com/ageless_entertainments_"><i class="lab la-instagram"></i></a></li>
                                 <li><a href="https://www.youtube.com/@agelessentertainments"><i class="lab la-youtube"></i></a></li>
                                 <li><a href="https://www.linkedin.com/in/ageless-entertainments-582290367/"><i class="lab la-linkedin-in"></i></a></li>
@@ -82,7 +82,7 @@
                             <h3>Information</h3>
                             <ul class="footer-list">
                                 <li>
-                                    <p>A.M.A Arcade, Vallathol Junction, 4/1585, Seaport - Airport Rd, P.O, Thrikkakara, Front, Kochi, Kakkanad, Kerala 682021</p>
+                                    <p>A.M.A Arcade, Vallathol Junction, 4/1585, Seaport - Airport Rd, P.O, Thrikkakara, Kochi, Kakkanad, Kerala 682021</p>
                                 </li>
                                 <li><a href="tel:7025777755">+91 7025 777 755</a></li>
                                 <li><a href="#">sales@agelessind.com</a></li>

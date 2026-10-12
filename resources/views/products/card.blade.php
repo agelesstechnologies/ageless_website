@@ -1,11 +1,17 @@
 <div class="premium-product-card product-item" data-category="{{ $product->category_key }}" data-aos="zoom-in-down">
     <div class="card-img-wrapper">
-        @if($product->slug === 'shooting-and-archery')
+        @if($product->slug === 'jaint-swing')
+            @include('products.jaint-swing-gallery')
+        @elseif($product->slug === 'steel-slide-hi-lite-mall-kozhikode')
+            @include('products.steel-slide-gallery', ['fillCard' => true])
+        @elseif($product->slug === 'shooting-and-archery')
             @include('products.shooting-archery-gallery')
-        @elseif(str_contains(strtolower($product->name), 'snow park'))
+        @elseif(str_contains(strtolower($product->name), 'dome') && str_contains(strtolower($product->name), 'cinema'))
+            @include('products.dome-cinema-gallery')
+        @elseif(($product->slug === 'snow-park' || str_contains(strtolower($product->name), 'snow fantasy') || str_contains(strtolower($product->name), 'snow park')))
             <div class="snow-park-gallery">
                 <div class="snow-park-gallery-track">
-                @foreach(['snow1.jpg', 'snow2.jpg', 'snow3.jpg', 'snow1.jpg'] as $snowImage)
+                @foreach(['snow1.jpeg', 'snow2.jpeg', 'snow3.jpeg', 'snow1.jpeg'] as $snowImage)
                     <div class="snow-park-gallery-image" @if($loop->last) aria-hidden="true" @endif>
                         <img src="{{ asset('assets/img/' . $snowImage) }}" alt="{{ $product->name }} - view {{ $loop->iteration }}" loading="lazy" decoding="async">
                     </div>
@@ -42,6 +48,8 @@
                     @endforeach
                 </div>
             </div>
+        @elseif($product->slug === 'arcade-games')
+            <img style="display: block; width: 100%; height: 100%; max-width: none; object-fit: cover; object-position: center;" src="{{ $product->image_url }}" alt="{{ $product->name }}">
         @else
             <img src="{{ $product->image_url }}" alt="{{ $product->name }}">
         @endif
@@ -51,7 +59,7 @@
     <div class="card-content-body">
         <h3 class="card-product-title">{{ $product->name }}</h3>
         <p class="card-product-desc">{{ $product->short_description }}</p>
-        @if($product->slug !== 'interactive-entertainments')
+        @if(!in_array($product->slug, ['interactive-entertainments', 'interactive-immersive-zone', 'marine-drive-express', 'alpine-coaster']) && filled($product->features))
         <div class="card-features-chips">
             @foreach(preg_split('/\r\n|\r|\n/', $product->features ?? '', -1, PREG_SPLIT_NO_EMPTY) as $feature)
                 <span class="spec-chip"><i class="las la-check-circle"></i> {{ $feature }}</span>

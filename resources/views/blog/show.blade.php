@@ -27,7 +27,11 @@
                 <h1>{{ $blog->title }}</h1>
 
                 <div class="blog-content">
-                    {!! $blog->content !!}
+                    @if($blog->content === strip_tags($blog->content))
+                        {!! nl2br(e($blog->content)) !!}
+                    @else
+                        {!! $blog->content !!}
+                    @endif
                 </div>
 
                 <div class="blog-actions">

@@ -163,7 +163,7 @@
                                 <i class="las la-award"></i>
                             </div>
                             <div class="stats-text-content">
-                                <div class="stats-number">10<span class="accent-plus">+</span></div>
+                                <div class="stats-number">15<span class="accent-plus">+</span></div>
                                 <p class="stats-label">Years of Industry Experience <br><span class="![color:#f5a100] ![font-size:0.8rem] !tw-font-semibold">(Est. 2011)</span></p>
                             </div>
                         </div>
@@ -176,7 +176,7 @@
                                 <i class="las la-cubes"></i>
                             </div>
                             <div class="stats-text-content">
-                                <div class="stats-number">100<span class="accent-plus">+</span></div>
+                                <div class="stats-number">1000<span class="accent-plus">+</span></div>
                                 <p class="stats-label">Rides &amp; Attractions Installed</p>
                             </div>
                         </div>
@@ -657,7 +657,7 @@
                         <a class="footer-logo" href="{{ url('/') }}"><img src="{{ asset('assets/img/nlogo.png') }}" alt="Ageless Entertainments Logo"></a>
                         <p>Turnkey amusement park builder, ride manufacturer, and experiential entertainment specialist delivering landmark attractions across India.</p>
                         <ul class="footer-social">
-                            <li><a href="https://www.facebook.com/agelessindia"><i class="lab la-facebook-f"></i></a></li>
+                            <li><a href="https://www.facebook.com/agelessentertainment/"><i class="lab la-facebook-f"></i></a></li>
                             <li><a href="https://www.instagram.com/ageless_entertainments_"><i class="lab la-instagram"></i></a></li>
                             <li><a href="https://www.youtube.com/@agelessentertainments"><i class="lab la-youtube"></i></a></li>
                             <li><a href="https://www.linkedin.com/in/ageless-entertainments-582290367/"><i class="lab la-linkedin-in"></i></a></li>

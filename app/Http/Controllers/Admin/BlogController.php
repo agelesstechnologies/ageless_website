@@ -87,9 +87,9 @@ class BlogController extends Controller
     private function validated(Request $request): array
     {
         return $request->validate([
-            'title' => 'required|max:255',
-            'excerpt' => 'nullable|max:500',
-            'content' => 'required',
+            'title' => 'required|string|max:255',
+            'excerpt' => 'nullable|string',
+            'content' => 'required|string',
             'image' => 'nullable|image|max:4096',
             'status' => 'required|in:draft,published',
             'published_at' => 'nullable|date',
@@ -98,7 +98,7 @@ class BlogController extends Controller
 
     private function uniqueSlug(string $title, ?int $ignoreId = null): string
     {
-        $base = Str::slug($title);
+        $base = Str::slug($title) ?: 'blog';
         $slug = $base;
         $i = 2;
 

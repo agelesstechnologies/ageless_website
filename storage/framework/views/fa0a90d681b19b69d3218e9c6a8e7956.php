@@ -52,7 +52,7 @@
                                 <time datetime="<?php echo e($blog->published_at->toDateString()); ?>"><i class="las la-calendar" aria-hidden="true"></i> <?php echo e($blog->published_at->format('d M Y')); ?></time>
                             <?php endif; ?>
                             <h3><a href="<?php echo e(route('blog.show', $blog->slug)); ?>"><?php echo e($blog->title); ?></a></h3>
-                            <p><?php echo e($blog->excerpt); ?></p>
+                            <p><?php echo nl2br(e($blog->excerpt)); ?></p>
                             <a class="journal-read-link" href="<?php echo e(route('blog.show', $blog->slug)); ?>">Read Article <i class="las la-arrow-right" aria-hidden="true"></i></a>
                         </div>
                     </article>
