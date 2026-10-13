@@ -113,7 +113,7 @@
                                 Get In Touch with <br><span>Our Engineers</span>
                             </h2>
                             <p class="info-panel-intro">
-                                Reach out directly to our engineering headquarters in Kochi or send us a project brief. We respond to all project inquiries within 24 business hours.
+                                Reach out directly to our headquarters in Kochi or send us a project brief. We respond to all project inquiries within 24 business hours.
                             </p>
 
                             <div class="contact-cards-stack">
@@ -123,7 +123,7 @@
                                         <i class="las la-map-marked-alt"></i>
                                     </div>
                                     <div>
-                                        <div class="contact-card-label">Engineering Headquarters</div>
+                                        <div class="contact-card-label">Headquarters</div>
                                         <p class="contact-card-value">
                                             A.M.A Arcade, Vallathol Junction, 4/1585, Seaport - Airport Rd, Thrikkakara, Kakkanad, Kochi, Kerala 682021
                                         </p>
