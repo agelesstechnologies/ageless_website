@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
         $this->call(BumperCarsSeeder::class);
         $this->call(ArcadeGamesSeeder::class);
         $this->call(RopeRiderSeeder::class);
+        $this->call(RopeRiderRideProductSeeder::class);
         $this->call(RainbowSlideProductSeeder::class);
         $this->call(SteelSlideProductSeeder::class);
         $this->call(JaintSwingProductSeeder::class);

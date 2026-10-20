@@ -50,7 +50,9 @@
             <div class="col-lg-6">
                 <div class="story-media-showcase">
                     <div class="story-main-img-card ![box-shadow:0_20px_50px_rgba(11,_23,_39,_0.12)]">
-                        @if($product->slug === 'paddle-boats')
+                        @if($product->slug === 'rope-rider-ride')
+                            @include('products.rope-rider-gallery', ['galleryHeight' => '440px'])
+                        @elseif($product->slug === 'paddle-boats')
                             @include('products.paddle-boats-gallery', ['galleryHeight' => '440px'])
                         @elseif($product->slug === 'marine-drive-express')
                             @include('products.marine-drive-express-gallery', ['galleryHeight' => '440px'])
@@ -66,7 +68,7 @@
                             <img class="![height:440px]" src="{{ $product->image_url }}" alt="{{ $product->name }}">
                         @endif
                     </div>
-                    @if(!in_array($product->slug, ['steel-slide-hi-lite-mall-kozhikode', 'jaint-swing', 'marine-drive-express', 'paddle-boats', 'kayaks']))
+                    @if(!in_array($product->slug, ['rope-rider-ride', 'steel-slide-hi-lite-mall-kozhikode', 'jaint-swing', 'marine-drive-express', 'paddle-boats', 'kayaks']))
                     <div class="story-floating-badge ![bottom:-15px] ![left:-10px]">
                         <div class="floating-badge-icon">
                             <i class="las la-shield-alt"></i>

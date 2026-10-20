@@ -1,6 +1,8 @@
 <div class="premium-product-card product-item" data-category="{{ $product->category_key }}" data-aos="zoom-in-down">
     <div class="card-img-wrapper">
-        @if($product->slug === 'jaint-swing')
+        @if($product->slug === 'rope-rider-ride')
+            @include('products.rope-rider-gallery')
+        @elseif($product->slug === 'jaint-swing')
             @include('products.jaint-swing-gallery')
         @elseif($product->slug === 'steel-slide-hi-lite-mall-kozhikode')
             @include('products.steel-slide-gallery', ['fillCard' => true])
@@ -59,7 +61,7 @@
     <div class="card-content-body">
         <h3 class="card-product-title">{{ $product->name }}</h3>
         <p class="card-product-desc">{{ $product->short_description }}</p>
-        @if(!in_array($product->slug, ['interactive-entertainments', 'interactive-immersive-zone', 'marine-drive-express', 'alpine-coaster']) && filled($product->features))
+        @if(!in_array($product->slug, ['rope-rider-ride', 'interactive-entertainments', 'interactive-immersive-zone', 'marine-drive-express', 'alpine-coaster']) && filled($product->features))
         <div class="card-features-chips">
             @foreach(preg_split('/\r\n|\r|\n/', $product->features ?? '', -1, PREG_SPLIT_NO_EMPTY) as $feature)
                 <span class="spec-chip"><i class="las la-check-circle"></i> {{ $feature }}</span>

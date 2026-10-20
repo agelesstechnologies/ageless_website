@@ -1,6 +1,8 @@
 <div class="premium-product-card product-item" data-category="<?php echo e($product->category_key); ?>" data-aos="zoom-in-down">
     <div class="card-img-wrapper">
-        <?php if($product->slug === 'jaint-swing'): ?>
+        <?php if($product->slug === 'rope-rider-ride'): ?>
+            <?php echo $__env->make('products.rope-rider-gallery', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+        <?php elseif($product->slug === 'jaint-swing'): ?>
             <?php echo $__env->make('products.jaint-swing-gallery', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
         <?php elseif($product->slug === 'steel-slide-hi-lite-mall-kozhikode'): ?>
             <?php echo $__env->make('products.steel-slide-gallery', ['fillCard' => true], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
@@ -59,7 +61,7 @@
     <div class="card-content-body">
         <h3 class="card-product-title"><?php echo e($product->name); ?></h3>
         <p class="card-product-desc"><?php echo e($product->short_description); ?></p>
-        <?php if(!in_array($product->slug, ['interactive-entertainments', 'interactive-immersive-zone', 'marine-drive-express', 'alpine-coaster']) && filled($product->features)): ?>
+        <?php if(!in_array($product->slug, ['rope-rider-ride', 'interactive-entertainments', 'interactive-immersive-zone', 'marine-drive-express', 'alpine-coaster']) && filled($product->features)): ?>
         <div class="card-features-chips">
             <?php $__currentLoopData = preg_split('/\r\n|\r|\n/', $product->features ?? '', -1, PREG_SPLIT_NO_EMPTY); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $feature): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <span class="spec-chip"><i class="las la-check-circle"></i> <?php echo e($feature); ?></span>
