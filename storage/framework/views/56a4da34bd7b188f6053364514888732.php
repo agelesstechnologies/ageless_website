@@ -8,14 +8,14 @@
     </div>
     <div class="swiper-pagination"></div>
 </div>
-<?php if (! $__env->hasRenderedOnce('3af04f7f-a92e-4e36-bc83-c9ee8f22afa8')): $__env->markAsRenderedOnce('3af04f7f-a92e-4e36-bc83-c9ee8f22afa8'); ?>
+<?php if (! $__env->hasRenderedOnce('efd1ee40-d2fd-4acf-a056-978552edee03')): $__env->markAsRenderedOnce('efd1ee40-d2fd-4acf-a056-978552edee03'); ?>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.rope-rider-gallery').forEach(function (gallery) {
         new Swiper(gallery, {
             loop: true,
             speed: 650,
-            autoplay: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? false : { delay: 3500, disableOnInteraction: false, pauseOnMouseEnter: true },
+            autoplay: { delay: 3000, disableOnInteraction: false, pauseOnMouseEnter: true },
             pagination: { el: gallery.querySelector('.swiper-pagination'), clickable: true },
             a11y: { enabled: true }
         });

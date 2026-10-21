@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
         new Swiper(gallery, {
             loop: true,
             speed: 650,
-            autoplay: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? false : { delay: 3500, disableOnInteraction: false, pauseOnMouseEnter: true },
+            autoplay: { delay: 3000, disableOnInteraction: false, pauseOnMouseEnter: true },
             pagination: { el: gallery.querySelector('.swiper-pagination'), clickable: true },
             a11y: { enabled: true }
         });
