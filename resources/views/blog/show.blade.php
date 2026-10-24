@@ -3,6 +3,15 @@
 @include('partials.tailwind.blog-show-1')
 @endpush
 
+@push('styles')
+<style>
+    /* Blog detail page only: show the same translucent nav bar as the scrolled state, even at the top of the page */
+    html body.blog-page.blog-article-page header.main-header.wonder-nav-header .nav-capsule-wrapper {
+        background: rgba(0, 0, 0, 0.65) !important;
+    }
+</style>
+@endpush
+
 @extends('layouts.app')
 @section('body_class', 'blog-page blog-article-page')
 

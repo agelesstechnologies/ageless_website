@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Faq;
 use App\Models\Product;
+use App\Models\Project;
 
 class FaqController extends Controller
 {
@@ -17,7 +18,9 @@ class FaqController extends Controller
                     && is_file(public_path($product->image));
             })->values();
 
-        return view('pages.home', compact('faqs', 'aboutProducts'));
+        $projects = Project::where('status', 1)->orderBy('sort_order')->orderBy('id')->get();
+
+        return view('pages.home', compact('faqs', 'aboutProducts', 'projects'));
     }
 
     public function index()

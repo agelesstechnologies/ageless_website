@@ -1,5 +1,5 @@
 <div class="premium-product-card product-item" data-category="{{ $product->category_key }}" data-aos="zoom-in-down">
-    <div class="card-img-wrapper">
+    <div class="card-img-wrapper" data-href="{{ route('products.show', $product->slug) }}" role="link" tabindex="0" aria-label="View details of {{ $product->name }}" style="cursor:pointer">
         @if($product->slug === 'rope-rider-ride')
             @include('products.rope-rider-gallery')
         @elseif($product->slug === 'jaint-swing')

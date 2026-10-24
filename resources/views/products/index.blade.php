@@ -427,6 +427,14 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Clicking a product image opens its details page
+    document.querySelectorAll('.card-img-wrapper[data-href]').forEach(function(wrap) {
+        wrap.addEventListener('click', function() { window.location.href = wrap.dataset.href; });
+        wrap.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); window.location.href = wrap.dataset.href; }
+        });
+    });
+
     // 2. Quote Modal Controls
     var modalOverlay = document.getElementById('quoteModalOverlay');
     var closeBtn = document.getElementById('closeQuoteModalBtn');

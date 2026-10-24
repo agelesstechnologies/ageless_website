@@ -3,6 +3,15 @@
 <?php echo $__env->make('partials.tailwind.blog-show-1', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
 <?php $__env->stopPush(); ?>
 
+<?php $__env->startPush('styles'); ?>
+<style>
+    /* Blog detail page only: show the same translucent nav bar as the scrolled state, even at the top of the page */
+    html body.blog-page.blog-article-page header.main-header.wonder-nav-header .nav-capsule-wrapper {
+        background: rgba(0, 0, 0, 0.65) !important;
+    }
+</style>
+<?php $__env->stopPush(); ?>
+
 
 <?php $__env->startSection('body_class', 'blog-page blog-article-page'); ?>
 

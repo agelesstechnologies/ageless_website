@@ -461,6 +461,122 @@
     </section>
 
     <!-- ==============================================
+         5A. RESEARCH & DEVELOPMENT
+         ============================================== -->
+    <section class="about-advantage-section" id="research-development">
+        <div class="container position-relative ![z-index:2]">
+            <div class="text-center mb-50" data-aos="fade-up">
+                <div class="section-pill-tag ![background:#0b1727] ![color:#ffffff] ![border-color:#0b1727]">
+                    <i class="las la-flask"></i> Research &amp; Development
+                </div>
+                <h2 class="![font-family:'Poppins',_sans-serif] ![font-size:clamp(2rem,_3.8vw,_3rem)] !tw-uppercase ![color:#0b1727] ![margin-top:10px]">
+                    Engineering the Next <span class="![color:#0b1727]">Generation of Attractions</span>
+                </h2>
+                <p class="![font-family:'Poppins',_sans-serif] ![font-size:1rem] ![color:#0b1727] ![max-width:720px] ![margin:0_auto]">
+                    Our in-house R&amp;D team continuously designs, prototypes, and tests new ride concepts and systems before they reach your park.
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3" data-aos="zoom-out-up" data-aos-delay="0">
+                    <div class="advantage-card">
+                        <div class="advantage-icon-box"><i class="las la-lightbulb"></i></div>
+                        <h3 class="advantage-title">Concept &amp; Innovation</h3>
+                        <p class="advantage-desc">New ride, theatre, and play-zone concepts developed around guest experience, throughput, and storytelling.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="zoom-out-up" data-aos-delay="100">
+                    <div class="advantage-card">
+                        <div class="advantage-icon-box"><i class="las la-cube"></i></div>
+                        <h3 class="advantage-title">3D Design &amp; Prototyping</h3>
+                        <p class="advantage-desc">Detailed 3D modelling, simulation, and working prototypes to validate mechanisms and safety before fabrication.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="zoom-out-up" data-aos-delay="200">
+                    <div class="advantage-card">
+                        <div class="advantage-icon-box"><i class="las la-vial"></i></div>
+                        <h3 class="advantage-title">Testing &amp; Validation</h3>
+                        <p class="advantage-desc">Structural, motion, and load testing against EN/ASTM guidelines to ensure every attraction is reliable and certified.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="zoom-out-up" data-aos-delay="300">
+                    <div class="advantage-card">
+                        <div class="advantage-icon-box"><i class="las la-sync-alt"></i></div>
+                        <h3 class="advantage-title">Continuous Improvement</h3>
+                        <p class="advantage-desc">Operator feedback and field data from installed rides feed back into better, more efficient, easier-to-maintain designs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==============================================
+         5B. SOFTWARE
+         ============================================== -->
+    <section class="about-capabilities-section" id="software">
+        <div class="container">
+            <div class="text-center mb-50" data-aos="fade-up">
+                <div class="section-pill-tag">
+                    <i class="las la-laptop-code"></i> Software
+                </div>
+                <h2 class="about-story-heading ![margin-bottom:12px]">
+                    Smart Software Powering <br><span class="gradient-word">Every Experience</span>
+                </h2>
+                <p class="![font-family:'Poppins',_sans-serif] ![font-size:1.05rem] ![color:#0b1727] ![max-width:750px] ![margin:0_auto]">
+                    Beyond steel and motion, we build the control, content, and interactive software that brings our attractions to life.
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-xl-3" data-aos="zoom-in-up" data-aos-delay="0">
+                    <div class="capability-card">
+                        <div class="capability-content">
+                            <h3 class="capability-title">Ride Control Systems</h3>
+                            <ul class="capability-items-list">
+                                <li>PLC and sensor-based control with safety interlocks</li>
+                                <li>Synchronised motion, lighting, and effects</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xl-3" data-aos="zoom-in-up" data-aos-delay="100">
+                    <div class="capability-card">
+                        <div class="capability-content">
+                            <h3 class="capability-title">Immersive Content &amp; Games</h3>
+                            <ul class="capability-items-list">
+                                <li>Interactive projection and motion-responsive games</li>
+                                <li>Custom films and content for 12D, dome, and flying theatres</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xl-3" data-aos="zoom-in-up" data-aos-delay="200">
+                    <div class="capability-card">
+                        <div class="capability-content">
+                            <h3 class="capability-title">VR &amp; Simulation</h3>
+                            <ul class="capability-items-list">
+                                <li>VR experiences and simulation zones</li>
+                                <li>Show-control and playback software for theatres</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xl-3" data-aos="zoom-in-up" data-aos-delay="300">
+                    <div class="capability-card">
+                        <div class="capability-content">
+                            <h3 class="capability-title">Park Management Tools</h3>
+                            <ul class="capability-items-list">
+                                <li>Ticketing, scheduling, and operations support</li>
+                                <li>Remote monitoring and diagnostics</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==============================================
          6. THE AGELESS ADVANTAGE (WHY CHOOSE US)
          ============================================== -->
     <section class="about-advantage-section">
