@@ -50,26 +50,10 @@
             <div class="col-lg-6">
                 <div class="story-media-showcase">
                     <div class="story-main-img-card ![box-shadow:0_20px_50px_rgba(11,_23,_39,_0.12)]">
-                        @if($product->slug === 'rope-rider-ride')
-                            @include('products.rope-rider-gallery', ['galleryHeight' => '440px'])
-                        @elseif($product->slug === 'paddle-boats')
-                            @include('products.paddle-boats-gallery', ['galleryHeight' => '440px'])
-                        @elseif($product->slug === 'marine-drive-express')
-                            @include('products.marine-drive-express-gallery', ['galleryHeight' => '440px'])
-                        @elseif($product->slug === 'jaint-swing')
-                            @include('products.jaint-swing-gallery', ['galleryHeight' => '440px'])
-                        @elseif($product->slug === 'steel-slide-hi-lite-mall-kozhikode')
-                            @include('products.steel-slide-gallery', ['galleryHeight' => '440px'])
-                        @elseif($product->slug === 'aquarium')
-                            @include('products.aquarium-gallery', ['galleryHeight' => '440px'])
-                        @elseif($product->slug === 'dino-park')
-                            @include('products.dino-park-gallery', ['galleryHeight' => '440px'])
-                        @elseif($product->slug === 'shooting-and-archery')
-                            @include('products.shooting-archery-gallery', ['galleryHeight' => '440px'])
-                        @elseif(str_contains(strtolower($product->name), 'dome') && str_contains(strtolower($product->name), 'cinema'))
-                            @include('products.dome-cinema-gallery', ['galleryHeight' => '440px'])
+                        @if(count($product->gallery_urls) > 1)
+                            @include('products.gallery', ['galleryHeight' => '440px', 'images' => $product->gallery_urls, 'alt' => $product->name])
                         @else
-                            <img class="![height:440px]" src="{{ $product->image_url }}" alt="{{ $product->name }}">
+                            <img class="![height:440px]" src="{{ $product->gallery_urls[0] ?? $product->image_url }}" alt="{{ $product->name }}">
                         @endif
                     </div>
                     @if(!in_array($product->slug, ['rope-rider-ride', 'steel-slide-hi-lite-mall-kozhikode', 'jaint-swing', 'marine-drive-express', 'paddle-boats', 'kayaks', 'dino-park', 'aquarium', 'digital-museum']))

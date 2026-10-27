@@ -1,8 +1,8 @@
-<div class="swiper aquarium-gallery" role="region" aria-label="Aquarium photos" style="width: 100%; overflow: hidden; height: {{ $galleryHeight ?? '100%' }};">
+<div class="swiper product-gallery" role="region" aria-label="{{ $alt }} photos" style="width: 100%; overflow: hidden; height: {{ $galleryHeight ?? '100%' }};">
     <div class="swiper-wrapper">
-        @foreach(['Starfish on the sandy aquarium floor', 'Lionfish swimming in an aquarium'] as $caption)
+        @foreach($images as $image)
             <div class="swiper-slide">
-                <img style="width: 100%; height: 100%; object-fit: cover; object-position: center;" src="{{ asset('assets/img/products/aquarium-' . $loop->iteration . '.jpg') }}" alt="{{ $caption }}" loading="lazy" decoding="async">
+                <img style="width: 100%; height: 100%; object-fit: cover; object-position: center;" src="{{ $image }}" alt="{{ $alt }} photo {{ $loop->iteration }}" loading="{{ $loop->first ? 'eager' : 'lazy' }}" decoding="async">
             </div>
         @endforeach
     </div>
@@ -11,7 +11,7 @@
 @once
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('.aquarium-gallery').forEach(function (gallery) {
+    document.querySelectorAll('.product-gallery').forEach(function (gallery) {
         gallery.addEventListener('click', function (event) {
             if (event.target.closest('.swiper-pagination') || (gallery.swiper && !gallery.swiper.allowClick)) {
                 event.stopPropagation();
@@ -28,4 +28,3 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 @endonce
-

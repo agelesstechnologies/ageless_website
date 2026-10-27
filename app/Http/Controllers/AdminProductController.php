@@ -9,6 +9,8 @@ use Illuminate\Support\Str;
 
 class AdminProductController extends Controller
 {
+    use \App\Http\Controllers\Concerns\HandlesGallery;
+
     public function index()
     {
         $products = Product::orderBy('sort_order')->orderByDesc('id')->paginate(10);
@@ -53,7 +55,7 @@ class AdminProductController extends Controller
             'status' => 'required|boolean',
             'spec_badge' => 'nullable|string|max:255',
             'features' => 'nullable|string',
-        ]);
+        ] + self::GALLERY_RULES);
         // Keep published URLs stable when the name changes.
         if (! $record) {
             $base = Str::slug($data['name']) ?: 'product';
@@ -63,7 +65,8 @@ class AdminProductController extends Controller
             }
             $data['slug'] = $slug;
         }
-        unset($data['image']);
+        unset($data['image'], $data['gallery_files'], $data['remove_gallery']);
+        $data['gallery'] = $this->galleryFromRequest($request, 'products', $record?->gallery);
         if ($request->hasFile('image')) {
             $file = $request->file('image');
             $filename = $file->hashName();

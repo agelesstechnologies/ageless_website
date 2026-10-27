@@ -9,6 +9,8 @@ use Illuminate\Support\Str;
 
 class AdminProjectController extends Controller
 {
+    use \App\Http\Controllers\Concerns\HandlesGallery;
+
     public function index()
     {
         $projects = Project::orderBy('sort_order')->orderByDesc('id')->paginate(10);
@@ -56,7 +58,7 @@ class AdminProjectController extends Controller
             'capacity' => 'nullable|string|max:255',
             'scope' => 'nullable|string',
             'specifications' => 'nullable|string',
-        ]);
+        ] + self::GALLERY_RULES);
         // Keep published URLs stable when the name changes.
         if (! $record) {
             $base = Str::slug($data['title']) ?: 'project';
@@ -66,7 +68,8 @@ class AdminProjectController extends Controller
             }
             $data['slug'] = $slug;
         }
-        unset($data['image']);
+        unset($data['image'], $data['gallery_files'], $data['remove_gallery']);
+        $data['gallery'] = $this->galleryFromRequest($request, 'projects', $record?->gallery);
         if ($request->hasFile('image')) {
             $file = $request->file('image');
             $filename = $file->hashName();

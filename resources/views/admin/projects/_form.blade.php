@@ -30,3 +30,11 @@
 <div class="mb-3"><label for="image">Image</label>
 @if(isset($project) && $project->image)<div><img src="{{ $project->image_url }}" width="150" alt="Current image"></div>@endif
 <input id="image" name="image" type="file" accept="image/*" class="form-control"><small>Maximum 4 MB. Leave empty to keep the current image.</small></div>
+
+<div class="mb-3"><label for="gallery_files">Gallery Images</label>
+@if(!empty($project->gallery))
+<div class="d-flex flex-wrap gap-3 mb-2">@foreach($project->gallery as $i => $path)
+<label class="text-center small"><img src="{{ $project->gallery_urls[$i] ?? '' }}" width="110" alt="Gallery image {{ $loop->iteration }}"><br><input type="checkbox" name="remove_gallery[]" value="{{ $path }}"> Remove</label>
+@endforeach</div>
+@endif
+<input id="gallery_files" name="gallery_files[]" type="file" accept="image/*" multiple class="form-control"><small>Optional extra photos shown as a slider on the detail page. Maximum 4 MB each.</small></div>

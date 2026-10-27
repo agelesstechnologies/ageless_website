@@ -17,5 +17,8 @@ class Product extends Model
         'description',
         'sort_order',
         'status',
+        'gallery',
     ];
+
+    protected $casts = ['gallery' => 'array'];
 }

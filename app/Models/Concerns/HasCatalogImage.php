@@ -29,4 +29,13 @@ trait HasCatalogImage
             ? asset('storage/'.$this->image)
             : asset('assets/img/roller1.jpg');
     }
+
+    public function getGalleryUrlsAttribute(): array
+    {
+        return collect($this->gallery ?? [])
+            ->filter()
+            ->map(fn ($path) => str_starts_with($path, 'assets/') ? asset($path) : asset('storage/'.$path))
+            ->values()
+            ->all();
+    }
 }
