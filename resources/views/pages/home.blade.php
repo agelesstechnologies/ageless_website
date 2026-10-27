@@ -36,7 +36,7 @@
 
     <!-- Full Animation & Parallax Engine Styles -->
 
-    <link rel="preload" as="image" href="{{ asset('hero-park-poster.jpg') }}" fetchpriority="high">
+    <link rel="preload" as="image" href="{{ asset('hero-park-ferriswheel.jpg') }}" fetchpriority="high">
     @include('partials.clean-navigation')
     
     <link rel="stylesheet" href="{{ asset('assets/css/tailwind.css') }}?v={{ filemtime(public_path('assets/css/tailwind.css')) }}">
@@ -65,7 +65,7 @@
          1. HERO SECTION - MULTI-LAYER 3D PARALLAX
          ============================================== -->
     <section class="hero-parallax-wrapper">
-        <video class="hero-bg-layer" autoplay muted loop playsinline preload="metadata" poster="{{ asset('hero-park-poster.jpg') }}" aria-hidden="true">
+        <video class="hero-bg-layer" autoplay muted loop playsinline preload="metadata" poster="{{ asset('hero-park-ferriswheel.jpg') }}" aria-hidden="true">
             <source src="{{ asset('assets/videos/hero-park-clouds.mp4') }}?v={{ filemtime(public_path('assets/videos/hero-park-clouds.mp4')) }}" type="video/mp4">
         </video>
         <canvas id="hero-particle-canvas"></canvas>
