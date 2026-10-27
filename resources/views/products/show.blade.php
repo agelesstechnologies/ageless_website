@@ -60,6 +60,10 @@
                             @include('products.jaint-swing-gallery', ['galleryHeight' => '440px'])
                         @elseif($product->slug === 'steel-slide-hi-lite-mall-kozhikode')
                             @include('products.steel-slide-gallery', ['galleryHeight' => '440px'])
+                        @elseif($product->slug === 'aquarium')
+                            @include('products.aquarium-gallery', ['galleryHeight' => '440px'])
+                        @elseif($product->slug === 'dino-park')
+                            @include('products.dino-park-gallery', ['galleryHeight' => '440px'])
                         @elseif($product->slug === 'shooting-and-archery')
                             @include('products.shooting-archery-gallery', ['galleryHeight' => '440px'])
                         @elseif(str_contains(strtolower($product->name), 'dome') && str_contains(strtolower($product->name), 'cinema'))
@@ -68,7 +72,7 @@
                             <img class="![height:440px]" src="{{ $product->image_url }}" alt="{{ $product->name }}">
                         @endif
                     </div>
-                    @if(!in_array($product->slug, ['rope-rider-ride', 'steel-slide-hi-lite-mall-kozhikode', 'jaint-swing', 'marine-drive-express', 'paddle-boats', 'kayaks']))
+                    @if(!in_array($product->slug, ['rope-rider-ride', 'steel-slide-hi-lite-mall-kozhikode', 'jaint-swing', 'marine-drive-express', 'paddle-boats', 'kayaks', 'dino-park', 'aquarium', 'digital-museum']))
                     <div class="story-floating-badge ![bottom:-15px] ![left:-10px]">
                         <div class="floating-badge-icon">
                             <i class="las la-shield-alt"></i>
@@ -101,7 +105,7 @@
                 </div>
 
                 <!-- Highlights Checklist -->
-                @if(!in_array($product->slug, ['interactive-immersive-zone', 'marine-drive-express', 'alpine-coaster', 'paddle-boats', 'kayaks']) && filled($product->features))
+                @if(!in_array($product->slug, ['interactive-immersive-zone', 'marine-drive-express', 'alpine-coaster', 'paddle-boats', 'kayaks', 'dino-park']) && filled($product->features))
                 <div class="story-features-list mb-4">
                     @foreach(preg_split('/\r\n|\r|\n/', $product->features ?? '', -1, PREG_SPLIT_NO_EMPTY) as $feature)
                     <div class="story-feature-item">

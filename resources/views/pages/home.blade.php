@@ -238,7 +238,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="service-item-3d tilt-card wow fade-in-bottom" data-wow-delay="300ms">
                         <div class="service-thumb">
-                            <img src="{{ asset("assets/img/products/kayaks.jpg") }}" alt="Water Park" loading="lazy" decoding="async">
+                            <img src="{{ asset("assets/img/products/water-park.jpg") }}" alt="Water Park" loading="lazy" decoding="async">
                         </div>
                         <div class="service-content">
                             <h3>Water Park</h3>
@@ -264,10 +264,10 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="service-item-3d tilt-card wow fade-in-bottom" data-wow-delay="400ms">
                         <div class="service-thumb">
-                            <img src="{{ asset("assets/img/adventure.png") }}" alt="Sky and Adventure Rides" loading="lazy" decoding="async">
+                            <img src="{{ asset("assets/img/adventure.png") }}" alt="Adventurous Rides" loading="lazy" decoding="async">
                         </div>
                         <div class="service-content">
-                            <h3>Sky &amp; Adventure Rides</h3>
+                            <h3>Adventurous Rides</h3>
                             <p>Exciting attractions that lift fun to new heights — including monorails, rope riders, and sky gliders.</p>
                         </div>
                     </div>

@@ -33,6 +33,9 @@ class DatabaseSeeder extends Seeder
         $this->call(AlpineCoasterProductSeeder::class);
         $this->call(PaddleBoatsProductSeeder::class);
         $this->call(KayaksProductSeeder::class);
+        $this->call(DinoParkProductSeeder::class);
+        $this->call(AquariumProductSeeder::class);
+        $this->call(DigitalMuseumProductSeeder::class);
         $this->call(IndriyaAdventureProjectsSeeder::class);
         $this->call(FuntoppiaProjectSeeder::class);
         $this->call(ActivePlanetProjectSeeder::class);

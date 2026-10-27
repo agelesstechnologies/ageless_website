@@ -1,0 +1,158 @@
+{
+    "date":  "2026-10-27",
+    "backup_path":  "C:\\Users\\USER\\ageless-unused-backup-2026-10-27",
+    "removed_image_count":  36,
+    "removed_audit_file_count":  146,
+    "removed_bytes":  39563011,
+    "removed_mib":  37.73,
+    "verification_pages":  75,
+    "images":  [
+                   {
+                       "path":  "public\\assets\\img\\12d4d2.jpg",
+                       "bytes":  63261
+                   },
+                   {
+                       "path":  "public\\assets\\img\\12d4d3.jpg",
+                       "bytes":  59910
+                   },
+                   {
+                       "path":  "public\\assets\\img\\12d4d4.jpg",
+                       "bytes":  55454
+                   },
+                   {
+                       "path":  "public\\assets\\img\\12d4d5.jpg",
+                       "bytes":  106415
+                   },
+                   {
+                       "path":  "public\\assets\\img\\flying2.jpg",
+                       "bytes":  344978
+                   },
+                   {
+                       "path":  "public\\assets\\img\\flying3.jpg",
+                       "bytes":  34642
+                   },
+                   {
+                       "path":  "public\\assets\\img\\flying4.jpg",
+                       "bytes":  85586
+                   },
+                   {
+                       "path":  "public\\assets\\img\\flying5.jpg",
+                       "bytes":  120157
+                   },
+                   {
+                       "path":  "public\\assets\\img\\flying6.jpg",
+                       "bytes":  272295
+                   },
+                   {
+                       "path":  "public\\assets\\img\\flying7.jpg",
+                       "bytes":  125725
+                   },
+                   {
+                       "path":  "public\\assets\\img\\Kanyakumari activities.png",
+                       "bytes":  3548739
+                   },
+                   {
+                       "path":  "public\\assets\\img\\parkdesign2.jpg",
+                       "bytes":  253443
+                   },
+                   {
+                       "path":  "public\\assets\\img\\parkdesign3.jpg",
+                       "bytes":  293354
+                   },
+                   {
+                       "path":  "public\\assets\\img\\parkdesign4.jpg",
+                       "bytes":  86561
+                   },
+                   {
+                       "path":  "public\\assets\\img\\parkdesign5.jpg",
+                       "bytes":  52531
+                   },
+                   {
+                       "path":  "public\\assets\\img\\parkdesign6.jpg",
+                       "bytes":  178228
+                   },
+                   {
+                       "path":  "public\\assets\\img\\parkdesign7.jpg",
+                       "bytes":  92654
+                   },
+                   {
+                       "path":  "public\\assets\\img\\parkdesign8.jpg",
+                       "bytes":  208762
+                   },
+                   {
+                       "path":  "public\\assets\\img\\roller3.jpg",
+                       "bytes":  739623
+                   },
+                   {
+                       "path":  "public\\assets\\img\\roller4.jpg",
+                       "bytes":  144129
+                   },
+                   {
+                       "path":  "public\\assets\\img\\roller5.jpg",
+                       "bytes":  433025
+                   },
+                   {
+                       "path":  "public\\assets\\img\\roller6.jpg",
+                       "bytes":  120114
+                   },
+                   {
+                       "path":  "public\\assets\\img\\rope5.jpg",
+                       "bytes":  147727
+                   },
+                   {
+                       "path":  "public\\assets\\img\\snow4.jpg",
+                       "bytes":  61068
+                   },
+                   {
+                       "path":  "public\\assets\\img\\snow5.jpg",
+                       "bytes":  22904
+                   },
+                   {
+                       "path":  "public\\assets\\img\\snow6.jpg",
+                       "bytes":  126358
+                   },
+                   {
+                       "path":  "public\\assets\\img\\toy2.jpg",
+                       "bytes":  329348
+                   },
+                   {
+                       "path":  "public\\assets\\img\\toy3.jpg",
+                       "bytes":  56320
+                   },
+                   {
+                       "path":  "public\\assets\\img\\toy4.jpg",
+                       "bytes":  239164
+                   },
+                   {
+                       "path":  "public\\assets\\img\\toy5.jpg",
+                       "bytes":  1088746
+                   },
+                   {
+                       "path":  "public\\assets\\img\\toy6.jpg",
+                       "bytes":  36589
+                   },
+                   {
+                       "path":  "public\\assets\\img\\toy7.jpg",
+                       "bytes":  187925
+                   },
+                   {
+                       "path":  "public\\assets\\img\\WhatsApp Image 2026-03-27 at 6.45.07 PM.jpeg",
+                       "bytes":  86739
+                   },
+                   {
+                       "path":  "public\\assets\\img\\WhatsApp Image 2026-06-09 at 4.00.17 PM (1).jpeg",
+                       "bytes":  597105
+                   },
+                   {
+                       "path":  "public\\assets\\img\\WhatsApp Image 2026-07-01 at 12.33.06 PM (1).jpeg",
+                       "bytes":  2414949
+                   },
+                   {
+                       "path":  "public\\assets\\img\\WhatsApp Image 2026-07-10 at 9.15.36 AM.jpeg",
+                       "bytes":  151437
+                   }
+               ],
+    "audit_folder":  "scratch/tailwind-migration-20261007",
+    "retained":  "Dependencies, active galleries, database, uploads, and uncertain files",
+    "post_cleanup_verification":  "75 public pages rendered without server errors; no removed image appeared in rendered HTML. Compiled views cleared afterward. CSS rebuild unavailable because npm is not on PATH."
+}

@@ -46,11 +46,6 @@ async function build() {
     const result = await postcss([tailwind(config)]).process(fs.readFileSync(from, 'utf8'), {
       from, to: path.join(target, name), map: false
     });
-    // Keep the generated utility candidates available for migration auditing.
-    const auditFolder = path.resolve('scratch/tailwind-migration-20261007');
-    if (process.env.TAILWIND_AUDIT === '1' && fs.existsSync(auditFolder)) {
-      fs.writeFileSync(path.join(auditFolder, 'compiled-utilities.css'), result.css);
-    }
     // Utility profiles use short activation classes. This preserves the legacy
     // JS selector contracts without adding thousands of classes to each page.
     const root = result.root;

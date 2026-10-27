@@ -6,6 +6,10 @@
             @include('products.jaint-swing-gallery')
         @elseif($product->slug === 'steel-slide-hi-lite-mall-kozhikode')
             @include('products.steel-slide-gallery', ['fillCard' => true])
+        @elseif($product->slug === 'aquarium')
+            @include('products.aquarium-gallery')
+        @elseif($product->slug === 'dino-park')
+            @include('products.dino-park-gallery')
         @elseif($product->slug === 'shooting-and-archery')
             @include('products.shooting-archery-gallery')
         @elseif(str_contains(strtolower($product->name), 'dome') && str_contains(strtolower($product->name), 'cinema'))
@@ -56,7 +60,6 @@
             <img src="{{ $product->image_url }}" alt="{{ $product->name }}">
         @endif
         <span class="card-category-pill {{ ['outdoor' => 'cat-theme', 'adventure' => 'cat-adventure', 'cinema' => 'cat-cinema', 'indoor' => 'cat-indoor'][$product->category_key] ?? 'cat-theme' }}">{{ $product->category }}</span>
-        @if($product->spec_badge)<span class="card-spec-badge">{{ $product->spec_badge }}</span>@endif
     </div>
     <div class="card-content-body">
         <h3 class="card-product-title">{{ $product->name }}</h3>
