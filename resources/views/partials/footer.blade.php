@@ -21,6 +21,7 @@
                         <li><a href="{{ url('/projects') }}">Our Projects</a></li>
                         <li><a href="{{ url('/products') }}">Rides &amp; Attractions</a></li>
                         <li><a href="{{ route('blog.index') }}">Blog &amp; News</a></li>
+                        <li><a href="{{ route('faq.index') }}">FAQ</a></li>
                         <li><a href="{{ url('/contact') }}">Get in Touch</a></li>
                     </ul>
                 </div>

@@ -44,6 +44,12 @@
                             </a>
                         </li>
                         <li>
+                            <a href="{{ route('faq.index') }}">
+                                <i class="las la-question-circle nav-item-icon"></i>
+                                <span>FAQ</span>
+                            </a>
+                        </li>
+                        <li>
                             <a href="{{ url('/contact') }}">
                                 <i class="las la-envelope nav-item-icon"></i>
                                 <span>Contact</span>
