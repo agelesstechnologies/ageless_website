@@ -37,6 +37,7 @@ class AdminFaqController extends Controller
                 mkdir($uploadPath, 0775, true);
             }
             $file->move($uploadPath, $filename);
+            @chmod($uploadPath.DIRECTORY_SEPARATOR.$filename, 0644);
             @copy($uploadPath . '/' . $filename, storage_path('app/public/faqs/' . $filename));
             $data['image'] = 'faqs/' . $filename;
         }
@@ -70,6 +71,7 @@ class AdminFaqController extends Controller
                 mkdir($uploadPath, 0775, true);
             }
             $file->move($uploadPath, $filename);
+            @chmod($uploadPath.DIRECTORY_SEPARATOR.$filename, 0644);
             @copy($uploadPath . '/' . $filename, storage_path('app/public/faqs/' . $filename));
             $data['image'] = 'faqs/' . $filename;
         }

@@ -36,6 +36,7 @@ class BlogController extends Controller
     }
 
     $file->move($uploadPath, $filename);
+    @chmod($uploadPath.DIRECTORY_SEPARATOR.$filename, 0644);
     @copy($uploadPath . '/' . $filename, storage_path('app/public/blogs/' . $filename));
     $data['image'] = 'blogs/' . $filename;
 }
@@ -68,6 +69,7 @@ class BlogController extends Controller
     }
 
     $file->move($uploadPath, $filename);
+    @chmod($uploadPath.DIRECTORY_SEPARATOR.$filename, 0644);
     @copy($uploadPath . '/' . $filename, storage_path('app/public/blogs/' . $filename));
     $data['image'] = 'blogs/' . $filename;
 }

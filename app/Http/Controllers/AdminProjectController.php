@@ -76,6 +76,7 @@ class AdminProjectController extends Controller
             $path = public_path('storage/projects');
             File::ensureDirectoryExists($path);
             $file->move($path, $filename);
+            @chmod($path.DIRECTORY_SEPARATOR.$filename, 0644);
             $data['image'] = 'projects/'.$filename;
         }
 

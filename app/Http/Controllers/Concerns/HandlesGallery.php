@@ -24,6 +24,7 @@ trait HandlesGallery
             File::ensureDirectoryExists($path);
             $name = $file->hashName();
             $file->move($path, $name);
+            @chmod($path.DIRECTORY_SEPARATOR.$name, 0644);
             $gallery[] = $folder.'/'.$name;
         }
 

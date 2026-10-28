@@ -73,6 +73,7 @@ class AdminProductController extends Controller
             $path = public_path('storage/products');
             File::ensureDirectoryExists($path);
             $file->move($path, $filename);
+            @chmod($path.DIRECTORY_SEPARATOR.$filename, 0644);
             $data['image'] = 'products/'.$filename;
         }
 
