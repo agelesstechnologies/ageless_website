@@ -1,19 +1,7 @@
 <div class="premium-product-card product-item" data-category="{{ $product->category_key }}" data-aos="zoom-in-down">
     <div class="card-img-wrapper" data-href="{{ route('products.show', $product->slug) }}" role="link" tabindex="0" aria-label="View details of {{ $product->name }}" style="cursor:pointer">
-        @if($product->slug === 'rope-rider-ride')
-            @include('products.rope-rider-gallery')
-        @elseif($product->slug === 'jaint-swing')
-            @include('products.jaint-swing-gallery')
-        @elseif($product->slug === 'steel-slide-hi-lite-mall-kozhikode')
-            @include('products.steel-slide-gallery', ['fillCard' => true])
-        @elseif($product->slug === 'aquarium')
-            @include('products.aquarium-gallery')
-        @elseif($product->slug === 'dino-park')
-            @include('products.dino-park-gallery')
-        @elseif($product->slug === 'shooting-and-archery')
-            @include('products.shooting-archery-gallery')
-        @elseif(str_contains(strtolower($product->name), 'dome') && str_contains(strtolower($product->name), 'cinema'))
-            @include('products.dome-cinema-gallery')
+        @if(count($product->gallery_urls) > 1)
+            @include('products.gallery', ['images' => $product->gallery_urls, 'alt' => $product->name])
         @elseif(($product->slug === 'snow-park' || str_contains(strtolower($product->name), 'snow fantasy') || str_contains(strtolower($product->name), 'snow park')))
             <div class="snow-park-gallery">
                 <div class="snow-park-gallery-track">
