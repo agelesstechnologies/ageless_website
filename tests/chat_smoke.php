@@ -38,7 +38,7 @@ try {
 }
 
 foreach (['pages.home', 'pages.contact', 'pages.about-company', 'layouts.app'] as $view) {
-    $html = view($view)->render();
+    $html = ($view === 'pages.home' ? app(App\Http\Controllers\FaqController::class)->home() : view($view))->render();
     verifyChat(substr_count($html, 'id="website-chat"') === 1, "One widget rendered in $view");
 }
 $request = Illuminate\Http\Request::create('/chat', 'POST', ['message' => str_repeat('a', 501)]);

@@ -5,6 +5,10 @@
 <input id="name" name="name" type="text" class="form-control" value="{{ old('name', $product->name ?? '') }}" required></div>
 <div class="mb-3"><label for="category">Category Label</label>
 <input id="category" name="category" type="text" class="form-control" value="{{ old('category', $product->category ?? '') }}"></div>
+<div class="mb-3"><label for="seo_title">SEO Title <small class="text-muted">(optional, about 50-60 characters)</small></label>
+<input id="seo_title" name="seo_title" type="text" maxlength="70" class="form-control" value="{{ old('seo_title', $product->seo_title ?? '') }}"></div>
+<div class="mb-3"><label for="seo_description">SEO Description <small class="text-muted">(optional, about 120-155 characters)</small></label>
+<textarea id="seo_description" name="seo_description" maxlength="320" class="form-control" rows="2">{{ old('seo_description', $product->seo_description ?? '') }}</textarea></div>
 <div class="mb-3"><label for="short_description">Short Description</label>
 <textarea id="short_description" name="short_description" class="form-control" rows="4">{{ old('short_description', $product->short_description ?? '') }}</textarea></div>
 <div class="mb-3"><label for="description">Full Description</label>
@@ -22,7 +26,7 @@
 </select></div>
 <div class="mb-3"><label for="status">Status</label><select id="status" name="status" class="form-control"><option value="1" @selected(old('status', $product->status ?? 1) == 1)>Active</option><option value="0" @selected(old('status', $product->status ?? 1) == 0)>Inactive</option></select></div>
 <div class="mb-3"><label for="image">Image</label>
-@if(isset($product) && $product->image)<div><img src="{{ asset('storage/'.$product->image) }}" width="150" alt="Current image"></div>@endif
+@if(isset($product) && $product->image)<div><img src="{{ $product->image_url }}" width="150" alt="Current image"></div>@endif
 <input id="image" name="image" type="file" accept="image/*" class="form-control"><small>Maximum 4 MB. Leave empty to keep the current image.</small></div>
 
 <div class="mb-3"><label for="gallery_files">Gallery Images</label>

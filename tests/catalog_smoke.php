@@ -23,7 +23,7 @@ foreach (['products' => Product::class, 'projects' => Project::class] as $type =
     $records = json_decode(file_get_contents(database_path("data/$type.json")), true);
     foreach ($records as $record) {
         $saved = $model::where('slug', Illuminate\Support\Str::slug($record[$type === 'products' ? 'name' : 'title']))->first();
-        check($saved !== null && is_file(public_path('storage/'.$saved->image)), "Imported record and image: ".$record[$type === 'products' ? 'name' : 'title']);
+        check($saved !== null && (is_file(public_path($saved->image)) || is_file(public_path('storage/'.$saved->image))), "Imported record and image: ".$record[$type === 'products' ? 'name' : 'title']);
     }
     $publicClass = 'App\\Http\\Controllers\\'.($type === 'products' ? 'Product' : 'Project').'Controller';
     $html = (new $publicClass)->index()->render();

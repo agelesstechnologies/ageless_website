@@ -1,49 +1,7 @@
 <div class="premium-product-card product-item" data-category="{{ $product->category_key }}" data-aos="zoom-in-down">
     <div class="card-img-wrapper" data-href="{{ route('products.show', $product->slug) }}" role="link" tabindex="0" aria-label="View details of {{ $product->name }}" style="cursor:pointer">
-        @if(count($product->gallery_urls) > 1)
-            @include('products.gallery', ['images' => $product->gallery_urls, 'alt' => $product->name])
-        @elseif(($product->slug === 'snow-park' || str_contains(strtolower($product->name), 'snow fantasy') || str_contains(strtolower($product->name), 'snow park')))
-            <div class="snow-park-gallery">
-                <div class="snow-park-gallery-track">
-                @foreach(['snow1.jpeg', 'snow2.jpeg', 'snow3.jpeg', 'snow1.jpeg'] as $snowImage)
-                    <div class="snow-park-gallery-image" @if($loop->last) aria-hidden="true" @endif>
-                        <img src="{{ asset('assets/img/' . $snowImage) }}" alt="{{ $product->name }} - view {{ $loop->iteration }}" loading="lazy" decoding="async">
-                    </div>
-                @endforeach
-                </div>
-            </div>
-        @elseif(str_contains(strtolower($product->name), 'horror'))
-            <div class="horror-house-gallery">
-                <div class="horror-house-gallery-track">
-                    @foreach(['horror1.jpeg', 'horror2.jpeg', 'horror3.jpeg', 'horror4.jpeg', 'horror1.jpeg'] as $horrorImage)
-                        <div class="horror-house-gallery-image" @if($loop->last) aria-hidden="true" @endif>
-                            <img src="{{ asset('assets/img/' . $horrorImage) }}" alt="{{ $loop->last ? '' : $product->name . ' - view ' . $loop->iteration }}" loading="lazy" decoding="async">
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        @elseif(str_contains(strtolower($product->name), 'traffic park'))
-            <div class="traffic-park-gallery">
-                <div class="traffic-park-gallery-track">
-                    @foreach(['traffic-park-vehicles-1.jpeg', 'traffic-park-vehicles-2.jpeg', 'traffic-park-vehicles-1.jpeg'] as $trafficImage)
-                        <div class="traffic-park-gallery-image" @if($loop->last) aria-hidden="true" @endif>
-                            <img src="{{ asset('assets/img/' . $trafficImage) }}" alt="{{ $loop->last ? '' : $product->name . ' - view ' . $loop->iteration }}" loading="lazy" decoding="async">
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        @elseif($product->slug === 'net-games')
-            <div class="net-games-gallery">
-                <div class="net-games-gallery-track">
-                    @foreach(['net1.jpeg', 'net2.jpeg', 'net1.jpeg'] as $netImage)
-                        <div class="net-games-gallery-image" @if($loop->last) aria-hidden="true" @endif>
-                            <img src="{{ asset('assets/img/' . $netImage) }}" alt="{{ $loop->last ? '' : $product->name . ' - view ' . $loop->iteration }}" loading="lazy" decoding="async">
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        @elseif($product->slug === 'arcade-games')
-            <img style="display: block; width: 100%; height: 100%; max-width: none; object-fit: cover; object-position: center;" src="{{ $product->image_url }}" alt="{{ $product->name }}">
+        @if(count($product->gallery_images) > 1)
+            @include('products.gallery', ['images' => $product->gallery_images, 'alt' => $product->name])
         @else
             <img src="{{ $product->image_url }}" alt="{{ $product->name }}">
         @endif

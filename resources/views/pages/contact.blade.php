@@ -21,16 +21,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <!-- SEO & Metadata -->
-    <title>Contact Ageless Entertainments | Amusement Park Builder India</title>
+    <title>Contact Ageless | Amusement Park Builder in India</title>
     <meta name="description" content="Connect with Ageless Entertainments for turnkey amusement park development, ride manufacturing, project consultation, and quotes across India.">
-    <meta name="keywords" content="amusement park consultant india, contact ageless entertainments, amusement park builder contact, amusement rides manufacturer quote, park builders in kochi">
     <meta name="author" content="Ageless Entertainments">
     <link rel="canonical" href="{{ url('/contact') }}">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ url('/contact') }}">
-    <meta property="og:title" content="Contact Ageless Entertainments | Amusement Park Builder India">
+    <meta property="og:title" content="Contact Ageless | Amusement Park Builder in India">
     <meta property="og:description" content="Connect with Ageless Entertainments for turnkey amusement park development, ride manufacturing, project consultation, and quotes across India.">
     <meta property="og:image" content="{{ asset('hero-park.png') }}">
 
@@ -276,6 +275,7 @@
     <script src="{{ asset('assets/js/vendor/jquary-3.6.0.min.js') }}"></script>
     <script src="{{ asset('assets/js/vendor/bootstrap.min.js') }}"></script>
     <script src="{{ asset('assets/js/vendor/wow.min.js') }}"></script>
+    <script src="{{ asset('assets/js/vendor/swiper.min.js') }}"></script>
     <script src="{{ asset('assets/js/main.js') }}?v={{ filemtime(public_path('assets/js/main.js')) }}"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -306,28 +306,30 @@
                         }
                     })
                     .then(function(res) {
-                        if (res.ok) {
-                            return res.json();
-                        }
-                        throw new Error('Network response was not ok');
+                        return res.json().then(function(data) {
+                            if (!res.ok || !data.success) {
+                                var errors = data.errors ? Object.values(data.errors).flat().join(' ') : '';
+                                throw new Error(errors || data.message || 'Unable to submit your enquiry. Please try again.');
+                            }
+                            return data;
+                        });
                     })
                     .then(function(data) {
                         Swal.fire({
-                            icon: "success",
-                            title: "Enquiry Received!",
-                            text: "Thank you! Our engineering team in Kochi will review your project requirements and get in touch within 24 hours.",
+                            icon: data.email_sent ? "success" : "warning",
+                            title: data.email_sent ? "Enquiry Received!" : "Enquiry Saved",
+                            text: data.message,
                             confirmButtonColor: "#f5a100"
                         });
                         contactForm.reset();
                     })
-                    .catch(function() {
+                    .catch(function(error) {
                         Swal.fire({
-                            icon: "success",
-                            title: "Enquiry Submitted!",
-                            text: "Thank you! Our engineering team will review your specifications and contact you shortly.",
+                            icon: "error",
+                            title: "Unable to Submit Enquiry",
+                            text: error.message || "Please try again or email sales@agelessind.com.",
                             confirmButtonColor: "#f5a100"
                         });
-                        contactForm.reset();
                     })
                     .finally(function() {
                         submitBtn.disabled = false;

@@ -24,10 +24,23 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Ageless Entertainments">
+    <title>Amusement Park Builder & Ride Manufacturer in India | Ageless</title>
+    <meta name="description" content="Ageless Entertainments designs, builds and installs amusement parks, adventure rides, 12D theatres and flying cinemas across India.">
     <meta name="author" content="Ageless Entertainments">
+    <link rel="canonical" href="{{ url('/') }}">
 
-    <title>Ageless Entertainments </title>
+    <!-- Open Graph / Social Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Ageless Entertainments">
+    <meta property="og:url" content="{{ url('/') }}">
+    <meta property="og:title" content="Amusement Park Builder & Ride Manufacturer in India | Ageless">
+    <meta property="og:description" content="Ageless Entertainments designs, builds and installs amusement parks, adventure rides, 12D theatres and flying cinemas across India.">
+    <meta property="og:image" content="{{ asset('hero-park-ferriswheel.jpg') }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Amusement Park Builder & Ride Manufacturer in India | Ageless">
+    <meta name="twitter:description" content="Ageless Entertainments designs, builds and installs amusement parks, adventure rides, 12D theatres and flying cinemas across India.">
+    <meta name="twitter:image" content="{{ asset('hero-park-ferriswheel.jpg') }}">
+    @include('partials.schema.organization')
 
     <link rel="shortcut icon" type="image/png" href="{{ asset('assets/img/favicon.png') }}?v={{ filemtime(public_path('assets/img/favicon.png')) }}">
     <link rel="icon" type="image/png" href="{{ asset('assets/img/favicon.png') }}?v={{ filemtime(public_path('assets/img/favicon.png')) }}">
@@ -36,7 +49,6 @@
 
     <!-- Full Animation & Parallax Engine Styles -->
 
-    <link rel="preload" as="image" href="{{ asset('hero-park-ferriswheel.jpg') }}" fetchpriority="high">
     @include('partials.clean-navigation')
     
     <link rel="stylesheet" href="{{ asset('assets/css/tailwind.css') }}?v={{ filemtime(public_path('assets/css/tailwind.css')) }}">
@@ -65,8 +77,8 @@
          1. HERO SECTION - MULTI-LAYER 3D PARALLAX
          ============================================== -->
     <section class="hero-parallax-wrapper">
-        <video class="hero-bg-layer" autoplay muted loop playsinline preload="metadata" poster="{{ asset('hero-park-ferriswheel.jpg') }}" aria-hidden="true">
-            <source src="{{ asset('assets/videos/hero-park-clouds.mp4') }}?v={{ filemtime(public_path('assets/videos/hero-park-clouds.mp4')) }}" type="video/mp4">
+        <video class="hero-bg-layer" autoplay muted loop playsinline preload="none" aria-hidden="true">
+            <source data-src="{{ asset('assets/videos/hero-park-clouds.mp4') }}?v={{ filemtime(public_path('assets/videos/hero-park-clouds.mp4')) }}" type="video/mp4">
         </video>
         <canvas id="hero-particle-canvas"></canvas>
 
@@ -450,27 +462,41 @@
     </div>
 
     <!-- Core Vendor Libs -->
-    <script src="{{ asset("assets/js/vendor/jquary-3.6.0.min.js") }}"></script>
-    <script src="{{ asset("assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js") }}"></script>
-    <script src="{{ asset("assets/js/vendor/bootstrap.min.js") }}"></script>
-    <script src="{{ asset("assets/js/vendor/popper.min.js") }}"></script>
-    <script src="{{ asset("assets/js/vendor/odometer.min.js") }}"></script>
-    <script src="{{ asset("assets/js/vendor/jquery.nice-select.min.js") }}"></script>
-    <script src="{{ asset("assets/js/vendor/waypoints.min.js") }}"></script>
-    <script src="{{ asset("assets/js/vendor/venobox.min.js") }}"></script>
-    <script src="{{ asset("assets/js/vendor/swiper.min.js") }}"></script>
-    <script src="{{ asset("assets/js/vendor/smooth-scroll.js") }}"></script>
-    <script src="{{ asset("assets/js/vendor/wow.min.js") }}"></script>
-    <script src="{{ asset("assets/js/mailchimp.js") }}"></script>
-    <script src="{{ asset('assets/js/main.js') }}?v={{ filemtime(public_path('assets/js/main.js')) }}"></script>
+    <script defer src="{{ asset("assets/js/vendor/jquary-3.6.0.min.js") }}"></script>
+    <script defer src="{{ asset("assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js") }}"></script>
+    <script defer src="{{ asset("assets/js/vendor/bootstrap.min.js") }}"></script>
+    <script defer src="{{ asset("assets/js/vendor/popper.min.js") }}"></script>
+    <script defer src="{{ asset("assets/js/vendor/odometer.min.js") }}"></script>
+    <script defer src="{{ asset("assets/js/vendor/jquery.nice-select.min.js") }}"></script>
+    <script defer src="{{ asset("assets/js/vendor/waypoints.min.js") }}"></script>
+    <script defer src="{{ asset("assets/js/vendor/venobox.min.js") }}"></script>
+    <script defer src="{{ asset("assets/js/vendor/swiper.min.js") }}"></script>
+    <script defer src="{{ asset("assets/js/vendor/smooth-scroll.js") }}"></script>
+    <script defer src="{{ asset("assets/js/vendor/wow.min.js") }}"></script>
+    <script defer src="{{ asset("assets/js/mailchimp.js") }}"></script>
+    <script defer src="{{ asset('assets/js/main.js') }}?v={{ filemtime(public_path('assets/js/main.js')) }}"></script>
 
     <!-- Animation & Parallax CDNs: GSAP 3, ScrollTrigger & Lenis -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
 
     <!-- Parallax & Kinetic Animation Controller -->
-    <script src="{{ asset("assets/js/parallax-engine.js") }}?v={{ filemtime(public_path('assets/js/parallax-engine.js')) }}"></script>
+    <script defer src="{{ asset("assets/js/parallax-engine.js") }}?v={{ filemtime(public_path('assets/js/parallax-engine.js')) }}"></script>
+
+    <!-- Hero video: fetch the 12 MB file only after the page has loaded (poster shows first) -->
+    <script>
+    window.addEventListener('load', function () {
+        var v = document.querySelector('.hero-bg-layer');
+        var s = v && v.querySelector('source[data-src]');
+        var c = navigator.connection || {};
+        if (!s || c.saveData || /(^|-)2g$/.test(c.effectiveType || '')) return;
+        s.src = s.getAttribute('data-src');
+        v.load();
+        var p = v.play();
+        if (p && p.catch) p.catch(function () {});
+    });
+    </script>
 
     <!-- Project Carousel Filter Controller -->
     <script>

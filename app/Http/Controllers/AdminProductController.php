@@ -55,6 +55,8 @@ class AdminProductController extends Controller
             'status' => 'required|boolean',
             'spec_badge' => 'nullable|string|max:255',
             'features' => 'nullable|string',
+            'seo_title' => 'nullable|string|max:70',
+            'seo_description' => 'nullable|string|max:320',
         ] + self::GALLERY_RULES);
         // Keep published URLs stable when the name changes.
         if (! $record) {

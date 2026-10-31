@@ -22,11 +22,4 @@ class FaqController extends Controller
 
         return view('pages.home', compact('faqs', 'aboutProducts', 'projects'));
     }
-
-    public function index()
-    {
-        $faqs = Faq::where('status', 1)->ordered()->get();
-
-        return view('faq.index', compact('faqs'));
-    }
 }

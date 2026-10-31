@@ -6,9 +6,12 @@
 
 @extends('layouts.app')
 
-@section('title', 'Amusement Park Rides & Attractions Manufacturer India | Ageless')
+@push('jsonld')
+@include('partials.schema.breadcrumbs', ['crumbs' => [['Home', url('/')], ['Products', url('/products')]]])
+@endpush
+
+@section('title', 'Amusement Park Rides & Attractions in India | Ageless')
 @section('meta_description', 'Ageless Entertainments manufactures and installs world-class amusement rides, high-altitude adventure courses, 12D/360° cinemas, and turnkey indoor entertainment centers across India.')
-@section('meta_keywords', 'amusement park rides manufacturer, buy amusement park rides, amusement rides for sale, amusement park equipment, indoor amusement rides, adventure park manufacturer')
 @section('canonical', url('/products'))
 @section('body_class', 'products-page')
 

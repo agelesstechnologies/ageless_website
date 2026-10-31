@@ -22,7 +22,6 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="Ageless Entertainments designs, manufactures, and installs state-of-the-art 360° Dome Cinemas and planetarium visual attractions across India.">
-        <meta name="keywords" content="360 dome cinema in india, dome cinema manufacturer, planetarium installation, immersive 360 theater, dome projection system">
         <meta name="author" content="Ageless Entertainments">
 
         <title>360° Dome Cinema in India | Ageless</title>

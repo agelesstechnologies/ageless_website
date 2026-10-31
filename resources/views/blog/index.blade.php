@@ -6,6 +6,10 @@
 
 @extends('layouts.app')
 
+@push('jsonld')
+@include('partials.schema.breadcrumbs', ['crumbs' => [['Home', url('/')], ['Blog', url('/blog')]]])
+@endpush
+
 @section('title', 'Amusement Park Industry Insights & Guides | Ageless')
 @section('meta_description', 'Explore amusement park industry insights, ride planning guides and entertainment project ideas from Ageless Entertainments in India.')
 @section('canonical', url('/blog'))

@@ -22,7 +22,6 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="Ageless Entertainments is a leading flying theatre and flying cinema manufacturer in India, delivering suspended motion platforms and immersive flight simulations.">
-        <meta name="keywords" content="flying theatre manufacturer in india, flying cinema manufacturer, suspended motion theatre, 6DOF flight simulator, amusement park cinema">
         <meta name="author" content="Ageless Entertainments">
 
         <title>Flying Theatre Manufacturer &amp; Installation in India | Ageless</title>

@@ -1,0 +1,40 @@
+@include('partials.schema.json', ['data' => [
+    '@context' => 'https://schema.org',
+    '@graph' => [
+        [
+            '@type' => ['Organization', 'LocalBusiness'],
+            '@id' => url('/') . '#organization',
+            'name' => 'Ageless Entertainments',
+            'alternateName' => 'Ageless India',
+            'url' => url('/'),
+            'logo' => asset('assets/img/nlogo.png'),
+            'image' => asset('hero-park-ferriswheel.jpg'),
+            'description' => 'Amusement park builder and ride manufacturer in India: adventure rides, 12D theatres, flying cinemas, traffic parks and turnkey entertainment attractions.',
+            'foundingDate' => '2011',
+            'telephone' => '+91-7025-777-755',
+            'email' => 'sales@agelessind.com',
+            'address' => [
+                '@type' => 'PostalAddress',
+                'streetAddress' => 'A.M.A Arcade, Vallathol Junction, 4/1585, Seaport - Airport Rd, Thrikkakara',
+                'addressLocality' => 'Kakkanad, Kochi',
+                'addressRegion' => 'Kerala',
+                'postalCode' => '682021',
+                'addressCountry' => 'IN',
+            ],
+            'areaServed' => 'IN',
+            'sameAs' => [
+                'https://www.facebook.com/agelessentertainment/',
+                'https://www.instagram.com/ageless_entertainments_',
+                'https://www.youtube.com/@agelessentertainments',
+                'https://www.linkedin.com/in/ageless-entertainments-582290367/',
+            ],
+        ],
+        [
+            '@type' => 'WebSite',
+            '@id' => url('/') . '#website',
+            'url' => url('/'),
+            'name' => 'Ageless Entertainments',
+            'publisher' => ['@id' => url('/') . '#organization'],
+        ],
+    ],
+]])

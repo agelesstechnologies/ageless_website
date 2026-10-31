@@ -1,2 +1,6 @@
 User-agent: *
-Disallow:
+Disallow: /admin
+Disallow: /chat
+Disallow: /contact-submit
+
+Sitemap: https://agelessindia.in/sitemap.xml

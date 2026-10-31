@@ -22,7 +22,6 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="Ageless Entertainments is a leading 12D theatre and interactive immersive room manufacturer and installer in India, creating sensory VR &amp; multi-sensory experiences.">
-        <meta name="keywords" content="12D theatre manufacturer, interactive immersive room, 12D cinema installation india, VR attractions setup, interactive game zone">
         <meta name="author" content="Ageless Entertainments">
 
         <title>12D Theatre &amp; Interactive Immersive Rooms in India | Ageless</title>

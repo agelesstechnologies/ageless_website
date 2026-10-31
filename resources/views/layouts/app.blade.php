@@ -26,7 +26,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title', $title ?? 'Amusement Park Builder & Ride Manufacturer in India | Ageless')</title>
     <meta name="description" content="@yield('meta_description', 'Ageless Entertainments designs, builds and installs amusement parks, adventure rides, immersive attractions, 12D theatres, flying cinemas, traffic parks and entertainment solutions across India.')">
-    <meta name="keywords" content="@yield('meta_keywords', 'amusement park builder in india, amusement park manufacturer, theme park builder india, amusement park consultant, adventure park manufacturer, indoor amusement park setup')">
     <meta name="author" content="Ageless Entertainments">
     <link rel="canonical" href="@yield('canonical', url()->current())">
 
@@ -35,7 +34,7 @@
     <meta property="og:url" content="@yield('canonical', url()->current())">
     <meta property="og:title" content="@yield('title', $title ?? 'Amusement Park Builder & Ride Manufacturer in India | Ageless')">
     <meta property="og:description" content="@yield('meta_description', 'Ageless Entertainments designs, builds and installs amusement parks, adventure rides, immersive attractions, 12D theatres, flying cinemas, traffic parks and entertainment solutions across India.')">
-    <meta property="og:image" content="{{ asset('hero-park.png') }}">
+    <meta property="og:image" content="@yield('og_image', asset('hero-park-ferriswheel.jpg'))">
 
     <link rel="shortcut icon" type="image/png" href="{{ asset('assets/img/favicon.png') }}?v={{ filemtime(public_path('assets/img/favicon.png')) }}">
     <link rel="icon" type="image/png" href="{{ asset('assets/img/favicon.png') }}?v={{ filemtime(public_path('assets/img/favicon.png')) }}">
@@ -43,6 +42,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     @stack('styles')
+    @stack('jsonld')
     @include('partials.clean-navigation')
     
     <link rel="stylesheet" href="{{ asset('assets/css/tailwind.css') }}?v={{ filemtime(public_path('assets/css/tailwind.css')) }}">

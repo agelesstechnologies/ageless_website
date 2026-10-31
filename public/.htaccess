@@ -16,12 +16,36 @@
     ExpiresByType font/woff2 "access plus 7 days"
 </IfModule>
 
+# Serve WebP copies (made by scripts/optimize-images.py) to browsers that accept them.
+<IfModule mod_mime.c>
+    AddType image/webp .webp
+</IfModule>
+<IfModule mod_headers.c>
+    Header append Vary Accept env=REDIRECT_WEBP
+</IfModule>
+
 <IfModule mod_rewrite.c>
     <IfModule mod_negotiation.c>
         Options -MultiViews -Indexes
     </IfModule>
 
     RewriteEngine On
+
+    # Canonical host: send www to the bare domain.
+    RewriteCond %{HTTP_HOST} ^www\.agelessindia\.in$ [NC]
+    RewriteRule ^(.*)$ https://agelessindia.in/$1 [L,R=301]
+
+    # Canonical URL: /index.php redirects to /, /index.php/path to /path.
+    RewriteCond %{THE_REQUEST} \s/+index\.php[\s?] [NC]
+    RewriteRule ^index\.php/?$ / [L,R=301]
+    RewriteCond %{THE_REQUEST} \s/+index\.php/ [NC]
+    RewriteRule ^index\.php/(.*)$ /$1 [L,R=301]
+
+    # Serve <image>.webp in place of PNG/JPEG when the browser supports it.
+    RewriteCond %{HTTP_ACCEPT} image/webp
+    RewriteCond %{REQUEST_FILENAME} \.(png|jpe?g)$ [NC]
+    RewriteCond %{REQUEST_FILENAME}.webp -f
+    RewriteRule ^ %{REQUEST_URI}.webp [L,E=WEBP:1]
 
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .

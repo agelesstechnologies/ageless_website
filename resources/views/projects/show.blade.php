@@ -5,6 +5,10 @@
 
 @extends('layouts.app')
 
+@push('jsonld')
+@include('partials.schema.breadcrumbs', ['crumbs' => [['Home', url('/')], ['Projects', url('/projects')], [$project->title ?? 'Project', url()->current()]]])
+@endpush
+
 @section('title', ($project->title ?? 'Landmark Project') . ' | Ageless Entertainments')
 @section('meta_description', $project->short_description ?? 'Landmark amusement park and ride installation case study by Ageless Entertainments.')
 @section('canonical', url('/projects/' . ($project->slug ?? '')))

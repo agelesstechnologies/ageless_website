@@ -18,7 +18,14 @@ class Product extends Model
         'sort_order',
         'status',
         'gallery',
+        'seo_title', 'seo_description',
     ];
 
     protected $casts = ['gallery' => 'array'];
+
+    public function getGalleryImagesAttribute(): array
+    {
+        // The admin's main image must lead every frontend product gallery.
+        return array_values(array_unique(array_merge([$this->image_url], $this->gallery_urls)));
+    }
 }

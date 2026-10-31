@@ -3,10 +3,57 @@
 @php
     $productSeo = config('product-seo')[$product->name] ?? [];
     $productHeading = $productSeo['heading'] ?? $product->name;
+
+    // Fallback SEO copy for products without a hand-written entry in config/product-seo.php.
+    $seoName = trim(preg_replace('/\s+/', ' ', $productHeading));
+    $seoTitle = filled($product->seo_title) ? $product->seo_title : ($productSeo['title'] ?? null);
+    if (! $seoTitle) {
+        foreach ([$seoName . ' Design & Installation in India | Ageless', $seoName . ' Design & Installation in India', $seoName . ' in India | Ageless'] as $candidate) {
+            $seoTitle = $candidate;
+            if (mb_strlen($candidate) <= 60) break;
+        }
+    }
+
+    $seoDescription = filled($product->seo_description) ? $product->seo_description : ($productSeo['description'] ?? null);
+    if (! $seoDescription) {
+        $seoDescription = trim((string) $product->short_description);
+        if ($seoDescription !== '' && ! preg_match('/[.!?]$/', $seoDescription)) $seoDescription .= '.';
+        if (mb_strlen($seoDescription) < 110) {
+            $seoDescription = trim($seoDescription . ' Ageless Entertainments designs, manufactures and installs ' . $seoName . ' for parks, malls and resorts across India. Get a quote.');
+        }
+        $seoDescription = \Illuminate\Support\Str::limit($seoDescription, 155, '...', true);
+    }
+
+    $relatedProducts = \App\Models\Product::where('status', 1)
+        ->where('id', '!=', $product->id)
+        ->where('category', $product->category)
+        ->orderBy('sort_order')->limit(4)->get();
+    if ($relatedProducts->count() < 4) {
+        $relatedProducts = $relatedProducts->concat(
+            \App\Models\Product::where('status', 1)->where('id', '!=', $product->id)
+                ->whereNotIn('id', $relatedProducts->pluck('id'))->orderBy('sort_order')
+                ->limit(4 - $relatedProducts->count())->get()
+        );
+    }
 @endphp
 
-@section('title', $productSeo['title'] ?? $productHeading . ' | Ageless')
-@section('meta_description', $productSeo['description'] ?? $product->short_description ?? 'Explore amusement ride and attraction solutions from Ageless Entertainments in India.')
+@push('jsonld')
+@include('partials.schema.json', ['data' => array_filter([
+    '@context' => 'https://schema.org',
+    '@type' => 'Product',
+    'name' => $seoName,
+    'description' => $seoDescription,
+    'image' => $product->gallery_images ?: [$product->image_url],
+    'url' => url('/products/' . $product->slug),
+    'category' => $product->category,
+    'brand' => ['@type' => 'Brand', 'name' => 'Ageless Entertainments'],
+    'manufacturer' => ['@id' => url('/') . '#organization'],
+])])
+@include('partials.schema.breadcrumbs', ['crumbs' => [['Home', url('/')], ['Products', url('/products')], [$seoName, url('/products/' . $product->slug)]]])
+@endpush
+
+@section('title', $seoTitle)
+@section('meta_description', $seoDescription)
 @section('canonical', url('/products/' . ($product->slug ?? '')))
 
 @section('content')
@@ -50,13 +97,13 @@
             <div class="col-lg-6">
                 <div class="story-media-showcase">
                     <div class="story-main-img-card ![box-shadow:0_20px_50px_rgba(11,_23,_39,_0.12)]">
-                        @if(count($product->gallery_urls) > 1)
-                            @include('products.gallery', ['galleryHeight' => '440px', 'images' => $product->gallery_urls, 'alt' => $product->name])
+                        @if(count($product->gallery_images) > 1)
+                            @include('products.gallery', ['galleryHeight' => '440px', 'images' => $product->gallery_images, 'alt' => $product->name])
                         @else
-                            <img class="![height:440px]" src="{{ $product->gallery_urls[0] ?? $product->image_url }}" alt="{{ $product->name }}">
+                            <img class="![height:440px]" src="{{ $product->image_url }}" alt="{{ $product->name }}">
                         @endif
                     </div>
-                    @if(!in_array($product->slug, ['rope-rider-ride', 'steel-slide-hi-lite-mall-kozhikode', 'jaint-swing', 'marine-drive-express', 'paddle-boats', 'kayaks', 'dino-park', 'aquarium', 'digital-museum']))
+                    @if(!in_array($product->slug, ['rope-rider-ride', 'steel-slide-hi-lite-mall-kozhikode', 'giant-swing', 'marine-drive-express', 'paddle-boats', 'kayaks', 'dino-park', 'aquarium', 'digital-museum']))
                     <div class="story-floating-badge ![bottom:-15px] ![left:-10px]">
                         <div class="floating-badge-icon">
                             <i class="las la-shield-alt"></i>
@@ -111,6 +158,46 @@
                         <span>Back to All Products</span>
                     </a>
                 </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==============================================
+     PLANNING, DELIVERY & RELATED PRODUCTS
+     ============================================== -->
+<section class="padding ![background:#f8fafc] ![padding:70px_0]">
+    <div class="container">
+        <div class="row gy-5">
+            <div class="col-lg-7">
+                <h2 class="![font-family:'Poppins',_sans-serif] ![font-size:1.7rem] ![color:#0b1727] ![margin-bottom:18px]">Planning {{ $seoName }} for Your Park or Venue</h2>
+                <p class="![color:#475569] ![line-height:1.8]">
+                    Every {{ $product->name }} project starts with your site. Our engineers review the available area, ceiling or ground conditions, visitor capacity, power and access, then propose a layout that fits your {{ $product->category ? strtolower($product->category) : 'entertainment' }} plan and your budget. We prepare 3D layouts and a clear scope before any fabrication begins, so you know exactly what is being built and installed.
+                </p>
+                <h3 class="![font-family:'Poppins',_sans-serif] ![font-size:1.2rem] ![color:#0b1727] ![margin:24px_0_10px]">Where it works well</h3>
+                <p class="![color:#475569] ![line-height:1.8]">
+                    {{ $product->name }} suits amusement and theme parks, shopping malls and family entertainment centres, resorts, hotels, tourist destinations, schools and event grounds. Whether you are opening a new attraction or adding one to an existing park, we can scale the installation to the space and the crowd you expect.
+                </p>
+                <h3 class="![font-family:'Poppins',_sans-serif] ![font-size:1.2rem] ![color:#0b1727] ![margin:24px_0_10px]">What we deliver</h3>
+                <ul class="![color:#475569] ![line-height:1.9] ![padding-left:20px]">
+                    <li>Concept design, layout and 3D visualisation tailored to your site</li>
+                    <li>In-house manufacturing with tested materials and quality checks</li>
+                    <li>Installation, commissioning and operator training by our Kochi-based team</li>
+                    <li>Safety documentation aligned with ASTM and EN standards and statutory inspections</li>
+                    <li>After-sales maintenance support and spare parts across India</li>
+                </ul>
+                <p class="![color:#475569] ![line-height:1.8] ![margin-top:18px]">
+                    Ageless Entertainments has been building rides and attractions since 2011. Tell us about your location and target audience, and we will recommend the right specification and a realistic timeline for {{ $product->name }}. <a href="{{ url('/contact') }}">Contact our team</a> for a custom quotation, or browse our <a href="{{ url('/projects') }}">completed projects</a> to see our work in the field.
+                </p>
+            </div>
+            <div class="col-lg-5">
+                <h2 class="![font-family:'Poppins',_sans-serif] ![font-size:1.4rem] ![color:#0b1727] ![margin-bottom:18px]">Related Attractions</h2>
+                <ul class="list-unstyled">
+                    @foreach($relatedProducts as $related)
+                        <li class="![margin-bottom:12px]"><a href="{{ url('/products/' . $related->slug) }}" class="![font-weight:600]">{{ $related->name }}</a>@if($related->short_description) <span class="![color:#64748b]">&ndash; {{ \Illuminate\Support\Str::limit($related->short_description, 70, '...', true) }}</span>@endif</li>
+                    @endforeach
+                </ul>
+                <a href="{{ url('/products') }}" class="btn-card-details ![padding:12px_24px]"><span>View All Products</span></a>
             </div>
         </div>
     </div>

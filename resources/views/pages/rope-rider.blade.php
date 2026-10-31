@@ -22,7 +22,6 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="Ageless Entertainments is India's premier rope rider, zipline, and high-altitude adventure course manufacturer, engineering certified adventure park attractions.">
-        <meta name="keywords" content="rope rider manufacturer for adventure parks, zipline manufacturer india, rope course manufacturer, adventure park builder india, net park manufacturer">
         <meta name="author" content="Ageless Entertainments">
 
         <title>High &amp; Low Rope Rider for Adventure Parks | Ageless</title>

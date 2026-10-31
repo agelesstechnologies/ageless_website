@@ -371,11 +371,21 @@ document.addEventListener("DOMContentLoaded", function () {
             isAnimating = true;
             frontCard.classList.add("swiping-out");
 
-            setTimeout(() => {
+            let finished = false;
+            function finishSwap() {
+                if (finished) return;
+                finished = true;
+                frontCard.removeEventListener("animationend", onSwipeEnd);
                 currentIndex = (currentIndex + 1) % totalCards;
                 updateStackCards();
                 isAnimating = false;
-            }, 600);
+            }
+            function onSwipeEnd(event) {
+                if (event.target === frontCard) finishSwap();
+            }
+            frontCard.addEventListener("animationend", onSwipeEnd);
+            // Fallback if an animation is disabled or its end event is missed.
+            setTimeout(finishSwap, 750);
         }
 
         // Initialize stack state

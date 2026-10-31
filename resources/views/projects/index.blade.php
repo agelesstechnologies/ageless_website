@@ -10,9 +10,12 @@
 <link rel="stylesheet" href="{{ asset('assets/css/project-slideshow.css') }}?v={{ filemtime(public_path('assets/css/project-slideshow.css')) }}">
 @endpush
 
+@push('jsonld')
+@include('partials.schema.breadcrumbs', ['crumbs' => [['Home', url('/')], ['Projects', url('/projects')]]])
+@endpush
+
 @section('title', 'Amusement Park Projects in India | Ageless')
 @section('meta_description', 'Explore landmark amusement park, theme park, and adventure ride projects across India and worldwide, delivered turnkey by Ageless Entertainments.')
-@section('meta_keywords', 'amusement park projects india, theme park projects, adventure park installation, amusement rides portfolio, park builder case studies')
 @section('canonical', url('/projects'))
 @section('body_class', 'projects-page')
 

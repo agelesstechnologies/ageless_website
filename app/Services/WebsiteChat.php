@@ -32,7 +32,7 @@ class WebsiteChat
                 $items = array_values(array_filter($documents, fn ($item) => ($item['type'] ?? '') === $path));
                 return [
                     'answer' => $items ? 'Explore our '.$path.":\n\n".implode("\n", array_column(array_slice($items, 0, 6), 'title'))."\n\nAsk me about any of these for more details, or browse the full collection below." : 'Visit our '.$path.' page for the latest information.',
-                    'sources' => [['title' => 'Browse '.ucfirst($path), 'url' => url('/'.$path)]],
+                    'sources' => [['title' => 'Browse '.ucfirst($path), 'url' => url($path === 'faq' ? '/#home-faq' : '/'.$path)]],
                 ];
             }
         }
@@ -87,13 +87,13 @@ class WebsiteChat
         ] as [$records, $titleField, $path, $fields]) {
             foreach ($records as $record) {
                 $text = implode("\n", array_filter(array_map(fn ($field) => $record->$field, $fields)));
-                $documents[] = ['title' => $record->$titleField, 'type' => $path, 'text' => $this->plainText($text), 'url' => url($path.($path === 'faq' ? '' : '/'.$record->slug))];
+                $documents[] = ['title' => $record->$titleField, 'type' => $path, 'text' => $this->plainText($text), 'url' => url($path === 'faq' ? '/#home-faq' : $path.'/'.$record->slug)];
             }
         }
 
         // Only explicitly public pages are indexed; never admin views or enquiries.
-        foreach (['home', 'about-company', 'contact', 'services', 'services-details', 'dome-cinema', 'flying-cinema', 'interactive-room', 'rope-rider', 'ai', 'team', 'team-details', 'testimonials', 'seo-strategy', 'project-details'] as $page) {
-            $html = view('pages.'.$page)->render();
+        foreach (['home', 'about-company', 'contact', 'dome-cinema', 'flying-cinema', 'interactive-room', 'rope-rider'] as $page) {
+            $html = ($page === 'home' ? app(\App\Http\Controllers\FaqController::class)->home() : view('pages.'.$page))->render();
             $html = preg_replace('/<(head|script|style|header|footer|nav|form)\b[^>]*>.*?<\/\1>/is', '', $html);
             $html = preg_replace('/<!-- website-chat:start -->.*?<!-- website-chat:end -->/s', '', $html);
             if ($page === 'contact') {

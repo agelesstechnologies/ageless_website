@@ -13,6 +13,14 @@
     <input id="title" class="form-control" name="title" maxlength="255" value="{{ old('title', $blog->title ?? '') }}" required>
 </div>
 <div class="mb-3">
+    <label for="seo_title">SEO Title <small class="text-muted">(optional, about 50-60 characters)</small></label>
+    <input id="seo_title" class="form-control" name="seo_title" type="text" maxlength="70" value="{{ old('seo_title', $blog->seo_title ?? '') }}">
+</div>
+<div class="mb-3">
+    <label for="seo_description">SEO Description <small class="text-muted">(optional, about 120-155 characters)</small></label>
+    <textarea id="seo_description" class="form-control" name="seo_description" rows="2" maxlength="320">{{ old('seo_description', $blog->seo_description ?? '') }}</textarea>
+</div>
+<div class="mb-3">
     <label for="excerpt">Excerpt</label>
     <textarea id="excerpt" class="form-control" name="excerpt" rows="3">{{ old('excerpt', $blog->excerpt ?? '') }}</textarea>
 </div>

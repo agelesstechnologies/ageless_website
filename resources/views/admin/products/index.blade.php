@@ -23,7 +23,7 @@
                 <tr>
                     <td>
                         @if($product->image)
-                            <img src="{{ asset('storage/'.$product->image) }}" width="80">
+                            <img src="{{ $product->image_url }}" width="80">
                         @endif
                     </td>
                     <td>{{ $product->name }}</td>

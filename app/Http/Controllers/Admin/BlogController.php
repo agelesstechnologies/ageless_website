@@ -95,6 +95,8 @@ class BlogController extends Controller
             'image' => 'nullable|image|max:4096',
             'status' => 'required|in:draft,published',
             'published_at' => 'nullable|date',
+            'seo_title' => 'nullable|string|max:70',
+            'seo_description' => 'nullable|string|max:320',
         ]);
     }
 

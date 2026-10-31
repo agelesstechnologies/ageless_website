@@ -30,7 +30,6 @@
     <!-- 1. SEO & Head Metadata -->
     <title>About Ageless | Amusement Park Builders in India</title>
     <meta name="description" content="Since 2011, Ageless Entertainments has designed, manufactured, and built world-class amusement rides, adventure parks, and indoor entertainment centres across India and abroad.">
-    <meta name="keywords" content="amusement park company India, amusement park builder in India, theme park builder India, amusement ride manufacturer, adventure park manufacturer">
     <meta name="author" content="Ageless Entertainments">
     <link rel="canonical" href="{{ url('/about-company') }}">
 
